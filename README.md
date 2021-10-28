@@ -14,7 +14,7 @@ See [how results being checked](https://github.com/dimitryzub/seo-position-track
 
 ## 🤹‍♂️Usage
 
-_The following examples will be pretty much the same for other search engines._
+_The following examples will be pretty much the same for other search engines. Each `get_SEARCH_ENGINE_NAME_position()` will have its own arguments._ 
 
 #### Define parameters
 
@@ -43,7 +43,7 @@ PositionTracker(params=params).get_google_position(return_position_only=True)
 from seo_position_tracker import PositionTracker
 
                              # other_search_engine()
-PositionTracker(params=params).get_google_position(country='uk', lang='en') # change to what you need
+PositionTracker(params=params).get_google_position(country="uk", lang="en") # change to what you need
 
 '''
 [
