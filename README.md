@@ -10,7 +10,7 @@ Currently, supports:
 - Brave Search
 - [See what's coming next](https://github.com/dimitryzub/seo-position-tracker/projects).
 
-See [how results being checked](https://github.com/dimitryzub/seo-position-tracker/#how-results-are-being-filtered).
+See [how results being checked](https://github.com/dimitryzub/seo-position-tracker/#-how-results-are-being-filtered).
 
 ## 🤹‍♂️Usage
 
