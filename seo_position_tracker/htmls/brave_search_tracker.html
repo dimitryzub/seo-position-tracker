@@ -1,0 +1,2407 @@
+<!DOCTYPE html>
+<html class="no-js light" lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="Search the web privately ...">
+    <meta property="og:title" content="Brave Search">
+    <meta property="og:description"  content="Search the web privately ...">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://search.brave.com/">
+    <meta property="og:locale" content="en-us">
+        <meta property="og:site_name" content="Brave Search">
+    <meta name="keywords" content="brave, search">
+    <meta name="referrer" content="no-referrer">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="search" type="application/opensearchdescription+xml" title="Brave Search" href="https://cdn.search.brave.com/serp/v1/static/brand/c57da39655b0b08603d88711f8e33aae50500cbcd8d2fc70a0d01e105cbd0985-opensearch.xml">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.search.brave.com/serp/v1/static/brand/d0e363fa669331150271a24031a013baf0d7aded21cd73fedc0e0703cb67f312-apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.search.brave.com/serp/v1/static/brand/16c26cd189da3f0f7ba4e55a584ddde6a7853c9cc340ff9f381afc6cb18e9a1e-favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.search.brave.com/serp/v1/static/brand/9b3cd14668935362449eebb1854f575091a1169bf51aba6a8c17b39f64a9d07e-favicon-16x16.png">
+    <link rel="manifest" crossorigin="use-credentials" href="https://cdn.search.brave.com/serp/v1/static/brand/6f58cbbc985682bf18d4f7bf3a06f233d79253fa1089b50025d398c5e37a337a-site-webmanifest">
+    <link rel="mask-icon" href="https://cdn.search.brave.com/serp/v1/static/brand/dec70f98955eb6e2c347d2467f82672502d1348d40e0d40e1f7e2bab0d857708-safari-pinned-tab.svg">
+    <link href="https://imgr.search.brave.com" rel="preconnect" crossorigin="anonymous"/>
+    <link href="https://tiles.search.brave.com" rel="preconnect" crossorigin="anonymous"/>
+    <link rel="preload" href="https://cdn.search.brave.com/serp/v1/static/fonts/poppins/a33bc462ca68d387f65db290ff2791c7d6e82917a71a830b7f2d626c5fdcfa26-latin-normal-400.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="https://cdn.search.brave.com/serp/v1/static/fonts/poppins/cbbe1fdc585070fc91576dc40ad89b3213b9ea79adf9d57ac732c1f6f4fa2cd2-latin-normal-500.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <title>minecraft - Brave Search</title>
+
+    <style type="text/css">
+      /* devanagari */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 100;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/2609774f138dc0746242d870b10436fd9a77b700fd6d62373cf7080b84099d91-devanagari-italic-100.woff2") format("woff2");
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 100;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/81996cd80ac6830d4be558326314bbd839e4eccd5cd5d7e323152a650e6adc8e-latin-ext-italic-100.woff2") format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 100;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/1792cf9ae05a90f30465ed6c6c41749cec62824dc07d232bad29eca9f5cfb6df-latin-italic-100.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 200;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/bb2bb9a8ef58327782d1dd01f32b759f425e4223e0813a637d1afc42b89e9d8c-devanagari-italic-200.woff2") format("woff2");
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 200;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/acacb7d800874f0206de36dc7e7a414ca95f404eb76b16a712f1ff15aba66b75-latin-ext-italic-200.woff2") format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 200;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/2872244cc3e32a23c34000b55af44753bb3e13cdc33b7c09a945d539e028d87c-latin-italic-200.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 300;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/d2ff8fac812fca4221d8b07016d3705e8cc7df41bcac3d5ac7bcb33c619a66ba-devanagari-italic-300.woff2") format("woff2");
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 300;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/1076a7715ea269b73764514729176a86ab36b27defb6825166d5ec9095c0ced3-latin-ext-italic-300.woff2") format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 300;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/2ccd353327357adef7871b1836220314c2a0fd3ef8e6510d863275f011fadf64-latin-italic-300.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 400;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/e0868955304da226564bd3b1fbcbd24c987e027f0d95711b350026544a2a08a8-devanagari-italic-400.woff2") format("woff2");
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 400;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/4964e54941efaf04d503d2ad34e769ff41e5dc20d00454e1145ccd41e7d4ba73-latin-ext-italic-400.woff2") format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 400;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/9cc05ee2b51dfe10f4158cb5c422a2fbf9c5b03f9d9e3e703059074757229a50-latin-italic-400.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 500;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/f1dc7b87ec7bd4a4fd68ad43a2d6542b0a9debba59b814b74006ac6631010467-devanagari-italic-500.woff2") format("woff2");
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 500;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/d4b79ef248e69b1938bdf189d0ee1c5e1e2eeea07ebfdfe1480ea3218dd8587e-latin-ext-italic-500.woff2") format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 500;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/ced40c2d808d6da1484301654b1769b61c991b18937816101cccac3bf2df2b09-latin-italic-500.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 600;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/ed0731dbe151fa879e05303037da76fa90188a572eda172473aa5f2233a9cc43-devanagari-italic-600.woff2") format("woff2");
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 600;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/661d4e200998b5523b20006ff545c3e3aef98362aa4123fe5b2841a349d7e978-latin-ext-italic-600.woff2") format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 600;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/e4952585b5cc06b9a3d992d3bbd5a5f568532526feac4da21cb2ae6eb20cc4d4-latin-italic-600.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 700;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/22173830ca796775c946b66c66ffb11faefc486fd509e34475f5f640cc35dc61-devanagari-italic-700.woff2") format("woff2");
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 700;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/202ae136a6089d9c529ef71a2bb89c4170e5850f35827f2c30e0c178adc84fb4-latin-ext-italic-700.woff2") format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 700;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/3e9560f2d6f4523c769e87790ba4305703ea86b6cbcc96dc1fd0b0b7e9d61da8-latin-italic-700.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 800;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/088053e27b4199997b3f64663e2d34609f5cda1809b8f6a651497990cf740193-devanagari-italic-800.woff2") format("woff2");
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 800;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/a82cb8fdf4464868a1f80d9f6813a631da907bc7cb36c00d50d527f7e5d843df-latin-ext-italic-800.woff2") format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 800;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/fc2733e450e01321db0eac69d46d30d03fabad2c30ce85065bd4e522b0ed0cc0-latin-italic-800.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 900;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/cf66350018b768e58ab8c515ec7b8b8634346e7d920e14a0294031f6d8fb9edf-devanagari-italic-900.woff2") format("woff2");
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 900;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/17d15055999304330592259112c9ec1c6d368721be46f81df07892f540c5d1b6-latin-ext-italic-900.woff2") format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 900;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/c947200b7b68f85c4e1f518fa8010636e6561de78d907112b583d6a2b325023f-latin-italic-900.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 100;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/413bc0086b769fa83a4ac572a626ce309cfeb1b9079fbae08a1661f831d49039-devanagari-normal-100.woff2") format("woff2");
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 100;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/6409bb27031384ac5e853593f0883f21761e60e980e00bbdc7f62147306efbf3-latin-ext-normal-100.woff2") format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 100;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/33ed0dc4efcba9d23444d91d886fb656ea708b7f0588706cb7e9b45521152d87-latin-normal-100.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 200;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/c139eab5d644b0622caf6b35468e81da9ab8b22a6571367e93dd2e120bee9e95-devanagari-normal-200.woff2") format("woff2");
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 200;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/5cc311f29b4b6f901296a0b7e0242ab067b79d90e0c813f35015979da2c13445-latin-ext-normal-200.woff2") format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 200;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/9fd055a1bb3f78f9fd0882ec9c95732701524249799cbf23c761f9befb96c300-latin-normal-200.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 300;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/897f8e913a4401306fb1cfd9f5c0d50e81a1ab9821345ca438189a54aa1b612b-devanagari-normal-300.woff2") format("woff2");
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 300;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/6642b21e6d0d4009e0938488d04ca29fb325466b8976b45f84ef2fd1217138af-latin-ext-normal-300.woff2") format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 300;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/5c6a6b4a000034474ebad618bae27ab76301a10270e8d39bc24f36e11342d1e7-latin-normal-300.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/703bb0674355255c3c43828fdd59c0ae32b3fde3503a4161bd920f746660a894-devanagari-normal-400.woff2") format("woff2");
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/7a3b58083cde8637a4414af1a53c740117daa61626c726b53be37737c610a583-latin-ext-normal-400.woff2") format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/a33bc462ca68d387f65db290ff2791c7d6e82917a71a830b7f2d626c5fdcfa26-latin-normal-400.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/33e7d2a81354d16f386d37dbb69c0531f3726a5e6a5a22e97f5a59bb9c35c076-devanagari-normal-500.woff2") format("woff2");
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/81f8a99471787f37ec4866bbce8924241b6008adc600eb080ed4caba0feb2683-latin-ext-normal-500.woff2") format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/cbbe1fdc585070fc91576dc40ad89b3213b9ea79adf9d57ac732c1f6f4fa2cd2-latin-normal-500.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/01cda7f6fda40393e213a8156fc55b4270318eee6a1daad4320eb7f9d40cdaae-devanagari-normal-600.woff2") format("woff2");
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/b97c5e974f3b69b985366fcbb677b5bddd35bd4a1bf2948e0baa4feb8a606611-latin-ext-normal-600.woff2") format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/de2c7e30b526482d24a41aef7e6bcf0b663748eb3624f74e722b636f45b42689-latin-normal-600.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/02fb4e06dc8d2ba0905181271098269d98f99212c192515048793c8faf52ca50-devanagari-normal-700.woff2") format("woff2");
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/3172086c96dfe927a5f3157cb95dd852c7debbf1f80eebd07bd7d9183d79dfd1-latin-ext-normal-700.woff2") format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/e7b59aa327d60ab902437914988d35ee17d7c0c17d5cd2b6485e130e56893f14-latin-normal-700.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 800;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/8e69363498c8997d464bb2c25fbbf2ee80b6468cacb34329afb109b0e258de15-devanagari-normal-800.woff2") format("woff2");
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 800;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/5d87731b3ea5fd19eac3453d8f485ea8b8b8f112054962cbfb3aeb63352bc523-latin-ext-normal-800.woff2") format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 800;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/125495151bd9b5b503e50cbc95c75a92e21e9046a59bee6d3e7ceef936a39430-latin-normal-800.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 900;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/4171782036fe0982e29b1ba141f2c1bcbe1dcbfcff2cae02564b26a29c6a31e6-devanagari-normal-900.woff2") format("woff2");
+    unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 900;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/134e9c3f4002728fc5a3ee6f472cdb3376ed97eb63e55280d855080a8845625c-latin-ext-normal-900.woff2") format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 900;
+    font-display: optional;
+    src: url("https://cdn.search.brave.com/serp/v1/static/fonts/poppins/9597f9135ca67824f8d43b3cd2c25051bc12d2d74ca034fd62f7640711a87f79-latin-normal-900.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}    </style>
+
+    <style type="text/css">
+      :root {
+    /* Fonts */
+    --brand-font: 'Poppins', arial, sans-serif;
+    --main-font: 'Poppins', arial, sans-serif;
+    --mono-font: Consolas, Menlo, Monaco, monospace;
+    --system-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+    /* Containers */
+    --main-column-width: 632px;
+    --normal-snippet-width: 600px;
+    --search-form-width: 700px;
+    --search-form-height: 45px;
+
+    /* TODO: Paddings, Margins */
+    --main-content-padding: 175px;
+    --border-radius-xlarge: 16px;
+    --border-radius-large: 12px;
+    --border-radius: 8px;
+    --border-radius-sm: 4px;
+    --border-radius-xs: 2px;
+    --border-radius-0: 0px;
+
+    /* text */
+    --text-sm:  0.66rem;
+    --text-sm-2: 12px;
+    --text-xs:  11px;
+
+    /* blur */
+    --blur: blur(4px);
+}    </style>
+
+    <style type="text/css">
+      :root.light {
+    /* colors */
+    --body-bg: #ffffff;
+    --bg-0: #ffffff;
+    --bg-01: #ffffff;
+    --bg-02: #ffffff;
+    --bg-glassy: #ffffffb3;
+    --bg-serp-header: #FAFBFD;
+    --bg-1: #EBEEF3;
+    --bg-2: #e5e5e5;
+    --bg-02: #F8F9FA; /* this is the 02 color from the Brave Design System */
+    --bg-3: #f7f3f0;
+    --bg-green: #a7f0ba;
+    --bg-blue: #d0e2ff;
+    --bg-red: #ffd6e8;
+    --bg-inverse: #222;
+    --bg-0-opacity: #ffffffbd;
+    --bg-favicon: var(--bg-0);
+    --bg-placeholder: #ECEEF2;
+    --bg-scrim: rgba(34, 37, 49, 0.40);
+
+    --bg-form-control-selected: #E1E2F6;
+    --bg-form-control-unselected: #DADCE8;
+    --form-control-selected: #4C54D2;
+    --form-control-unselected: #ffffff;
+    --form-control-hover: #4C54D2;
+    --form-control-focus: #A0A5EB;
+    --form-control-shadow: #A0A5EB;
+
+    /**
+     * Search widget styles
+     */
+    --search-widget-bg: #F8F9FA;
+
+    /**
+     * Settings drawer styles
+     */
+    --settings-header-bg: #FFFFFF;
+    --settings-header-text: #222531;
+    --settings-header-icon: #222531;
+    --settings-widget-text: #808A9D;
+    --settings-item-text: #3F4C63;
+    --settings-item-icon: #A1A5E4;
+    --settings-item-border: #EFF2F5;
+    --settings-item-border-2: #D8DFE8;
+    --settings-dark-theme-btn: #343A40;
+    --settings-btn-bg: rgba(225, 226, 246, 0.5);
+    --settings-btn-text: #4C54D2;
+    --settings-widget-outline: #C7CFDC;
+    --settings-independent-score: #4C54D2;
+    --settings-global-score: #F1724A;
+    --settings-label-bg: rgba(218, 220, 232, 0.25);
+
+    --context-menu-header-border: #E6E8F5;
+
+    --color-primary: #27292f;
+    --color-primary-2: #0D0C10;
+    --color-primary-3: #212529; /* this variable should go away */
+    --color-inverse: #ffffff;
+    --color-gray-2: #828d9f;
+    --color-gray-3: #58667E;
+    --color-gray-4: #5A626D;
+    --color-gray-5: #7E8790; /* this variable should go away */
+    --color-gray-6: #CFD6E4;
+    --color-gray-7: #58667E;
+    --color-green: #0f9d58;
+    --color-red: #d23f31;
+    --color-blue: #0043ce;
+    --info-color: #828D9F; /* Temporary variable name */
+
+    --link-primary: #1841d2;
+    --link-secondary: #3861FB;
+    --link-visited: #9C86F5;
+    --snippet-url: #A6B0C3; /* Temporary variable name */
+    --snippet-url-netloc: #365fad; /* Temporary variable name */
+
+    --separator-dot: #A6B0C3;
+
+    /* THEME NEW */
+    --theme-purple: #4C54D2;
+    --theme-yellow: #F8BE2D;
+
+    /* Borders related */
+    --border-color: #E2E8ED;
+    --border-color-1: #e5e5e5;
+    --border-color-favicon: #DEE2F2;
+
+    /* Brave UI Design System */
+    --text-02: #495057;
+    --text-03: #868E96;
+    --interactive-04: #353DAB;
+    --interactive-05: #4C54D2;
+    --interactive-06: #737ADE;
+    --interactive-07: #212529;
+    --interactive-08: #AEB1C2;
+    --focus-border: #A0A5EB;
+    --divider-01: #E9E9F4;
+    --disabled: #DADCE8;
+
+    /* Brave UI Design System Derivatives */
+    --btn-filled-bg: var(--interactive-05);
+    --btn-filled-bg-hover: var(--interactive-04);
+    --btn-filled-text: #ffffff;
+    --btn-filled-text-active: rgba(255, 255, 255, 0.7);
+    --btn-filled-bg-active: rgba(53, 61, 171, 0.7);
+    --btn-filled-text-disabled: #ffff;
+
+    --btn-outline-border: var(--interactive-08);
+    --btn-outline-border-hover: var(--interactive-05);
+    --btn-outline-text: var(--interactive-07);
+    --btn-outline-text-hover: var(--interactive-05);
+    --btn-outline-text-active: rgba(76, 84, 210, 0.7);
+    --btn-outline-border-active: rgba(76, 84, 210, 0.7);
+    --btn-outline-text-disabled: #C2C4CF;
+
+    --btn-icon-svg-hover: var(--interactive-05);
+    --btn-icon-bg-hover: rgba(160, 165, 235, 0.16);
+    --btn-icon-svg-active: rgba(76, 84, 210, 0.7);
+
+    /* CODE SNIPPETS THEME */
+    --code-bg-0: #F8FAFD;
+    --code-border: #EFF2F5;
+    --code-color-1: #96979D;
+    --code-color-2: #58667E;
+    --code-color-3: #49964B;
+    --code-color-4: #127DB2;
+    --code-color-5: #9D2E99;
+
+
+    /* SHADOWS */
+    --shadow-1: 0 1px 1px 0 rgba(66, 66, 66, 0.08), 0 1px 3px 1px rgba(66, 66, 66, 0.16);
+    --shadow-2: 0 1px 6px rgba(32, 33, 36, 0.28);
+}      :root.dark {
+    /* colors */
+    --body-bg: #1E2028;
+    --bg-0: #242731;
+    --bg-01: #242731;
+    --bg-02: #242731;
+    --bg-glassy: #1A1C23;
+    --bg-serp-header: #1A1C23;
+    /* --bg-1: #4B5062; */
+    --bg-1: #313543;
+    --bg-2: #282828;
+    --bg-02: #17171F; /* this is the 02 color from the Brave Design System */
+    --bg-3: #1f1f1f;
+    --bg-green: #a7f0ba;
+    --bg-blue: #d0e2ff;
+    --bg-red: #ffd6e8;
+    --bg-inverse: #ffffff;
+    --bg-0-opacity: #1b1b1bbd;
+    --bg-favicon: #4B5062;
+    --bg-placeholder: #2B2E3B;
+    --bg-scrim: rgba(34, 37, 49, 0.6);
+    
+    --bg-form-control-selected: #7679B1;
+    --bg-form-control-unselected: #5E6175;
+    --form-control-selected: #4436E1;
+    --form-control-unselected: #ffffff;
+    --form-control-hover: #D0D2F7;
+    --form-control-focus: #A0A5EB;
+    --form-control-shadow: #A0A5EB;
+
+    /**
+     * Search widget styles
+     */
+    --search-widget-bg: #242731;
+
+    /**
+     * Settings drawer styles
+     */
+    --settings-header-bg: #222531;
+    --settings-header-text: #F8FAFD;
+    --settings-header-icon: #808A9D;
+    --settings-widget-text: #828D9F;
+    --settings-item-text: #CFD6E4;
+    --settings-item-icon: #A1A5E4;
+    --settings-item-border: #2B3445;
+    --settings-item-border-2: #3F4C63;
+    --settings-dark-theme-btn: #343A40;
+    --settings-btn-bg: #3A3F55;
+    --settings-btn-text: #CFD6E4;
+    --settings-widget-outline: #3F4C63;
+    --settings-independent-score: #7078FF;
+    --settings-global-score: #FF845D;
+    --settings-label-bg: rgba(58, 63, 85, 0.7);
+
+    --context-menu-header-border: #58667E;
+
+    --color-primary: #c9d4dc;
+    --color-primary-2: #bcbcbc;
+    --color-primary-3: #c9d4dc; /* this variable should go away */
+    --color-inverse: #ffffff;
+    --color-gray-2: #a6b0c3;
+    --color-gray-3: #A6B0C3;
+    --color-gray-4: #7E8790;
+    --color-gray-5: #7E8790; /* this variable should go away */
+    --color-gray-6: #828d9f;
+    --color-gray-7: #828d9f; /* new variable since light theme is different than color-gray-6's */
+    --color-green: #0f9d58;
+    --color-red: #d23f31;
+    --color-blue: #0043ce;
+    --info-color: #828D9F; /* Temporary variable name */
+
+    --link-primary: #EFF2F5;
+    --link-secondary: #CFD6E4;
+    --link-visited: #A0A5EB;
+    --snippet-url: #6E798D; /* Temporary variable name */
+    --snippet-url-netloc: #7d95bb; /* Temporary variable name */
+
+    --separator-dot: #808a9d;
+
+    /* THEME NEW */
+    --theme-purple: #7675fd;
+    --theme-yellow: #F8BE2D;
+
+    /* Borders related */
+    --border-color: #333;
+    --border-color-1: #272626;
+    --border-color-favicon: #545761;
+
+    /* Brave UI Design System */
+    --blurple-300: #A0A5EB;
+    --text-02: #C2C4CF;
+    --text-03: #84889C;
+    --interactive-04: #353DAB;
+    --interactive-05: #4C54D2;
+    --interactive-06: #737ADE;
+    --interactive-07: #F0F2FF;
+    --interactive-08: #5E6175;
+    --focus-border: #555889;
+    --divider-01: #3B3E4F;
+    --disabled: #343A40;
+
+    /* Brave UI Design System Derivatives */
+    --btn-filled-bg: var(--interactive-05);
+    --btn-filled-bg-hover: var(--interactive-06);
+    --btn-filled-text: #ffffff;
+    --btn-filled-text-active: rgba(255, 255, 255, 0.7);
+    --btn-filled-bg-active: rgba(115, 122, 222, 0.7);
+    --btn-filled-text-disabled: #677078;
+
+    --btn-outline-border: var(--interactive-08);
+    --btn-outline-border-hover: var(--interactive-06);
+    --btn-outline-text: var(--interactive-07);
+    --btn-outline-text-hover: var(--blurple-300);
+    --btn-outline-text-active: rgba(160, 165, 235, 0.7);
+    --btn-outline-border-active: rgba(115, 122, 222, 0.7);
+    --btn-outline-text-disabled: #495057;
+
+    --btn-icon-svg-hover: var(--focus-border);
+    --btn-icon-bg-hover: rgba(160, 165, 235, 0.32);
+    --btn-icon-svg-active: rgba(160, 165, 235, 0.7);
+
+    /* CODE SNIPPETS THEME */
+    --code-bg-0: #2F313C;
+    --code-border: #22232A;
+    --code-color-1: #525964;
+    --code-color-2: #ACBBD5;
+    --code-color-3: #7FA569;
+    --code-color-4: #5198D4;
+    --code-color-5: #B26AC7;
+
+
+    /* SHADOWS */
+    --shadow-1: 0 1px 1px 0 rgba(66, 66, 66, 0.08), 0 1px 3px 1px rgba(66, 66, 66, 0.16);
+    --shadow-2: 0 1px 6px rgba(32, 33, 36, 0.28);
+}    </style>
+
+    <link rel="icon" href="https://cdn.search.brave.com/serp/v1/static/brand/d6a7857f7f3c2d5e1a55d27a8e25b39a31c4c5d093ff479aeb1b99d0faca5c71-favicon.ico">
+    <link href="https://cdn.search.brave.com/serp/v1/static/css/6cedc56d016eced794b0f6391565851f7194212341117ee82dbb5500a7246a36-spectre.min.css" rel="stylesheet" />
+<link href="https://cdn.search.brave.com/serp/v1/static/css/390cc12775c919ff6456c4385669c0f33bf1bec975b5343747711707caa17f93-icons.css" rel="stylesheet" />
+<link href="https://cdn.search.brave.com/serp/v1/static/css/5666ca83fda584867029c6e17c15ab4209c533ef7cd9dd42adcd396bfb809e6f-search.css" rel="stylesheet" />
+<link href="https://cdn.search.brave.com/serp/v1/static/css/components/0b81a942f5a66376231a85d6ed01694df954acc5e03562885d033eeaaa46d178-results.css" rel="stylesheet" />
+<link href="https://cdn.search.brave.com/serp/v1/static/css/components/b49a84f93253ea7a0f161618d6baa0c81b2d6a778b8395859ca0ecf220bc1c73-carousel.css" rel="stylesheet" />
+<link href="https://cdn.search.brave.com/serp/v1/static/serp-js/5ff08a2d20d2a1d584be8d1fa0d3f338d184ce43184c8037a52c3b753cd7a9dd-newsHeadlines.bundle.css" rel="stylesheet" />
+<link href="https://cdn.search.brave.com/serp/v1/static/serp-js/5ff08a2d20d2a1d584be8d1fa0d3f338d184ce43184c8037a52c3b753cd7a9dd-videos.bundle.css" rel="stylesheet" />
+<link href="https://cdn.search.brave.com/serp/v1/static/serp-js/5ada7b9ca86a2ea6182bbea9dcf067ddf94235cc2781b8aac145196427862d74-suggest.bundle.css" rel="stylesheet" />
+<link href="https://cdn.search.brave.com/serp/v1/static/serp-js/d0fda00fc43e7d9379b483870cb9835511850c9ddd99be31a7171671ea0c55d9-sticky-header.bundle.css" rel="stylesheet" />
+<link href="https://cdn.search.brave.com/serp/v1/static/serp-js/a2f16f790e6232c45197c06aed8f71a7e28a467fc8c25ca2466fe7ee70c58cc5-filters.bundle.css" rel="stylesheet" />
+<link href="https://cdn.search.brave.com/serp/v1/static/serp-js/a9487d0c7edf82155f116c4389097f223b2a40d601bb09f33033d1bd052d2639-settings.bundle.css" rel="stylesheet" />
+<link href="https://cdn.search.brave.com/serp/v1/static/serp-js/23350feec25ab2af22bde9237ecbb7ec7ea031a4af6edac8946e28d9a2742237-feedback.bundle.css" rel="stylesheet" />
+<link href="https://cdn.search.brave.com/serp/v1/static/serp-js/e7bfc431fbcca3cd261854d39574dac6f17222e8ca3ca0ac6d5e97073045247c-searchElsewhere.bundle.css" rel="stylesheet" />
+<link href="https://cdn.search.brave.com/serp/v1/static/serp-js/b64a5473ccf7ae94428551efcef9e9c82720be26baf6e8af1403d3adca23cbe9-ask-location.bundle.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://cdn.search.brave.com/serp/v1/static/css/2d273a400af8581799f6eace9b603381ac79a8a95d515408786e1c93cfa982b9-search-with-background.css">
+  </head>
+
+  <body class="is-pc">
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="height: 0; position: absolute; width: 0;">
+      <defs>
+        <linearGradient id="gradient02-alt" x1="13.5864" y1="14.8691" x2="-1.81487" y2="4.18618" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#6F4CD2" />
+          <stop offset="0.5625" stop-color="#BF14A2" />
+          <stop offset="1" stop-color="#F73A1C" />
+        </linearGradient>
+      </defs>
+  </svg>
+
+    
+
+<header id="site-header" class="navbar">
+  <!-- backdrop-filter does not seem to work properly in Firefox see: https://bugzilla.mozilla.org/show_bug.cgi?id=1591674 -->
+    <div class="flex" style="justify-content: space-between;">
+    <div class="flex">
+    <a id="nav-logo" href="/" class="btn btn-link">
+      <img alt="Brave logo" class="logo-large logo-dark" title="Brave Search"
+        src="https://cdn.search.brave.com/serp/v1/static/brand/619dc8431627c379a29d1d6510e1536b70ad492fc520f6232d969cbc05eac83a-brave-logo-light-beta.svg" />
+      <img alt="Brave logo" class="logo-large logo-light" title="Brave Search"
+        src="https://cdn.search.brave.com/serp/v1/static/brand/dae17b6340dfbe845c5297d535c3c885e7a698e8c50838f52941c4bf55f1e92e-brave-logo-dark-beta.svg" />
+      <img alt="Brave logo" class="logo-small logo-dark" title="Brave Search"
+        src="https://cdn.search.brave.com/serp/v1/static/brand/db6009ebf3caaa85b15bf6750f67bb636c683447bb594dd5e8ac79ee30f2c4e4-brave-logo-small-light-beta.svg" />
+      <img alt="Brave logo" class="logo-small logo-light" title="Brave Search"
+        src="https://cdn.search.brave.com/serp/v1/static/brand/f10b067e6ed67c1ca41ed86c4b821718165842155b7e23e84f1b03538748fac3-brave-logo-small-dark-beta.svg" />
+    </a>
+    <div class="searchform-container">
+  <form class="form" action="/search" method="GET" id="searchform">
+        <span id="search-icon" class=" no-display">
+      <svg width="15" height="15" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.57212 13.1442C2.94254 13.1442 0 10.2016 0 6.57173C0 2.94248 2.94268 0 6.57212 0C10.2016 0 13.1442 2.94248 13.1442 6.57173C13.1442 8.05658 12.6519 9.42642 11.8215 10.5269L16.3528 15.0581C16.7103 15.4156 16.7103 15.9952 16.3528 16.3527C15.9953 16.7102 15.4157 16.7102 15.0582 16.3527L10.527 11.8215C9.42657 12.6519 8.05682 13.1442 6.57212 13.1442ZM6.57212 11.2665C3.97956 11.2665 1.87775 9.16463 1.87775 6.57184C1.87775 3.97952 3.97966 1.87775 6.57212 1.87775C9.16458 1.87775 11.2665 3.97952 11.2665 6.57184C11.2665 9.16463 9.16468 11.2665 6.57212 11.2665Z" fill="#C2C4CF"/>
+      </svg>
+    </span>
+    <input
+      id="searchbox"
+      type="text"
+      class="form-input"
+      placeholder="Search the web privately…"
+      name="q"
+      value="minecraft"
+      autocapitalize="off"
+      autocomplete="off"
+      autocorrect="off"
+      spellcheck="false"
+      aria-label="Search"
+      title="Search"
+      aria-autocomplete="both"
+      aria-haspopup="false"
+      maxlength="2048"
+          />
+    <input name="source" value="web" type="hidden">
+    <button id="submit-button" class="btn btn--filled input-group-btn">
+      <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.57212 13.1442C2.94254 13.1442 0 10.2016 0 6.57173C0 2.94248 2.94268 0 6.57212 0C10.2016 0 13.1442 2.94248 13.1442 6.57173C13.1442 8.05658 12.6519 9.42642 11.8215 10.5269L16.3528 15.0581C16.7103 15.4156 16.7103 15.9952 16.3528 16.3527C15.9953 16.7102 15.4157 16.7102 15.0582 16.3527L10.527 11.8215C9.42657 12.6519 8.05682 13.1442 6.57212 13.1442ZM6.57212 11.2665C3.97956 11.2665 1.87775 9.16463 1.87775 6.57184C1.87775 3.97952 3.97966 1.87775 6.57212 1.87775C9.16458 1.87775 11.2665 3.97952 11.2665 6.57184C11.2665 9.16463 9.16468 11.2665 6.57212 11.2665Z" fill="url(#paint0_linear)"/>
+        <defs>
+          <linearGradient id="paint0_linear" x1="16.6209" y1="16.6208" x2="-1.90605" y2="3.18655" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#BF14A2"/>
+          <stop offset="1" stop-color="#F73A1C"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </button>
+  </form>
+</div>    </div>
+    <div id="settings"></div>
+  </div>
+  </header>
+<div class=" border-bottom" id="navbar-tabs">
+  <div class="container-80">
+    
+<div id="nav-tabs">
+  <ul class="tab tab-block">
+              <li class="tab-item active">
+       <a href="/search?q=minecraft">
+        <span class="mr-5 icon-wrapper">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="17" viewBox="0 0 18 17"><path fill-rule="evenodd" d="M1.6 7.336a5.736 5.736 0 1 1 11.471 0 5.736 5.736 0 0 1-11.471 0ZM7.336 0a7.336 7.336 0 1 0 4.957 12.743l3.56 3.561a.8.8 0 0 0 1.132-1.131l-3.636-3.636A7.336 7.336 0 0 0 7.335 0Z" clip-rule="evenodd"/></svg>        </span>
+        <span>
+          All
+        </span>
+      </a>
+    </li>
+
+          <li class="tab-item">
+       <a href="/images?q=minecraft">
+        <span class="mr-5 icon-wrapper">
+          <svg class="icon" width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.492 2.093h-8a2.6 2.6 0 00-2.6 2.6v8a2.6 2.6 0 002.6 2.6h8a2.6 2.6 0 002.6-2.6v-8a2.6 2.6 0 00-2.6-2.6zm-8-1.4a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4v-8a4 4 0 00-4-4h-8zm5.46 7.048a.7.7 0 01.514.156l2.971 2.447a.7.7 0 01-.89 1.08L10.12 9.427l-2.172 2.676a.7.7 0 01-1.001.088l-1.142-.987L4.55 12.86a.7.7 0 01-1.116-.845L5.14 9.763a.7.7 0 011.016-.107l1.16 1.003 2.162-2.663a.7.7 0 01.473-.255zM4.34 5.291a.5.5 0 111 0 .5.5 0 01-1 0zm.5-1.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg>        </span>
+        <span>
+          Images
+        </span>
+      </a>
+    </li>
+
+          <li class="tab-item">
+       <a href="/news?q=minecraft">
+        <span class="mr-5 icon-wrapper">
+          <svg class="icon" width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.317 2.093h-.225a.8.8 0 00-.575.768v2.133h3.022a.575.575 0 00.378-.14v-.161a2.6 2.6 0 00-2.6-2.6zm0-1.4c.685 0 1.33.172 1.893.475a3.556 3.556 0 012.104 3.359c.002.055.003.11.003.166v8a4 4 0 01-4 4h-8a4 4 0 01-4-4v-8a4 4 0 014-4h8zm2.222 5.501c.13 0 .256-.014.378-.04v6.539a2.6 2.6 0 01-2.6 2.6h-8a2.6 2.6 0 01-2.6-2.6v-8a2.6 2.6 0 012.6-2.6h6.153a1.994 1.994 0 00-.153.768v2.333a1 1 0 001 1h3.222zM3.615 4.808a.6.6 0 000 1.2h4a.6.6 0 000-1.2h-4zm-.6 2.937a.6.6 0 01.6-.6h8a.6.6 0 110 1.2h-8a.6.6 0 01-.6-.6zm.6 1.866a.6.6 0 000 1.2h8a.6.6 0 000-1.2h-8z"/></svg>        </span>
+        <span>
+          News
+        </span>
+      </a>
+    </li>
+
+          <li class="tab-item">
+       <a href="/videos?q=minecraft">
+        <span class="mr-5 icon-wrapper">
+          <svg class="icon" width="16" height="17" viewBox="0 0 16 17" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.283 1.408h2.161c.2 0 .395.026.58.073L10.296 4.21H7.483l2.78-2.78a.462.462 0 00.02-.02zm-1.507 0H6.067a.544.544 0 01-.02.022l-2.78 2.78h2.708l2.8-2.802zM1.759 4.21l2.8-2.8H3.557a2.311 2.311 0 00-2.312 2.31v.49h.515zm10.046 0h2.95v-.49c0-.676-.29-1.284-.753-1.707L11.805 4.21zM1.245 5.454h13.51v7.154a2.311 2.311 0 01-2.31 2.311h-8.89a2.311 2.311 0 01-2.31-2.31V5.453zM0 3.719A3.556 3.556 0 013.556.164h8.888A3.556 3.556 0 0116 3.719v8.89a3.556 3.556 0 01-3.556 3.555H3.556A3.556 3.556 0 010 12.608V3.72zm7.22 8.674l2.933-1.694a.978.978 0 000-1.693L7.22 7.312a.978.978 0 00-1.466.847v3.387a.978.978 0 001.466.847zm-.222-3.772l2.133 1.232-2.133 1.231V8.621z" clip-rule="evenodd"/></svg>        </span>
+        <span>
+          Videos
+        </span>
+      </a>
+    </li>
+
+    
+      </ul>
+  <div class="flex-hcenter">
+    <div id="tools-info"></div>
+    <div id="feedback"></div>
+  </div>
+  </div>  </div>
+</div>
+
+<div class="">
+  <div class="container-80">
+    <div id="search-filters"></div>
+  </div>
+</div>
+<main id="search-main">
+    
+                                
+  <div class="container-80 flex">
+    <div id="results" class="section">
+
+                                                                                                                                                                        
+      
+      
+            
+      <div id="ask-for-location"></div>
+
+
+            
+            
+      
+                  <div class="snippet fdb" data-loc="main" data-pos=0 data-type="web"
+  data-ref-pos=0>
+  <a href="https://www.minecraft.net/en-us" class="result-header" target="_self">
+    <span class="snippet-title"><img alt="🌐" class="favicon" src="https://imgr.search.brave.com/Q0_A3ICa-ob6gKtTjT_5yuIeH-6Y0yd3cXFDtDXd_7s/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYTE3MTAxZTdj/OTZkOGQ0MWY0NmI3/MGY0Y2ZmM2I2MTll/OGM5OGQxN2IyNTQ0/MzY1OTY4NjFlOTU2/YjlhM2I3OC93d3cu/bWluZWNyYWZ0Lm5l/dC8" loading="lazy" width="16" height="16" />Minecraft Official Site | Minecraft
+    </span>
+    <cite class="snippet-url">
+      <span class="netloc">minecraft.net</span>
+      <span class="url-path">› en-us</span>
+          </cite>
+  </a>
+    <div class="snippet-content">
+                    <p class="snippet-description">
+            2 weeks ago -
+            Explore new gaming adventures, accessories, &amp; merchandise on the <strong>Minecraft</strong> Official Site. Buy &amp; download the game here, or check the site for the latest news.
+    </p>
+  </div>
+
+  
+  
+    
+
+
+  
+    
+
+      <div class="result-cluster">
+        <div class="snippet">
+            <a href="https://www.minecraft.net/en-us/download" class="result-header" target="_self">
+        <span class="snippet-title">Download Minecraft</span>
+      </a>
+      <p class="snippet-description">
+        Download <strong>Minecraft</strong> for Windows, Mac and Linux. Download server software for Java and Bedrock, and begin playing <strong>Minecraft</strong> with your friends. Learn more.
+      </p>
+          </div>
+        <div class="snippet">
+            <a href="https://www.minecraft.net/en-us/about-minecraft" class="result-header" target="_self">
+        <span class="snippet-title">What is Minecraft?</span>
+      </a>
+      <p class="snippet-description">
+        Discover more about what <strong>Minecraft</strong> is and explore our website today. Learn more about how to play and download the game, as well as helpful tips and tricks.
+      </p>
+          </div>
+        <div class="snippet">
+            <a href="https://www.minecraft.net/en-us/store/minecraft-java-edition" class="result-header" target="_self">
+        <span class="snippet-title">Minecraft Java Edition</span>
+      </a>
+      <p class="snippet-description">
+        Buy <strong>Minecraft</strong> for Java Edition. Compare features and view game screenshots and video to see why <strong>Minecraft</strong> is one of the most popular video games on the market.
+      </p>
+          </div>
+      </div>
+  
+</div>
+
+      
+      
+                  <div class="snippet fdb" data-loc="main" data-pos=1 data-type="web"
+  data-ref-pos=1>
+  <a href="https://classic.minecraft.net/" class="result-header" target="_self">
+    <span class="snippet-title"><img alt="🌐" class="favicon" src="https://imgr.search.brave.com/PsjBBI3yZVc13J2ANLJGASw5UjuoZjjLD0SOExUnj30/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMmJjMDZhMTYw/N2Y2MDc2ZjhjM2E4/YmVmYTgxOTYyNWQ1/NTNlY2VkYTE4Yzg4/YzMxMWYxNzFhZGFl/NjYyOWM5MS9jbGFz/c2ljLm1pbmVjcmFm/dC5uZXQv" loading="lazy" width="16" height="16" />Minecraft Classic
+    </span>
+    <cite class="snippet-url">
+      <span class="netloc">classic.minecraft.net</span>
+      <span class="url-path"></span>
+          </cite>
+  </a>
+    <div class="snippet-content">
+                    <p class="snippet-description">
+            3 weeks ago -
+            This version of <strong>Minecraft</strong> requires a keyboard.
+    </p>
+  </div>
+
+  
+  
+    
+
+
+  
+    
+
+    
+</div>
+
+      
+      
+                                    
+  <div id="news-carousel" class="carousel-snippet fdb" data-loc="main"
+  data-pos=2 data-type="news">
+  <div class="header h5 color-primary">
+    <svg class="icon" width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.317 2.093h-.225a.8.8 0 00-.575.768v2.133h3.022a.575.575 0 00.378-.14v-.161a2.6 2.6 0 00-2.6-2.6zm0-1.4c.685 0 1.33.172 1.893.475a3.556 3.556 0 012.104 3.359c.002.055.003.11.003.166v8a4 4 0 01-4 4h-8a4 4 0 01-4-4v-8a4 4 0 014-4h8zm2.222 5.501c.13 0 .256-.014.378-.04v6.539a2.6 2.6 0 01-2.6 2.6h-8a2.6 2.6 0 01-2.6-2.6v-8a2.6 2.6 0 012.6-2.6h6.153a1.994 1.994 0 00-.153.768v2.333a1 1 0 001 1h3.222zM3.615 4.808a.6.6 0 000 1.2h4a.6.6 0 000-1.2h-4zm-.6 2.937a.6.6 0 01.6-.6h8a.6.6 0 110 1.2h-8a.6.6 0 01-.6-.6zm.6 1.866a.6.6 0 000 1.2h8a.6.6 0 000-1.2h-8z"/></svg>    In the News
+  </div>
+  <div class="carousel">
+        <a class="card fdb" href="https://www.minecraft.net/en-us/article/minecraft-snapshot-21w43a" target="_self" data-loc="main" data-pos=0 data-ref-pos=0 data-type="news">
+        <div class="card-image">
+                      <div style="background-image: url(https://cdn.search.brave.com/serp/v1/static/img/app/dcf7981b8356b1c5467518dd6c78124b5ad4cd791b78b45164889a2707436013-default-news.svg);" class="img-bg" data-original=""></div>
+                  </div>
+
+        <div class="card-body">
+          <div class="text-sm center-horizontally mb-6 anchor">
+            <img alt="🌐" class="favicon" src="https://imgr.search.brave.com/Q0_A3ICa-ob6gKtTjT_5yuIeH-6Y0yd3cXFDtDXd_7s/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYTE3MTAxZTdj/OTZkOGQ0MWY0NmI3/MGY0Y2ZmM2I2MTll/OGM5OGQxN2IyNTQ0/MzY1OTY4NjFlOTU2/YjlhM2I3OC93d3cu/bWluZWNyYWZ0Lm5l/dC8" />
+            minecraft.net
+          </div>
+          <div class="color-primary title">Minecraft Snapshot 21w43a</div>
+        </div>
+
+        <div class="card-footer">
+          <div class="text-sm center-horizontally">
+                        <span class="text-gray text-xs card-footer__timestamp">
+              18 hours ago
+            </span>
+                      </div>
+        </div>
+      </a>
+        <a class="card fdb" href="https://www.minecraft.net/en-us/article/java-or-bedrock-edition" target="_self" data-loc="main" data-pos=1 data-ref-pos=1 data-type="news">
+        <div class="card-image">
+                      <div style="background-image: url(https://cdn.search.brave.com/serp/v1/static/img/app/dcf7981b8356b1c5467518dd6c78124b5ad4cd791b78b45164889a2707436013-default-news.svg);" class="img-bg" data-original=""></div>
+                  </div>
+
+        <div class="card-body">
+          <div class="text-sm center-horizontally mb-6 anchor">
+            <img alt="🌐" class="favicon" src="https://imgr.search.brave.com/Q0_A3ICa-ob6gKtTjT_5yuIeH-6Y0yd3cXFDtDXd_7s/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYTE3MTAxZTdj/OTZkOGQ0MWY0NmI3/MGY0Y2ZmM2I2MTll/OGM5OGQxN2IyNTQ0/MzY1OTY4NjFlOTU2/YjlhM2I3OC93d3cu/bWluZWNyYWZ0Lm5l/dC8" />
+            minecraft.net
+          </div>
+          <div class="color-primary title">Bedrock or Java Edition</div>
+        </div>
+
+        <div class="card-footer">
+          <div class="text-sm center-horizontally">
+                        <span class="text-gray text-xs card-footer__timestamp">
+              19 hours ago
+            </span>
+                      </div>
+        </div>
+      </a>
+        <a class="card fdb" href="https://www.sportskeeda.com/minecraft/deep-dark-cities-minecraft-s-the-wild-update-everything-known-far" target="_self" data-loc="main" data-pos=2 data-ref-pos=2 data-type="news">
+        <div class="card-image">
+                      <div style="background-image: url('https://imgr.search.brave.com/t2SHcV0EK4n8cqX0ZSEyt4F7M3HFPwYVmvpNuNK65ok/fit/200/200/ce/1/aHR0cHM6Ly9zdGF0/aWNnLnNwb3J0c2tl/ZWRhLmNvbS9lZGl0/b3IvMjAyMS8xMC9l/MTIzOS0xNjM1MzA1/MTUyMzM4OS0xOTIw/LmpwZw'), url(https://cdn.search.brave.com/serp/v1/static/img/app/dcf7981b8356b1c5467518dd6c78124b5ad4cd791b78b45164889a2707436013-default-news.svg);" class="img-bg" data-original="None"></div>
+                  </div>
+
+        <div class="card-body">
+          <div class="text-sm center-horizontally mb-6 anchor">
+            <img alt="🌐" class="favicon" src="https://imgr.search.brave.com/SdNKUtnXVY3rzMa9WV9AYHjkYI7Mgxk7Ioy1eMoQMqM/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvODBjOTJhNGY2/ZmNlODQ2ZjIwNzI2/MDNkNTVmZjgxYTNi/OTQ2YzA0MjYwNzU4/NmY2ZDFhNjdiN2Qz/YTI0ZDVkNC93d3cu/c3BvcnRza2VlZGEu/Y29tLw" />
+            sportskeeda.com
+          </div>
+          <div class="color-primary title">Deep dark cities in Minecraft's The Wild Update: Everything known ...</div>
+        </div>
+
+        <div class="card-footer">
+          <div class="text-sm center-horizontally">
+                        <span class="text-gray text-xs card-footer__timestamp">
+              1 day ago
+            </span>
+                      </div>
+        </div>
+      </a>
+        <a class="card fdb" href="https://www.sportskeeda.com/minecraft/how-get-every-crop-minecraft" target="_self" data-loc="main" data-pos=3 data-ref-pos=3 data-type="news">
+        <div class="card-image">
+                      <div style="background-image: url('https://imgr.search.brave.com/bTREKHlIGTowPSefBUj1ntjpMdTLHtLhYHBBwxDg8vc/fit/200/200/ce/1/aHR0cHM6Ly9zdGF0/aWNnLnNwb3J0c2tl/ZWRhLmNvbS9lZGl0/b3IvMjAyMS8xMC82/NzU0YS0xNjM1MjY5/Mjg2NzM5OC0xOTIw/LmpwZw'), url(https://cdn.search.brave.com/serp/v1/static/img/app/dcf7981b8356b1c5467518dd6c78124b5ad4cd791b78b45164889a2707436013-default-news.svg);" class="img-bg" data-original="None"></div>
+                  </div>
+
+        <div class="card-body">
+          <div class="text-sm center-horizontally mb-6 anchor">
+            <img alt="🌐" class="favicon" src="https://imgr.search.brave.com/SdNKUtnXVY3rzMa9WV9AYHjkYI7Mgxk7Ioy1eMoQMqM/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvODBjOTJhNGY2/ZmNlODQ2ZjIwNzI2/MDNkNTVmZjgxYTNi/OTQ2YzA0MjYwNzU4/NmY2ZDFhNjdiN2Qz/YTI0ZDVkNC93d3cu/c3BvcnRza2VlZGEu/Y29tLw" />
+            sportskeeda.com
+          </div>
+          <div class="color-primary title">How to get every crop in Minecraft</div>
+        </div>
+
+        <div class="card-footer">
+          <div class="text-sm center-horizontally">
+                        <span class="text-gray text-xs card-footer__timestamp">
+              1 day ago
+            </span>
+                      </div>
+        </div>
+      </a>
+        <a class="card fdb" href="https://dotesports.com/streaming/news/noxcrew-unveils-next-minecraft-championship-event-mcc-all-stars" target="_self" data-loc="main" data-pos=4 data-ref-pos=4 data-type="news">
+        <div class="card-image">
+                      <div style="background-image: url('https://imgr.search.brave.com/H7SRbmH3w4vGJRNrlbCynFd63lGOC9mDhKgyFs_G9HM/fit/200/200/ce/1/aHR0cHM6Ly9jZG4x/LmRvdGVzcG9ydHMu/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIxLzA2LzI2MTgw/NTMwL21jYy0xMjAw/LTc2OHgzODIuanBl/Zw'), url(https://cdn.search.brave.com/serp/v1/static/img/app/dcf7981b8356b1c5467518dd6c78124b5ad4cd791b78b45164889a2707436013-default-news.svg);" class="img-bg" data-original="None"></div>
+                  </div>
+
+        <div class="card-body">
+          <div class="text-sm center-horizontally mb-6 anchor">
+            <img alt="🌐" class="favicon" src="https://imgr.search.brave.com/m3JMOC8vbjYXKFdErLSZKkz8bd-UxbjyXGrbK7NYAGs/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjU0MWYwYjdh/NGRiNWY3ZDQwOGEy/ZWQ2OGYyNTY2MjU1/MTc4MmUyMTMyZDhk/NjMwYjA2ZjQzYzA1/YjVkYTcxNi9kb3Rl/c3BvcnRzLmNvbS8" />
+            dotesports.com
+          </div>
+          <div class="color-primary title">Noxcrew unveils next Minecraft Championship event, MCC All-Stars ...</div>
+        </div>
+
+        <div class="card-footer">
+          <div class="text-sm center-horizontally">
+                        <span class="text-gray text-xs card-footer__timestamp">
+              1 day ago
+            </span>
+                      </div>
+        </div>
+      </a>
+        <a class="card fdb" href="https://www.minecraft.net/en-us/article/-marketplace-haunted" target="_self" data-loc="main" data-pos=5 data-ref-pos=5 data-type="news">
+        <div class="card-image">
+                      <div style="background-image: url(https://cdn.search.brave.com/serp/v1/static/img/app/dcf7981b8356b1c5467518dd6c78124b5ad4cd791b78b45164889a2707436013-default-news.svg);" class="img-bg" data-original=""></div>
+                  </div>
+
+        <div class="card-body">
+          <div class="text-sm center-horizontally mb-6 anchor">
+            <img alt="🌐" class="favicon" src="https://imgr.search.brave.com/Q0_A3ICa-ob6gKtTjT_5yuIeH-6Y0yd3cXFDtDXd_7s/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYTE3MTAxZTdj/OTZkOGQ0MWY0NmI3/MGY0Y2ZmM2I2MTll/OGM5OGQxN2IyNTQ0/MzY1OTY4NjFlOTU2/YjlhM2I3OC93d3cu/bWluZWNyYWZ0Lm5l/dC8" />
+            minecraft.net
+          </div>
+          <div class="color-primary title">Marketplace is haunted</div>
+        </div>
+
+        <div class="card-footer">
+          <div class="text-sm center-horizontally">
+                        <span class="text-gray text-xs card-footer__timestamp">
+              1 day ago
+            </span>
+                      </div>
+        </div>
+      </a>
+        <a class="card fdb" href="https://www.gamespot.com/articles/minecraft-guide-all-the-best-tool-enchantments/1100-6497368/" target="_self" data-loc="main" data-pos=6 data-ref-pos=6 data-type="news">
+        <div class="card-image">
+                      <div style="background-image: url('https://imgr.search.brave.com/xMp6fgCMQEYPHWdVN6QzeBCiitNPIaS6kbUOMixZ_Ko/fit/200/200/ce/1/aHR0cHM6Ly93d3cu/Z2FtZXNwb3QuY29t/L2EvdXBsb2Fkcy9z/Y3JlZW5fa3Vicmlj/ay8xNjAzLzE2MDMw/MDAyLzM4OTgyOTUt/bWluZWNyYWZ0LWd1/aWRlcy10b29scy5q/cGc'), url(https://cdn.search.brave.com/serp/v1/static/img/app/dcf7981b8356b1c5467518dd6c78124b5ad4cd791b78b45164889a2707436013-default-news.svg);" class="img-bg" data-original="None"></div>
+                  </div>
+
+        <div class="card-body">
+          <div class="text-sm center-horizontally mb-6 anchor">
+            <img alt="🌐" class="favicon" src="https://imgr.search.brave.com/ssmJMHxTB0-JFHjAmEed36xfl-U6z6s7gGBRZbIXjoA/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2NmZmZjZjY1/YWVlZjQwMzQ2NTI3/NTIyZjg5M2E0MTY5/OTYwNjMxODA1ODEx/MzJiMzkxZWE3YmUy/MDM0NmEzOS93d3cu/Z2FtZXNwb3QuY29t/Lw" />
+            gamespot.com
+          </div>
+          <div class="color-primary title">Minecraft Guide - All The Best Tool Enchantments - GameSpot</div>
+        </div>
+
+        <div class="card-footer">
+          <div class="text-sm center-horizontally">
+                        <span class="text-gray text-xs card-footer__timestamp">
+              1 day ago
+            </span>
+                      </div>
+        </div>
+      </a>
+        <a class="card fdb" href="https://www.sportskeeda.com/minecraft/target-blocks-minecraft-all-need-know" target="_self" data-loc="main" data-pos=7 data-ref-pos=7 data-type="news">
+        <div class="card-image">
+                      <div style="background-image: url('https://imgr.search.brave.com/FlncmxZQedjb9-ZN6_Kju4Am-7xPsUIfSse8G-0u3ms/fit/200/200/ce/1/aHR0cHM6Ly9zdGF0/aWNnLnNwb3J0c2tl/ZWRhLmNvbS9lZGl0/b3IvMjAyMS8xMC8x/MWQ0MS0xNjM1MzYw/MDQwNDA1OS0xOTIw/LmpwZw'), url(https://cdn.search.brave.com/serp/v1/static/img/app/dcf7981b8356b1c5467518dd6c78124b5ad4cd791b78b45164889a2707436013-default-news.svg);" class="img-bg" data-original="None"></div>
+                  </div>
+
+        <div class="card-body">
+          <div class="text-sm center-horizontally mb-6 anchor">
+            <img alt="🌐" class="favicon" src="https://imgr.search.brave.com/SdNKUtnXVY3rzMa9WV9AYHjkYI7Mgxk7Ioy1eMoQMqM/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvODBjOTJhNGY2/ZmNlODQ2ZjIwNzI2/MDNkNTVmZjgxYTNi/OTQ2YzA0MjYwNzU4/NmY2ZDFhNjdiN2Qz/YTI0ZDVkNC93d3cu/c3BvcnRza2VlZGEu/Y29tLw" />
+            sportskeeda.com
+          </div>
+          <div class="color-primary title">Target blocks in Minecraft: All you need to know</div>
+        </div>
+
+        <div class="card-footer">
+          <div class="text-sm center-horizontally">
+                        <span class="text-gray text-xs card-footer__timestamp">
+              9 hours ago
+            </span>
+                      </div>
+        </div>
+      </a>
+        <a class="card fdb" href="https://www.minecraft.net/en-us/article/city-bridge" target="_self" data-loc="main" data-pos=8 data-ref-pos=8 data-type="news">
+        <div class="card-image">
+                      <div style="background-image: url(https://cdn.search.brave.com/serp/v1/static/img/app/dcf7981b8356b1c5467518dd6c78124b5ad4cd791b78b45164889a2707436013-default-news.svg);" class="img-bg" data-original=""></div>
+                  </div>
+
+        <div class="card-body">
+          <div class="text-sm center-horizontally mb-6 anchor">
+            <img alt="🌐" class="favicon" src="https://imgr.search.brave.com/Q0_A3ICa-ob6gKtTjT_5yuIeH-6Y0yd3cXFDtDXd_7s/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYTE3MTAxZTdj/OTZkOGQ0MWY0NmI3/MGY0Y2ZmM2I2MTll/OGM5OGQxN2IyNTQ0/MzY1OTY4NjFlOTU2/YjlhM2I3OC93d3cu/bWluZWNyYWZ0Lm5l/dC8" />
+            minecraft.net
+          </div>
+          <div class="color-primary title">City on a Bridge</div>
+        </div>
+
+        <div class="card-footer">
+          <div class="text-sm center-horizontally">
+                        <span class="text-gray text-xs card-footer__timestamp">
+              5 days ago
+            </span>
+                      </div>
+        </div>
+      </a>
+      </div>
+  </div>
+
+              
+      
+                  <div class="snippet fdb" data-loc="main" data-pos=3 data-type="web"
+  data-ref-pos=2>
+  <a href="https://play.google.com/store/apps/details?id=com.mojang.minecraftpe&amp;hl=en_US&amp;gl=US" class="result-header" target="_self">
+    <span class="snippet-title"><img alt="🌐" class="favicon" src="https://imgr.search.brave.com/oXdAJVqYDgQSz64MXELvRtabOGC5tw89BnxcS7VZdD8/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYjgwZWUzMzVj/YTc2M2VmMDJlYjE2/YmIyYzA3Y2IwZDkx/ZGViYmUxOGU1Njk4/NGI0NDNhOTQ1N2Mw/MDYyNjk4Ny9wbGF5/Lmdvb2dsZS5jb20v" loading="lazy" width="16" height="16" />Minecraft - Apps on Google Play
+    </span>
+    <cite class="snippet-url">
+      <span class="netloc">play.google.com</span>
+      <span class="url-path">› store  › apps  › details</span>
+          </cite>
+  </a>
+    <div class="snippet-content">
+                            <p class="snippet-description">
+            1 week ago -
+            Millions of crafters have smashed billions of blocks! Now you can join the fun!
+    </p>
+  </div>
+
+  
+  
+    
+<div class="item-attributes">
+    <div class="r-attr">
+    <style>
+  /* RATING */
+  .r {
+    align-items: center;
+    display: flex;
+    margin-top: -2px;
+    color: var(--color-gray-2);
+  }
+  .rating {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 58.5px;
+    height: 14px;
+    margin-top: -1px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxMiAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgNy4xOTM0MUMyLjYxMjkgNC44NzA4MyAzLjE5MzU1IDYuMDE2MTMgNS44MDY0NSAwLjVDNy44NTkgNC45MzE5NSA5LjA3Njg1IDUuNTA3NTMgMTEuMzIyNiA2LjkwMzA4QzguNTI4MTQgOC45NTQwNSA3LjIxMzUzIDEwLjM5MzcgNS44MDY0NSAxNEM0LjQ3NzY1IDEwLjU0IDMuMTIzNjYgOS4yMjc1OCAwIDcuMTkzNDFaIiBmaWxsPSIjRDRERUU1IiBmaWxsLW9wYWNpdHk9IjAuOCIvPgo8L3N2Zz4K);
+  }
+  .rating-ta {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 58.5px;
+    height: 14px;
+    margin-top: -1px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1OC41IiBoZWlnaHQ9IjE0IiBmaWxsPSJub25lIiB2aWV3Qm94PSIwIDAgNjQgMTIiPjxkZWZzLz48cGF0aCBmaWxsPSIjMDBhYTZjIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiA2QTYgNiAwIDExMCA2YTYgNiAwIDAxMTIgMHptLTEuNSAwYTQuNSA0LjUgMCAxMS05IDAgNC41IDQuNSAwIDAxOSAwem04LjUgNmE2IDYgMCAxMDAtMTIgNiA2IDAgMDAwIDEyem0wLTEuNWE0LjUgNC41IDAgMTAwLTkgNC41IDQuNSAwIDAwMCA5ek0zOCA2YTYgNiAwIDExLTEyIDAgNiA2IDAgMDExMiAwem0tMS41IDBhNC41IDQuNSAwIDExLTkgMCA0LjUgNC41IDAgMDE5IDB6bTguNSA2YTYgNiAwIDEwMC0xMiA2IDYgMCAwMDAgMTJ6bTAtMS41YTQuNSA0LjUgMCAxMDAtOSA0LjUgNC41IDAgMDAwIDl6TTU4IDEyYTYgNiAwIDEwMC0xMiA2IDYgMCAwMDAgMTJ6bTAtMS41YTQuNSA0LjUgMCAxMDAtOSA0LjUgNC41IDAgMDAwIDl6IiBjbGlwLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=);
+  }
+  .rating .stars, .rating-ta .stars {
+    background-repeat: repeat-x;
+    overflow: hidden;
+    position: relative;
+  }
+  .rating .stars span {
+    height: 14px;
+    top: 1px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxMiAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgNy4xOTM0MUMyLjYxMjkgNC44NzA4MyAzLjE5MzU1IDYuMDE2MTMgNS44MDY0NSAwLjVDNy44NTkgNC45MzE5NSA5LjA3Njg1IDUuNTA3NTMgMTEuMzIyNiA2LjkwMzA4QzguNTI4MTQgOC45NTQwNSA3LjIxMzUzIDEwLjM5MzcgNS44MDY0NSAxNEM0LjQ3NzY1IDEwLjU0IDMuMTIzNjYgOS4yMjc1OCAwIDcuMTkzNDFaIiBmaWxsPSIjRkZBODAwIi8+Cjwvc3ZnPgo=);
+    background-repeat: repeat-x;
+    display: block;
+  }
+  .rating-ta .stars span {
+    height: 14px;
+    top: 1px;
+    background: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjE0IiB2aWV3Qm94PSIwIDAgNjQgMTIiIHdpZHRoPSI1OC41IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0ibTEyIDZjMCAzLjMxMzcxLTIuNjg2MjkgNi02IDZzLTYtMi42ODYyOS02LTYgMi42ODYyOS02IDYtNiA2IDIuNjg2MjkgNiA2em0xMyAwYzAgMy4zMTM3MS0yLjY4NjMgNi02IDZzLTYtMi42ODYyOS02LTYgMi42ODYzLTYgNi02IDYgMi42ODYyOSA2IDZ6bTcgNmMzLjMxMzcgMCA2LTIuNjg2MjkgNi02cy0yLjY4NjMtNi02LTYtNiAyLjY4NjI5LTYgNiAyLjY4NjMgNiA2IDZ6bTE5LTZjMCAzLjMxMzcxLTIuNjg2MyA2LTYgNnMtNi0yLjY4NjI5LTYtNiAyLjY4NjMtNiA2LTYgNiAyLjY4NjI5IDYgNnptNyA2YzMuMzEzNyAwIDYtMi42ODYyOSA2LTZzLTIuNjg2My02LTYtNi02IDIuNjg2MjktNiA2IDIuNjg2MyA2IDYgNnoiIGZpbGw9IiMwMGFhNmMiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==);
+    background-repeat: repeat-x;
+    display: block;
+  }
+
+</style>
+
+
+<div class="r">
+
+  
+    <div class="rating">
+    <span class="stars">
+      <span style="width: 53.81999999999999px;" ></span>
+    </span>
+  </div>
+  
+    <div class="ml-10">
+        <span class="text-sm">Rating: 4.6 - 4.33M votes</span>
+      </div>
+  
+</div>
+
+  </div>
+  </div>
+
+
+  
+    
+
+    
+</div>
+
+      
+      
+                                      
+<div id="video-carousel" class="carousel-snippet fdb" data-loc="main" data-pos=4
+  data-type="videos">
+  <div class="header h5 color-primary">
+    <svg class="icon" width="16" height="17" viewBox="0 0 16 17" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.283 1.408h2.161c.2 0 .395.026.58.073L10.296 4.21H7.483l2.78-2.78a.462.462 0 00.02-.02zm-1.507 0H6.067a.544.544 0 01-.02.022l-2.78 2.78h2.708l2.8-2.802zM1.759 4.21l2.8-2.8H3.557a2.311 2.311 0 00-2.312 2.31v.49h.515zm10.046 0h2.95v-.49c0-.676-.29-1.284-.753-1.707L11.805 4.21zM1.245 5.454h13.51v7.154a2.311 2.311 0 01-2.31 2.311h-8.89a2.311 2.311 0 01-2.31-2.31V5.453zM0 3.719A3.556 3.556 0 013.556.164h8.888A3.556 3.556 0 0116 3.719v8.89a3.556 3.556 0 01-3.556 3.555H3.556A3.556 3.556 0 010 12.608V3.72zm7.22 8.674l2.933-1.694a.978.978 0 000-1.693L7.22 7.312a.978.978 0 00-1.466.847v3.387a.978.978 0 001.466.847zm-.222-3.772l2.133 1.232-2.133 1.231V8.621z" clip-rule="evenodd"/></svg>    Videos
+  </div>
+  <div class="carousel">
+        <a class="card fdb" href="https://www.youtube.com/watch?v=MmB9b5njVbA" target="_self" data-loc="main" data-pos=0 data-ref-pos=0 data-type="videos">
+      <div class="card-image">
+                  <div style="background-image: url('https://imgr.search.brave.com/ivL5UUtwdJMQxJveGCvQBn1ZgfUolPlRldwkCo8polk/fit/200/200/ce/1/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS9N/bUI5YjVualZiQS9t/YXhyZXNkZWZhdWx0/LmpwZw'), url(https://cdn.search.brave.com/serp/v1/static/img/app/dc0c0f1e246b39bab0823dfa1c17e14e7c405fb5932ba61867296faf8bf8c969-default-video.svg);" class="img-bg" data-original="None"></div>
+                        <div class="play-icon">
+          <span class="icon-wrapper" style="--size: 40px">
+            <svg class="icon" width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"><path d="M8.897 16.307a8 8 0 100-16 8 8 0 000 16zm-1.291-4.94a.4.4 0 01-.63-.328V5.575a.4.4 0 01.63-.327l3.902 2.731a.4.4 0 010 .656l-3.902 2.731z"/></svg>          </span>
+        </div>
+
+                <div class="duration">01:01</div>
+              </div>
+
+      <div class="card-body">
+        <div class="text-sm center-horizontally mb-6 anchor">
+          <img alt="🌐" class="favicon" src="https://imgr.search.brave.com/_l2jz03v6ptkaRq7BbdclpMEfo0AtVjCzta7SCwUTL0/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v" />
+          youtube.com
+        </div>
+        <div class="color-primary title">Official Minecraft Trailer - YouTube</div>
+      </div>
+
+      <div class="card-footer">
+                <div class="text-sm center-horizontally">
+                  </div>
+      </div>
+    </a>
+        <a class="card fdb" href="https://www.youtube.com/watch?v=DWZIfsaIgtE" target="_self" data-loc="main" data-pos=1 data-ref-pos=1 data-type="videos">
+      <div class="card-image">
+                  <div style="background-image: url('https://imgr.search.brave.com/eHMP5hHRD48yaVxMhJi75o9i0Tdt0zBJc8wbXXpTTDo/fit/200/200/ce/1/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS9E/V1pJZnNhSWd0RS9t/YXhyZXNkZWZhdWx0/LmpwZw'), url(https://cdn.search.brave.com/serp/v1/static/img/app/dc0c0f1e246b39bab0823dfa1c17e14e7c405fb5932ba61867296faf8bf8c969-default-video.svg);" class="img-bg" data-original="None"></div>
+                        <div class="play-icon">
+          <span class="icon-wrapper" style="--size: 40px">
+            <svg class="icon" width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"><path d="M8.897 16.307a8 8 0 100-16 8 8 0 000 16zm-1.291-4.94a.4.4 0 01-.63-.328V5.575a.4.4 0 01.63-.327l3.902 2.731a.4.4 0 010 .656l-3.902 2.731z"/></svg>          </span>
+        </div>
+
+                <div class="duration">02:13:55</div>
+              </div>
+
+      <div class="card-body">
+        <div class="text-sm center-horizontally mb-6 anchor">
+          <img alt="🌐" class="favicon" src="https://imgr.search.brave.com/_l2jz03v6ptkaRq7BbdclpMEfo0AtVjCzta7SCwUTL0/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v" />
+          youtube.com
+        </div>
+        <div class="color-primary title">Minecraft Live 2020: Full Show - YouTube</div>
+      </div>
+
+      <div class="card-footer">
+                <div class="text-sm center-horizontally">
+                  </div>
+      </div>
+    </a>
+        <a class="card fdb" href="https://www.youtube.com/watch?v=Eda1jwJ29JM" target="_self" data-loc="main" data-pos=2 data-ref-pos=2 data-type="videos">
+      <div class="card-image">
+                  <div style="background-image: url('https://imgr.search.brave.com/UJNybjLYBzjGloCFRuwOAAI70ZWCmKG2J0pcMVKgm6Q/fit/200/200/ce/1/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS9F/ZGExandKMjlKTS9t/YXhyZXNkZWZhdWx0/LmpwZw'), url(https://cdn.search.brave.com/serp/v1/static/img/app/dc0c0f1e246b39bab0823dfa1c17e14e7c405fb5932ba61867296faf8bf8c969-default-video.svg);" class="img-bg" data-original="None"></div>
+                        <div class="play-icon">
+          <span class="icon-wrapper" style="--size: 40px">
+            <svg class="icon" width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"><path d="M8.897 16.307a8 8 0 100-16 8 8 0 000 16zm-1.291-4.94a.4.4 0 01-.63-.328V5.575a.4.4 0 01.63-.327l3.902 2.731a.4.4 0 010 .656l-3.902 2.731z"/></svg>          </span>
+        </div>
+
+                <div class="duration">01:38</div>
+              </div>
+
+      <div class="card-body">
+        <div class="text-sm center-horizontally mb-6 anchor">
+          <img alt="🌐" class="favicon" src="https://imgr.search.brave.com/_l2jz03v6ptkaRq7BbdclpMEfo0AtVjCzta7SCwUTL0/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v" />
+          youtube.com
+        </div>
+        <div class="color-primary title">How We Make Minecraft – Trailer - YouTube</div>
+      </div>
+
+      <div class="card-footer">
+                <div class="text-sm center-horizontally">
+                  </div>
+      </div>
+    </a>
+        <a class="card fdb" href="https://www.youtube.com/watch?v=5qrUb7a821c" target="_self" data-loc="main" data-pos=3 data-ref-pos=3 data-type="videos">
+      <div class="card-image">
+                  <div style="background-image: url('https://imgr.search.brave.com/h6-xRiGmFltMNsX2YBoYcLwjaeUqCoHKD35RZ01KDGI/fit/200/200/ce/1/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS81/cXJVYjdhODIxYy9t/YXhyZXNkZWZhdWx0/LmpwZw'), url(https://cdn.search.brave.com/serp/v1/static/img/app/dc0c0f1e246b39bab0823dfa1c17e14e7c405fb5932ba61867296faf8bf8c969-default-video.svg);" class="img-bg" data-original="None"></div>
+                        <div class="play-icon">
+          <span class="icon-wrapper" style="--size: 40px">
+            <svg class="icon" width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"><path d="M8.897 16.307a8 8 0 100-16 8 8 0 000 16zm-1.291-4.94a.4.4 0 01-.63-.328V5.575a.4.4 0 01.63-.327l3.902 2.731a.4.4 0 010 .656l-3.902 2.731z"/></svg>          </span>
+        </div>
+
+                <div class="duration">01:31</div>
+              </div>
+
+      <div class="card-body">
+        <div class="text-sm center-horizontally mb-6 anchor">
+          <img alt="🌐" class="favicon" src="https://imgr.search.brave.com/_l2jz03v6ptkaRq7BbdclpMEfo0AtVjCzta7SCwUTL0/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v" />
+          youtube.com
+        </div>
+        <div class="color-primary title">Minecraft Live 2021: Announcement Trailer - YouTube</div>
+      </div>
+
+      <div class="card-footer">
+                <div class="text-sm center-horizontally">
+                  </div>
+      </div>
+    </a>
+        <a class="card fdb" href="https://www.youtube.com/watch?v=X-fMtNOS_gU" target="_self" data-loc="main" data-pos=4 data-ref-pos=4 data-type="videos">
+      <div class="card-image">
+                  <div style="background-image: url('https://imgr.search.brave.com/pCJTdBDTJxJCqlirO2lP3qfK_oCwlOu13zYl8tdphvA/fit/200/200/ce/1/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS9Y/LWZNdE5PU19nVS9t/YXhyZXNkZWZhdWx0/LmpwZw'), url(https://cdn.search.brave.com/serp/v1/static/img/app/dc0c0f1e246b39bab0823dfa1c17e14e7c405fb5932ba61867296faf8bf8c969-default-video.svg);" class="img-bg" data-original="None"></div>
+                        <div class="play-icon">
+          <span class="icon-wrapper" style="--size: 40px">
+            <svg class="icon" width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"><path d="M8.897 16.307a8 8 0 100-16 8 8 0 000 16zm-1.291-4.94a.4.4 0 01-.63-.328V5.575a.4.4 0 01.63-.327l3.902 2.731a.4.4 0 010 .656l-3.902 2.731z"/></svg>          </span>
+        </div>
+
+                <div class="duration">02:05</div>
+              </div>
+
+      <div class="card-body">
+        <div class="text-sm center-horizontally mb-6 anchor">
+          <img alt="🌐" class="favicon" src="https://imgr.search.brave.com/_l2jz03v6ptkaRq7BbdclpMEfo0AtVjCzta7SCwUTL0/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v" />
+          youtube.com
+        </div>
+        <div class="color-primary title">Minecraft: Pocket Edition Trailer 2015 - YouTube</div>
+      </div>
+
+      <div class="card-footer">
+                <div class="text-sm center-horizontally">
+                  </div>
+      </div>
+    </a>
+      </div>
+</div>
+
+              
+      
+                  <div class="snippet fdb" data-loc="main" data-pos=5 data-type="web"
+  data-ref-pos=3>
+  <a href="https://twitter.com/Minecraft" class="result-header" target="_self">
+    <span class="snippet-title"><img alt="🌐" class="favicon" src="https://imgr.search.brave.com/w6CZ_7KhFX7lFruXBajdt0rk0-9Z9YRcNcM98wSAT8k/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2MxOTUxNzhj/OTY1ZTQ3N2I0MjJk/MTY5NGM0MTRlYWVi/MjU1YWE2NDUwYmQ2/YTA2MDFhMDlkZDEx/NTAzZGNiNi90d2l0/dGVyLmNvbS8" loading="lazy" width="16" height="16" />Minecraft (@Minecraft) · Twitter
+    </span>
+    <cite class="snippet-url">
+      <span class="netloc">twitter.com</span>
+      <span class="url-path">› Minecraft</span>
+          </cite>
+  </a>
+    <div class="snippet-content">
+                    <p class="snippet-description">
+            The latest tweets from <strong>Minecraft</strong> (@<strong>Minecraft</strong>)
+    </p>
+  </div>
+
+  
+  
+    
+
+
+  
+    
+
+    
+</div>
+
+      
+      
+                  <div class="snippet fdb" data-loc="main" data-pos=6 data-type="web"
+  data-ref-pos=4>
+  <a href="https://edu-next.minecraft.net/" class="result-header" target="_self">
+    <span class="snippet-title"><img alt="🌐" class="favicon" src="https://imgr.search.brave.com/KYuw2mS29jyzZWo_W0vnkerUOH1C_PLlakKFgbvpcFE/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjBmYTQxM2I4/YTk5MjY1MDUwOTBk/M2M5MDQxMDA2YjIy/M2Y4OTYzMTIzOWM4/NWI0MzVjNjc4MzJj/Mjc5YzdlOS9lZHUt/bmV4dC5taW5lY3Jh/ZnQubmV0Lw" loading="lazy" width="16" height="16" />Minecraft Education Edition: Minecraft Official Site
+    </span>
+    <cite class="snippet-url">
+      <span class="netloc">edu-next.minecraft.net</span>
+      <span class="url-path"></span>
+          </cite>
+  </a>
+    <div class="snippet-content">
+                    <p class="snippet-description">
+            August 31, 2021 -
+            Find out how to use <strong>Minecraft</strong> in the classroom. Get the latest information on <strong>Minecraft</strong>: Education Edition, and take your students to the next level.
+    </p>
+  </div>
+
+  
+  
+    
+
+
+  
+    
+
+    
+</div>
+
+      
+      
+                  <div class="snippet fdb" data-loc="main" data-pos=7 data-type="web"
+  data-ref-pos=5>
+  <a href="https://en.wikipedia.org/wiki/Minecraft" class="result-header" target="_self">
+    <span class="snippet-title"><img alt="🌐" class="favicon" src="https://imgr.search.brave.com/wc-7XNJZ_tfrnnF72ZK8SIc1HV0ejHNf2xu1qguiQQw/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjQwNGZhZWY0/ZTQ1YWUzYzQ3MDUw/MmMzMGY3NTQ0ZjNj/NDUwMDk5ZTI3MWRk/NWYyNTM4N2UwOTE0/NTI3ZDQzNy9lbi53/aWtpcGVkaWEub3Jn/Lw" loading="lazy" width="16" height="16" />Minecraft - Wikipedia
+    </span>
+    <cite class="snippet-url">
+      <span class="netloc">en.wikipedia.org</span>
+      <span class="url-path">› wiki  › Minecraft</span>
+          </cite>
+  </a>
+    <div class="snippet-content">
+                    <img class="thumb" src="https://imgr.search.brave.com/vFiTL5JuUVsfj_3XxaGH846eyybVl47Ea4TY4tqhKe0/fit/200/200/ce/1/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvZW4vNS81MS9N/aW5lY3JhZnRfY292/ZXIucG5n" alt="" width="100" loading="lazy" />
+                <p class="snippet-description">
+            2 weeks ago -
+            <strong>Minecraft</strong> is a sandbox video game developed by the Swedish video game developer Mojang Studios. The game was created by Markus &quot;Notch&quot; Persson in the Java programming language. Following several early private testing versions, it was first made public in May 2009 before fully releasing in November ...
+    </p>
+  </div>
+
+  
+  
+    
+
+
+  
+        <div class="deep-results-buttons">
+        <a class="deep-link" href="https://en.wikipedia.org/wiki/Minecraft#Gameplay" target="_self">
+      Gameplay
+    </a>
+     <span class="attr-separator"> • </span>
+                <a class="deep-link" href="https://en.wikipedia.org/wiki/Minecraft#Development" target="_self">
+      Development
+    </a>
+     <span class="attr-separator"> • </span>
+                <a class="deep-link" href="https://en.wikipedia.org/wiki/Minecraft#Reception" target="_self">
+      Reception
+    </a>
+     <span class="attr-separator"> • </span>
+                <a class="deep-link" href="https://en.wikipedia.org/wiki/Minecraft#Cultural_impact" target="_self">
+      Cultural impact
+    </a>
+            </div>
+    
+
+    
+</div>
+
+      
+      
+                  <div class="snippet fdb" data-loc="main" data-pos=8 data-type="web"
+  data-ref-pos=6>
+  <a href="https://education.minecraft.net/en-us/get-started/download" class="result-header" target="_self">
+    <span class="snippet-title"><img alt="🌐" class="favicon" src="https://imgr.search.brave.com/R67aQV-waaUOjHVtSM_QUM5OhnxMd_ZJLy2PumLpxF0/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMWVmZWMxMTI0/NzRmMWFhYjYxNmZi/ZTNlODUwN2E0MDkz/MDljNTQ4Zjc3MDUx/NGM3ODhhMTY5MTlk/ZjM0NTc4ZS9lZHVj/YXRpb24ubWluZWNy/YWZ0Lm5ldC8" loading="lazy" width="16" height="16" />Download | Minecraft Education Edition
+    </span>
+    <cite class="snippet-url">
+      <span class="netloc">education.minecraft.net</span>
+      <span class="url-path">  › home  › get started  › download</span>
+          </cite>
+  </a>
+    <div class="snippet-content">
+                    <p class="snippet-description">
+            August 23, 2021 -
+            Learn how to download <strong>Minecraft</strong> Education. Follow these simple instructions in order to access <strong>Minecraft</strong> Education on your phone, computer or tablet.
+    </p>
+  </div>
+
+  
+  
+    
+
+
+  
+    
+
+    
+</div>
+
+      
+      
+                  <div class="snippet fdb" data-loc="main" data-pos=9 data-type="web"
+  data-ref-pos=7>
+  <a href="https://store.steampowered.com/app/1672970/Minecraft_Dungeons/" class="result-header" target="_self">
+    <span class="snippet-title"><img alt="🌐" class="favicon" src="https://imgr.search.brave.com/uAAqeX0DH1IDNAfwZ-r8-Zc74_PajW4JRDvfVcLuK-I/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZDIyMTA3YmY3/ODQ0Y2RiMzAzYTg1/MGVmNzcwNmQ5NWY3/YWJmYWIwMGNhNThk/YzBmMzNjM2ZjM2Qx/MTM3OWJjZC9zdG9y/ZS5zdGVhbXBvd2Vy/ZWQuY29tLw" loading="lazy" width="16" height="16" />Minecraft Dungeons on Steam
+    </span>
+    <cite class="snippet-url">
+      <span class="netloc">store.steampowered.com</span>
+      <span class="url-path">› app  › 1672970  › Minecraft_Dungeons</span>
+          </cite>
+  </a>
+    <div class="product">
+  <div class="flex-hcenter">
+    <div class="thumb-wrapper mt-10">
+      <div class="thumb-bg-blur" style="background-image: url('https://imgr.search.brave.com/dP8G_NzAi2163Gp1vDET9XWr2VKP7Yb_ybWmSj5EwVs/fit/360/283/ce/1/aHR0cHM6Ly9jZG4u/YWthbWFpLnN0ZWFt/c3RhdGljLmNvbS9z/dGVhbS9hcHBzLzE2/NzI5NzAvY2Fwc3Vs/ZV8yMzF4ODcuanBn/P3Q9MTYzMjUxNzQ0/Nw');">
+      </div>
+      <div class="thumb" style="background-image: url('https://imgr.search.brave.com/dP8G_NzAi2163Gp1vDET9XWr2VKP7Yb_ybWmSj5EwVs/fit/360/283/ce/1/aHR0cHM6Ly9jZG4u/YWthbWFpLnN0ZWFt/c3RhdGljLmNvbS9z/dGVhbS9hcHBzLzE2/NzI5NzAvY2Fwc3Vs/ZV8yMzF4ODcuanBn/P3Q9MTYzMjUxNzQ0/Nw'), url(https://cdn.search.brave.com/serp/v1/static/img/app/ebc2ffa9af26103ac21aafb568925092ef11f930131d3745ed8de9dd281d44ef-default-product.svg);" data-original="None">
+      </div>
+    </div>
+    <div>
+      <div class="color-primary">Minecraft Dungeons</div>
+            <div class="text-sm text-gray">Fight your way through an exciting action-adventure game, inspired by classic dungeon crawlers and set in the <strong>Minecraft</strong> universe!</div>
+      
+      <div class="flex mt-5">
+                        <div class="r-attr text-sm">
+          <strong>Price</strong>: 19.99 EUR
+        </div>
+              </div>
+    </div>
+
+  </div>
+</div>
+
+  
+    
+
+
+  
+    
+
+    
+</div>
+
+      
+      
+            
+<div id="search-elsewhere" class="text-gray">
+  <noscript>
+    <div class="panel">
+            <div class="flex-hcenter flex-wrap">
+        <span class="icon-wrapper mr-10">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="17" viewBox="0 0 18 17"><path fill-rule="evenodd" d="M1.6 7.336a5.736 5.736 0 1 1 11.471 0 5.736 5.736 0 0 1-11.471 0ZM7.336 0a7.336 7.336 0 1 0 4.957 12.743l3.56 3.561a.8.8 0 0 0 1.132-1.131l-3.636-3.636A7.336 7.336 0 0 0 7.335 0Z" clip-rule="evenodd"/></svg>        </span>
+        <span class="mr-15">Find elsewhere</span>
+        <a class="chip mr-10" href="/search?q=minecraft !g">Google</a>
+        <a class="chip mr-10" href="/search?q=minecraft !b">Bing</a>
+        <a class="chip mr-10" href="/search?q=minecraft !mj">Mojeek</a>
+      </div>
+          </div>
+  </noscript>
+</div>
+
+
+            
+      
+                  <div class="snippet fdb" data-loc="main" data-pos=11 data-type="web"
+  data-ref-pos=8>
+  <a href="https://apps.apple.com/us/app/minecraft/id479516143" class="result-header" target="_self">
+    <span class="snippet-title"><img alt="🌐" class="favicon" src="https://imgr.search.brave.com/S_prgYMhrUBabfVT_9Pyw3tFdRXRz4QUOaFJ0XsrtKU/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMDYzNzRkMjA3/NzAwOWZhNjI1MmM5/NzRiMzIwZGQ4YzZl/ZDgwYmM0Zjk3MDE2/ZDM1Y2FlMDBiNjVi/OWEzZDIzNy9hcHBz/LmFwcGxlLmNvbS8" loading="lazy" width="16" height="16" />‎Minecraft on the App Store
+    </span>
+    <cite class="snippet-url">
+      <span class="netloc">apps.apple.com</span>
+      <span class="url-path">› us  › app  › minecraft  › id479516143</span>
+          </cite>
+  </a>
+    <div class="snippet-content">
+                            <p class="snippet-description">
+            1 week ago -
+            ‎Read reviews, compare customer ratings, see screenshots, and learn more about <strong>Minecraft</strong>. Download <strong>Minecraft</strong> and enjoy it on your iPhone, iPad, and iPod touch.
+    </p>
+  </div>
+
+  
+  
+    
+<div class="item-attributes">
+    <div class="r-attr">
+    <style>
+  /* RATING */
+  .r {
+    align-items: center;
+    display: flex;
+    margin-top: -2px;
+    color: var(--color-gray-2);
+  }
+  .rating {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 58.5px;
+    height: 14px;
+    margin-top: -1px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxMiAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgNy4xOTM0MUMyLjYxMjkgNC44NzA4MyAzLjE5MzU1IDYuMDE2MTMgNS44MDY0NSAwLjVDNy44NTkgNC45MzE5NSA5LjA3Njg1IDUuNTA3NTMgMTEuMzIyNiA2LjkwMzA4QzguNTI4MTQgOC45NTQwNSA3LjIxMzUzIDEwLjM5MzcgNS44MDY0NSAxNEM0LjQ3NzY1IDEwLjU0IDMuMTIzNjYgOS4yMjc1OCAwIDcuMTkzNDFaIiBmaWxsPSIjRDRERUU1IiBmaWxsLW9wYWNpdHk9IjAuOCIvPgo8L3N2Zz4K);
+  }
+  .rating-ta {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 58.5px;
+    height: 14px;
+    margin-top: -1px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1OC41IiBoZWlnaHQ9IjE0IiBmaWxsPSJub25lIiB2aWV3Qm94PSIwIDAgNjQgMTIiPjxkZWZzLz48cGF0aCBmaWxsPSIjMDBhYTZjIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMiA2QTYgNiAwIDExMCA2YTYgNiAwIDAxMTIgMHptLTEuNSAwYTQuNSA0LjUgMCAxMS05IDAgNC41IDQuNSAwIDAxOSAwem04LjUgNmE2IDYgMCAxMDAtMTIgNiA2IDAgMDAwIDEyem0wLTEuNWE0LjUgNC41IDAgMTAwLTkgNC41IDQuNSAwIDAwMCA5ek0zOCA2YTYgNiAwIDExLTEyIDAgNiA2IDAgMDExMiAwem0tMS41IDBhNC41IDQuNSAwIDExLTkgMCA0LjUgNC41IDAgMDE5IDB6bTguNSA2YTYgNiAwIDEwMC0xMiA2IDYgMCAwMDAgMTJ6bTAtMS41YTQuNSA0LjUgMCAxMDAtOSA0LjUgNC41IDAgMDAwIDl6TTU4IDEyYTYgNiAwIDEwMC0xMiA2IDYgMCAwMDAgMTJ6bTAtMS41YTQuNSA0LjUgMCAxMDAtOSA0LjUgNC41IDAgMDAwIDl6IiBjbGlwLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=);
+  }
+  .rating .stars, .rating-ta .stars {
+    background-repeat: repeat-x;
+    overflow: hidden;
+    position: relative;
+  }
+  .rating .stars span {
+    height: 14px;
+    top: 1px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxMiAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgNy4xOTM0MUMyLjYxMjkgNC44NzA4MyAzLjE5MzU1IDYuMDE2MTMgNS44MDY0NSAwLjVDNy44NTkgNC45MzE5NSA5LjA3Njg1IDUuNTA3NTMgMTEuMzIyNiA2LjkwMzA4QzguNTI4MTQgOC45NTQwNSA3LjIxMzUzIDEwLjM5MzcgNS44MDY0NSAxNEM0LjQ3NzY1IDEwLjU0IDMuMTIzNjYgOS4yMjc1OCAwIDcuMTkzNDFaIiBmaWxsPSIjRkZBODAwIi8+Cjwvc3ZnPgo=);
+    background-repeat: repeat-x;
+    display: block;
+  }
+  .rating-ta .stars span {
+    height: 14px;
+    top: 1px;
+    background: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjE0IiB2aWV3Qm94PSIwIDAgNjQgMTIiIHdpZHRoPSI1OC41IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0ibTEyIDZjMCAzLjMxMzcxLTIuNjg2MjkgNi02IDZzLTYtMi42ODYyOS02LTYgMi42ODYyOS02IDYtNiA2IDIuNjg2MjkgNiA2em0xMyAwYzAgMy4zMTM3MS0yLjY4NjMgNi02IDZzLTYtMi42ODYyOS02LTYgMi42ODYzLTYgNi02IDYgMi42ODYyOSA2IDZ6bTcgNmMzLjMxMzcgMCA2LTIuNjg2MjkgNi02cy0yLjY4NjMtNi02LTYtNiAyLjY4NjI5LTYgNiAyLjY4NjMgNiA2IDZ6bTE5LTZjMCAzLjMxMzcxLTIuNjg2MyA2LTYgNnMtNi0yLjY4NjI5LTYtNiAyLjY4NjMtNiA2LTYgNiAyLjY4NjI5IDYgNnptNyA2YzMuMzEzNyAwIDYtMi42ODYyOSA2LTZzLTIuNjg2My02LTYtNi02IDIuNjg2MjktNiA2IDIuNjg2MyA2IDYgNnoiIGZpbGw9IiMwMGFhNmMiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==);
+    background-repeat: repeat-x;
+    display: block;
+  }
+
+</style>
+
+
+<div class="r">
+
+  
+    <div class="rating">
+    <span class="stars">
+      <span style="width: 52.65px;" ></span>
+    </span>
+  </div>
+  
+    <div class="ml-10">
+        <span class="text-sm">Rating: 4.5 - 496.66K votes</span>
+      </div>
+  
+</div>
+
+  </div>
+  </div>
+
+
+  
+    
+
+    
+</div>
+
+      
+      
+                  <div class="snippet fdb" data-loc="main" data-pos=12 data-type="web"
+  data-ref-pos=9>
+  <a href="https://www.xbox.com/en-us/games/store/Minecraft/9NBLGGH537BL" class="result-header" target="_self">
+    <span class="snippet-title"><img alt="🌐" class="favicon" src="https://imgr.search.brave.com/jiFpN0-Rxq2u-H-8eS8DT-b-P2-AaKgdKwoJlNHFBr4/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYjdjYzI5NjA1/MDVjNjc1OGM0MTU5/NzY2ZmFjMmIyNGU4/OTBlZjExNjEyMTU5/MDM0NGQ2NzhlMjVk/Y2RhODU0NC93d3cu/eGJveC5jb20v" loading="lazy" width="16" height="16" />Minecraft | Xbox
+    </span>
+    <cite class="snippet-url">
+      <span class="netloc">xbox.com</span>
+      <span class="url-path">› en-us  › games  › store  › Minecraft  › 9NBLGGH537BL</span>
+          </cite>
+  </a>
+    <div class="snippet-content">
+                    <p class="snippet-description">
+            2 weeks ago -
+            FEATURES Skin, texture, and mash-up packs from the community! Find out more at <strong>minecraft</strong>.net/marketplace. ADD-ONS! Learn more at <strong>minecraft</strong>.net/addons, where you can try some examples for free or learn to create your own. Realms! Play with up to 10 friends cross-platform in worlds that exist ...
+    </p>
+  </div>
+
+  
+  
+    
+
+
+  
+    
+
+    
+</div>
+
+      
+      
+                  <div class="snippet fdb" data-loc="main" data-pos=13 data-type="web"
+  data-ref-pos=10>
+  <a href="https://minecraft.fandom.com/wiki/Minecraft_Wiki" class="result-header" target="_self">
+    <span class="snippet-title"><img alt="🌐" class="favicon" src="https://imgr.search.brave.com/E4zEkcND-mYqlfwnhXkDxSWynC-G0FgmvXHY-JbIIls/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMGY3OWE5ZDgx/NzE2MjJmOThkZWQz/OTNjMjI0Mzk5NDk2/OGZjYWNiNjIxNmUw/MmJlNWI4ZTU2NmRk/NGRiMjA3ZC9taW5l/Y3JhZnQuZmFuZG9t/LmNvbS8" loading="lazy" width="16" height="16" />Minecraft Wiki – The Ultimate Resource for Minecraft
+    </span>
+    <cite class="snippet-url">
+      <span class="netloc">minecraft.fandom.com</span>
+      <span class="url-path">› wiki  › Minecraft_Wiki</span>
+          </cite>
+  </a>
+    <div class="snippet-content">
+                    <p class="snippet-description">
+            July 30, 2020 -
+            Welcome to the <strong>Minecraft</strong> Wiki, a publicly accessible and editable wiki for information on the <strong>Minecraft</strong> franchise. This wiki and its many articles and content for all the <strong>Minecraft</strong>-related elements are managed and maintained by 760 active contributors from the <strong>Minecraft</strong> community.
+    </p>
+  </div>
+
+  
+  
+    
+
+
+  
+    
+
+    
+</div>
+
+      
+      
+                  <div class="snippet fdb" data-loc="main" data-pos=14 data-type="web"
+  data-ref-pos=11>
+  <a href="https://www.microsoft.com/en-us/p/minecraft/9nblggh537bl" class="result-header" target="_self">
+    <span class="snippet-title"><img alt="🌐" class="favicon" src="https://imgr.search.brave.com/9JXzTOJ1d89-i_2_x2SolWjqSFFlNUyQKUig9fRSLQA/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTM5NmUzZTBm/Y2I4YTEzZDI1Mzll/NmM2MmU4NzlhMGVh/NjdjMmQwZjQ0OTMx/MGRhYTVkNjk1MDNi/M2VkYThkZC93d3cu/bWljcm9zb2Z0LmNv/bS8" loading="lazy" width="16" height="16" />Buy Minecraft - Microsoft Store
+    </span>
+    <cite class="snippet-url">
+      <span class="netloc">microsoft.com</span>
+      <span class="url-path">› en-us  › p  › minecraft  › 9nblggh537bl</span>
+          </cite>
+  </a>
+    <div class="snippet-content">
+                    <p class="snippet-description">
+            September 20, 2017 -
+            Explore randomly generated worlds and build amazing things from the simplest of homes to the grandest of castles. Play in creative mode with unlimited resources or mine deep into the world in survival mode, crafting weapons and armor to fend off the dangerous mobs.
+    </p>
+  </div>
+
+  
+  
+    
+
+
+  
+    
+
+    
+</div>
+
+      
+      
+                  <div class="snippet fdb" data-loc="main" data-pos=15 data-type="web"
+  data-ref-pos=12>
+  <a href="https://www.microsoft.com/en-us/p/minecraft-for-windows-10/9nblggh2jhxj" class="result-header" target="_self">
+    <span class="snippet-title"><img alt="🌐" class="favicon" src="https://imgr.search.brave.com/9JXzTOJ1d89-i_2_x2SolWjqSFFlNUyQKUig9fRSLQA/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTM5NmUzZTBm/Y2I4YTEzZDI1Mzll/NmM2MmU4NzlhMGVh/NjdjMmQwZjQ0OTMx/MGRhYTVkNjk1MDNi/M2VkYThkZC93d3cu/bWljcm9zb2Z0LmNv/bS8" loading="lazy" width="16" height="16" />Buy Minecraft for Windows 10 - Microsoft Store
+    </span>
+    <cite class="snippet-url">
+      <span class="netloc">microsoft.com</span>
+      <span class="url-path">› en-us  › p  › minecraft-for-windows-10  › 9nblggh2jhxj</span>
+          </cite>
+  </a>
+    <div class="snippet-content">
+                    <p class="snippet-description">
+            June 26, 2020 -
+            Ray tracing for Windows 10 brings a different graphics experience to <strong>Minecraft</strong>! Experience creator-built worlds with realistic lighting, vibrant colors, naturally reflective water and emissive textures that light up.
+    </p>
+  </div>
+
+  
+  
+    
+
+
+  
+    
+
+    
+</div>
+
+      
+      
+                  <div class="snippet fdb" data-loc="main" data-pos=16 data-type="web"
+  data-ref-pos=13>
+  <a href="https://www.youtube.com/watch?v=vQnfKoikihE" class="result-header" target="_self">
+    <span class="snippet-title"><img alt="🌐" class="favicon" src="https://imgr.search.brave.com/_l2jz03v6ptkaRq7BbdclpMEfo0AtVjCzta7SCwUTL0/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v" loading="lazy" width="16" height="16" />[AUDIO DESCRIPTION] Minecraft Live 2021 - YouTube
+    </span>
+    <cite class="snippet-url">
+      <span class="netloc">youtube.com</span>
+      <span class="url-path">  › minecraft</span>
+          </cite>
+  </a>
+    <div class="video-snippet flex mt-5" data-macro="video">
+  <a href="https://www.youtube.com/watch?v=vQnfKoikihE" class="video-thumb">
+    <img src="https://imgr.search.brave.com/3Y7d4eNwL8sie1faLmK90-OigJhD-qRLsXPIQGGjkWA/fit/200/200/ce/1/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS92/UW5mS29pa2loRS9t/YXhyZXNkZWZhdWx0/LmpwZw" loading="lazy" alt=" "/>
+    <div class="play-icon">
+      <span class="icon-wrapper" style="--size: 40px">
+        <svg class="icon" width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"><path d="M8.897 16.307a8 8 0 100-16 8 8 0 000 16zm-1.291-4.94a.4.4 0 01-.63-.328V5.575a.4.4 0 01.63-.327l3.902 2.731a.4.4 0 010 .656l-3.902 2.731z"/></svg>      </span>
+    </div>
+        <div class="duration">02:15:20</div>
+      </a>
+  <div>
+    <p class="snippet-description">
+      The live show is no longer live, but it lives forever as a recording! Watch us announce the next update, deliver the newest news, and vote for mobs over and ...</p>
+    <p class="snippet-description">
+                  <span class="text-bold">Views: </span> 1M
+          </p>
+  </div>
+</div>
+
+  
+    
+
+
+  
+    
+
+    
+</div>
+
+      
+      
+                  <div class="snippet fdb" data-loc="main" data-pos=17 data-type="web"
+  data-ref-pos=14>
+  <a href="https://minecraft.fandom.com/wiki/Minecraft" class="result-header" target="_self">
+    <span class="snippet-title"><img alt="🌐" class="favicon" src="https://imgr.search.brave.com/E4zEkcND-mYqlfwnhXkDxSWynC-G0FgmvXHY-JbIIls/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMGY3OWE5ZDgx/NzE2MjJmOThkZWQz/OTNjMjI0Mzk5NDk2/OGZjYWNiNjIxNmUw/MmJlNWI4ZTU2NmRk/NGRiMjA3ZC9taW5l/Y3JhZnQuZmFuZG9t/LmNvbS8" loading="lazy" width="16" height="16" />Minecraft – Minecraft Wiki
+    </span>
+    <cite class="snippet-url">
+      <span class="netloc">minecraft.fandom.com</span>
+      <span class="url-path">› wiki  › Minecraft</span>
+          </cite>
+  </a>
+    <div class="snippet-content">
+                    <p class="snippet-description">
+            November 18, 2011 -
+            <strong>Minecraft</strong> is a sandbox video game originally created by Markus &quot;Notch&quot; Persson. It is maintained by Mojang Studios, a part of Xbox Game Studios, which in turn is part of Microsoft. From its creation, <strong>Minecraft</strong> was developed almost exclusively by Notch until Jens &quot;Jeb&quot; Bergensten started working ...
+    </p>
+  </div>
+
+  
+  
+    
+
+
+  
+    
+
+    
+</div>
+
+      
+      
+                  <div class="snippet fdb" data-loc="main" data-pos=18 data-type="web"
+  data-ref-pos=15>
+  <a href="https://help.minecraft.net/hc/en-us" class="result-header" target="_self">
+    <span class="snippet-title"><img alt="🌐" class="favicon" src="https://imgr.search.brave.com/WqAvatYqTt49YoBOP6YbOxDdml1o424V0Iu0bqXxL1c/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNTk5OTgwYjlk/YmYxYzA4YjQwNzhi/MWU4NzgzMDgzMTBh/MTI1ZDRmYjM0ZGJh/NjJiY2EyN2ExZDc2/M2MwZmYxOS9oZWxw/Lm1pbmVjcmFmdC5u/ZXQv" loading="lazy" width="16" height="16" />Minecraft Help Center
+    </span>
+    <cite class="snippet-url">
+      <span class="netloc">help.minecraft.net</span>
+      <span class="url-path">› hc  › en-us</span>
+          </cite>
+  </a>
+    <div class="snippet-content">
+                    <p class="snippet-description">
+            2 weeks ago -
+            Mojang © 2009-2020. &quot;<strong>Minecraft</strong>&quot; is a trademark of Mojang Synergies AB
+    </p>
+  </div>
+
+  
+  
+    
+
+
+  
+    
+
+    
+</div>
+
+      
+      
+                  <div class="snippet fdb" data-loc="main" data-pos=19 data-type="web"
+  data-ref-pos=16>
+  <a href="https://www.youtube.com/user/TeamMojang" class="result-header" target="_self">
+    <span class="snippet-title"><img alt="🌐" class="favicon" src="https://imgr.search.brave.com/_l2jz03v6ptkaRq7BbdclpMEfo0AtVjCzta7SCwUTL0/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v" loading="lazy" width="16" height="16" />Minecraft - YouTube
+    </span>
+    <cite class="snippet-url">
+      <span class="netloc">youtube.com</span>
+      <span class="url-path">  › minecraft</span>
+          </cite>
+  </a>
+    <div class="snippet-content">
+                            <p class="snippet-description">
+            November 4, 2020 -
+            This is the official YouTube channel of <strong>Minecraft</strong>. We tell stories about the <strong>Minecraft</strong> Universe. ESRB Rating: Everyone 10+ with Fantasy Violence
+    </p>
+  </div>
+
+  
+  
+    
+
+
+  
+    
+
+    
+</div>
+
+      
+      
+                </div>
+
+
+        <div id="side-right" class="section">
+                  <div id="infobox" class="infobox fdb" data-loc="side" data-pos=0 data-type="infobox"
+  data-subtype="generic" data-ref-pos=0>
+  <div class="infobox-header">
+    <div class="infobox-header-text">
+      <a class="infobox-title" href="https://en.wikipedia.org/wiki/Minecraft" target="_self">
+        Minecraft
+              </a>
+            <div class="infobox-description">
+        2009 video game series developed by Mojang
+      </div>
+          </div>
+  </div>
+
+            <div class="infobox-thumbnail">
+        <a href="/images?origin=search&q=minecraft" target="_self">
+                    <div class="thumb" style="background-image: url(https://imgr.search.brave.com/XfZaBt_wZ5BmPT_Km56oB9yJGVTZtJoNrX_AIqsqqRE/fit/560/320/ce/1/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvZW4vdGh1bWIv/NS81MS9NaW5lY3Jh/ZnRfY292ZXIucG5n/LzIyMHB4LU1pbmVj/cmFmdF9jb3Zlci5w/bmc)"></div>
+                  </a>
+      </div>
+      
+
+      <div class="flex" id="website_url">
+    <a class="btn btn-sm btn--text" href="https://www.minecraft.net" target="_self">
+      <div class="icon-wrapper mr-5">
+      <svg class="icon" width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.926 6.617a6.765 6.765 0 000 3.266h3.426a17.594 17.594 0 010-3.266H1.926zm.446-1.25H5.52c.272-1.557.759-2.852 1.373-3.68a6.764 6.764 0 00-4.52 3.68zm4.236 1.25c-.052.519-.08 1.066-.08 1.633s.028 1.114.08 1.633h3.739c.052-.519.08-1.066.08-1.633s-.028-1.114-.08-1.633H6.608zm3.557-1.25H6.79c.145-.754.343-1.42.576-1.97.25-.592.517-.99.749-1.223.227-.226.348-.228.362-.228.014 0 .136.002.363.228.232.232.498.63.75 1.222.232.55.43 1.217.575 1.97zm1.437 1.25a17.565 17.565 0 010 3.266h3.426a6.764 6.764 0 000-3.266h-3.426zm2.98-1.25h-3.146c-.273-1.557-.76-2.852-1.373-3.68a6.764 6.764 0 014.52 3.68zm-7.69 9.446a6.764 6.764 0 01-4.52-3.68H5.52c.272 1.557.759 2.851 1.373 3.68zm.474-1.71a9.903 9.903 0 01-.576-1.97h3.375a9.903 9.903 0 01-.576 1.97c-.25.592-.517.99-.75 1.222-.226.227-.348.228-.362.228-.014 0-.135-.001-.362-.228-.232-.232-.499-.63-.75-1.222zm2.697 1.71c.614-.829 1.1-2.123 1.373-3.68h3.146a6.764 6.764 0 01-4.52 3.68zM.477 8.25a8 8 0 1116 0 8 8 0 01-16 0z"/></svg>      </div>
+        Website
+    </a>
+  </div>
+  <div class="section-divider"></div>
+
+  
+
+    
+
+  <div class="body">
+            <div class="mb-6">
+      Minecraft is a sandbox video game developed by the Swedish video game developer Mojang Studios. The game was created by Markus "Notch" Persson in the Java programming language. Following several early private testing versions, it was first made public in May 2009 before fully releasing in November ...
+                  <a href="https://en.wikipedia.org/wiki/Minecraft">Wikipedia</a>
+          </div>
+      </div>
+
+     <div class="section-divider"></div>
+  
+    
+    
+      <div class="body">
+            <div class="infobox-attr">
+                  <span class="infobox-attr-name">Developer(s)</span>
+              <span><a target="_self"href="https://en.wikipedia.org/wiki/Mojang_Studios">Mojang Studios</a></span>
+                      </div>
+        <div class="infobox-attr">
+                  <span class="infobox-attr-name">Publisher(s)</span>
+              <span><a target="_self"href="https://en.wikipedia.org/wiki/Mojang_Studios">Mojang Studios</a><br><a target="_self"href="https://en.wikipedia.org/wiki/Xbox_Game_Studios">Xbox Game Studios</a><br><a target="_self"href="https://en.wikipedia.org/wiki/Sony_Interactive_Entertainment">Sony Interactive Entertainment</a></span>
+                      </div>
+        <div class="infobox-attr">
+                  <span class="infobox-attr-name">Designer(s)</span>
+              <span><a target="_self"href="https://en.wikipedia.org/wiki/Markus_Persson">Markus Persson</a><br><a target="_self"href="https://en.wikipedia.org/wiki/Jens_Bergensten">Jens Bergensten</a></span>
+                      </div>
+    
+        <div id="hidden-atttributes" class="no-display">
+            <div class="infobox-attr">
+                        <span class="infobox-attr-name">Artist(s)</span>
+                <span>Markus Toivonen<br>Jasper Boerstra</span>
+                              </div>
+            <div class="infobox-attr">
+                        <span class="infobox-attr-name">Composer(s)</span>
+                <span><a target="_self"href="https://en.wikipedia.org/wiki/C418">C418</a></span>
+                              </div>
+            <div class="infobox-attr">
+                        <span class="infobox-attr-name">Series</span>
+                <span>Minecraft</span>
+                              </div>
+            <div class="infobox-attr">
+                        <span class="infobox-attr-name">Genre(s)</span>
+                <span>Sandbox, survival</span>
+                              </div>
+            <div class="infobox-attr">
+                        <span class="infobox-attr-name">Mode(s)</span>
+                <span>Single-player, multiplayer</span>
+                              </div>
+          </div>
+
+    <div id="infobox-attrs"></div>
+  </div>
+
+
+      <div class="section-divider"></div>
+  
+    
+    <div class="body">
+  <div id="profiles">
+    <h6 class="color-primary">Profiles</h6>
+    <div class="links">
+            <a title="Wikipedia" href="https://en.wikipedia.org/wiki/Minecraft" class="chip" target="_self">
+        <img alt=" " src="https://imgr.search.brave.com/wc-7XNJZ_tfrnnF72ZK8SIc1HV0ejHNf2xu1qguiQQw/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjQwNGZhZWY0/ZTQ1YWUzYzQ3MDUw/MmMzMGY3NTQ0ZjNj/NDUwMDk5ZTI3MWRk/NWYyNTM4N2UwOTE0/NTI3ZDQzNy9lbi53/aWtpcGVkaWEub3Jn/Lw" class="avatar avatar-sm">
+        Wikipedia
+      </a>
+            <a title="Reddit" href="https://www.reddit.com/r/Minecraft/" class="chip" target="_self">
+        <img alt=" " src="https://imgr.search.brave.com/9lVKe1T-Q5y8KCVYZ7L-wV4hXIPrYA2KqE8ohY2s9-o/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2ZiNTU0M2Nj/MTFhZjRiYWViZDlk/MjJiMjBjMzFjMDRk/Y2IzYWI0MGI0MjVk/OGY5NzQzOGQ5NzQ5/NWJhMWI0NC93d3cu/cmVkZGl0LmNvbS8" class="avatar avatar-sm">
+        Reddit
+      </a>
+            <a title="Facebook" href="https://www.facebook.com/gaming/minecraft" class="chip" target="_self">
+        <img alt=" " src="https://imgr.search.brave.com/wYloIoveucMFzjKxwknL0hmA9BMwZo1afucsEG_35ak/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOWM3NjZkMmE4/MTU1MTk4ZDU5YzU3/NjUxY2ExZTdjNWQx/NjJlNTY1Y2VlODM4/MmRmMDgzZDBiMmI3/YzU4NmU4ZS93d3cu/ZmFjZWJvb2suY29t/Lw" class="avatar avatar-sm">
+        Facebook
+      </a>
+            <a title="YouTube" href="https://www.youtube.com/channel/UCQvWX73GQygcwXOTSf_VDVg" class="chip" target="_self">
+        <img alt=" " src="https://imgr.search.brave.com/_l2jz03v6ptkaRq7BbdclpMEfo0AtVjCzta7SCwUTL0/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v" class="avatar avatar-sm">
+        YouTube
+      </a>
+            <a title="Twitter" href="https://twitter.com/i/topics/10043689888" class="chip" target="_self">
+        <img alt=" " src="https://imgr.search.brave.com/w6CZ_7KhFX7lFruXBajdt0rk0-9Z9YRcNcM98wSAT8k/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvN2MxOTUxNzhj/OTY1ZTQ3N2I0MjJk/MTY5NGM0MTRlYWVi/MjU1YWE2NDUwYmQ2/YTA2MDFhMDlkZDEx/NTAzZGNiNi90d2l0/dGVyLmNvbS8" class="avatar avatar-sm">
+        Twitter
+      </a>
+            <a title="IMDb" href="https://www.imdb.com/title/tt2011970/" class="chip" target="_self">
+        <img alt=" " src="https://imgr.search.brave.com/b9mQG7zVvCQuE9OuDfgH6I15r1-2dfmjjxHkIgj4QXk/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZmU3MjU1MmUz/MDhkYjY0OGFlYzY3/ZDVlMmQ4NWZjZDhh/NzZhOGZlZjNjNGE5/M2M0OWI1Y2M2ZjQy/MWE5ZDc3OC93d3cu/aW1kYi5jb20v" class="avatar avatar-sm">
+        IMDb
+      </a>
+            <a title="GitHub" href="https://github.com/topics/minecraft" class="chip" target="_self">
+        <img alt=" " src="https://imgr.search.brave.com/fkY5RH6A1G6fx8pDxRRUKz5SvQ8oQ2yS7uChwTWZBTU/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYWQyNWM1NjA5/ZjZmZjNlYzI2MDNk/N2VkNmJhYjE2MzZl/MDY5ZTMxMDUzZmY1/NmU3NWIzNWVmMjk0/NTBjMjJjZi9naXRo/dWIuY29tLw" class="avatar avatar-sm">
+        GitHub
+      </a>
+            <a title="Quora" href="https://www.quora.com/topic/Minecraft-video-game" class="chip" target="_self">
+        <img alt=" " src="https://imgr.search.brave.com/XKBBk0wQ6mY48c7RokIzUD5N1NdrPOm8l5WJQgoT008/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYjg3ZTk4MDVm/ZTE3YzUxZTc4Yjc3/YTE2MGI3MGVhNmQ2/MGE0Yjc4NzRhMmM1/ODMxYTIwNzI1ZjI0/NDkyZDI2Yy93d3cu/cXVvcmEuY29tLw" class="avatar avatar-sm">
+        Quora
+      </a>
+            <a title="Google News" href="https://news.google.com/topics/CAAqJAgKIh5DQkFTRUFvS0wyMHZNRGwyTm10d1p4SUNaVzRvQUFQAQ" class="chip" target="_self">
+        <img alt=" " src="https://imgr.search.brave.com/_jqD4_18TccYInqSeJJi4ndtVxXZEmvIpIJO_JAm8wI/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMDIxMTRhYjQ3/MzgyZjM0OGQ5NTdi/ZTI2NDAyYzQ1Njc2/OWVlNjIzNjI5NzIx/ZmNhODIxMjk0Njdh/ZTY4MjBmMS9uZXdz/Lmdvb2dsZS5jb20v" class="avatar avatar-sm">
+        Google News
+      </a>
+            <a title="Twitch" href="https://www.twitch.tv/directory/game/Minecraft" class="chip" target="_self">
+        <img alt=" " src="https://imgr.search.brave.com/W_MPmeB_sWqgqgnSZEfdhs2elkm_xz9ssDu62bKqQ_s/fit/32/32/ce/1/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZDk2ZTY0YTYz/NGU5NmZkM2U2ZTUw/ZTJiOGVhZjNhOGJh/Mzk3MWVlZmQwYWM5/YzM1ZDhmZjU3NDcz/MDQ1NDFmMC93d3cu/dHdpdGNoLnR2Lw" class="avatar avatar-sm">
+        Twitch
+      </a>
+          </div>
+  </div>
+</div>
+
+
+    <div class="footer">
+  <div class="attribution text-xs">
+    Data from
+        <a href="https://en.wikipedia.org/wiki/Minecraft">Wikipedia</a>
+            </div>
+  <div id="infobox-feedback"></div>
+</div>
+
+
+</div>
+
+
+            
+      
+          </div>
+  </div>
+
+
+    <div id="debug"></div>
+
+    <style>
+  footer {
+    background-color: var(--bg-0);
+    color: var(--color-primary);
+    height: fit-content;
+    padding: 2rem 0px;
+    margin-top: 2rem;
+  }
+
+  footer .content {
+    display: flex;
+    align-items: baseline;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  footer h6 {
+    color: var(--color-gray-3);
+    font-family: var(--brand-font);
+  }
+
+  footer .text-sm {
+    font-size: var(--text-sm);
+  }
+
+  footer .text-gray {
+    color: var(--color-gray-3) !important;
+  }
+
+  footer .container-sm {
+    max-width: 1000px;
+    padding-left: 175px;
+  }
+
+  footer .content .block {
+    margin-bottom: 1rem;
+  }
+</style>
+<footer>
+  <div class="container-sm">
+    <div class="content">
+      <div class="block">
+        <h6>Resources</h6>
+        <div>
+          <a class="text-gray text-sm" href="/help">
+            Brave Search Help
+          </a>
+        </div>
+        <div><a class="text-gray text-sm" href="https://brave.com/transparency/">
+            Transparency Report
+          </a>
+        </div>
+        <div>
+          <a class="text-gray text-sm" target="_blank" rel="noopener noreferrer" href="https://hackerone.com/brave">
+            Report a security issue
+          </a>
+        </div>
+        <div>
+          <a class="text-gray text-sm" href="https://status.brave.com/">
+            Status
+          </a>
+        </div>
+      </div>
+      <div class="block">
+        <h6>Products</h6>
+        <div>
+          <a class="text-gray text-sm" href="https://brave.com/download/">
+            Brave Browser
+          </a>
+        </div>
+        <div>
+          <a class="text-gray text-sm" href="https://search.brave.com">
+            Brave Search
+          </a>
+        </div>
+        <div>
+          <a class="text-gray text-sm" href="https://talk.brave.com/">
+            Brave Talk
+          </a>
+        </div>
+        <div>
+          <a class="text-gray text-sm" href="https://brave.com/firewall-vpn/">
+            Brave Firewall + VPN
+          </a>
+        </div>
+        <div>
+          <a class="text-gray text-sm" href="https://brave.com/playlist/">
+            Brave Playlist
+          </a>
+        </div>
+        <div>
+          <a class="text-gray text-sm" href="https://brave.com/brave-news/">
+            Brave News
+          </a>
+        </div>
+        <div>
+          <a class="text-gray text-sm" href="https://brave.com/brave-rewards//">
+            Brave Rewards
+          </a>
+        </div>
+      </div>
+      <div class="block">
+        <h6>Policies</h6>
+        <div><a class="text-gray text-sm" href="/help/privacy-policy">
+            Privacy Policy</a>
+        </div>
+        <div>
+          <a class="text-gray text-sm" href="https://brave.com/terms-of-use/">
+            Terms of Use
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer></main>
+
+<script
+  id="js-shared"
+  src="https://cdn.search.brave.com/serp/v1/static/serp-js/5810fd470c72635b9d6eeda1a19ff2ef58280f34d43463896aa5c4638328ee53-shared.bundle.js"
+  data="{&#34;reproducible_parameters&#34;:{&#34;country&#34;:&#34;us&#34;,&#34;search_lang&#34;:&#34;en&#34;,&#34;spellcheck&#34;:1,&#34;external&#34;:&#34;1&#34;,&#34;show_local&#34;:null,&#34;unit&#34;:&#34;us&#34;,&#34;geoloc&#34;:&#34;41.259x-95.852&#34;},&#34;is_mobile&#34;:false,&#34;i18n&#34;:{&#34;Learn more&#34;:&#34;Learn more&#34;,&#34;Feedback&#34;:&#34;Feedback&#34;,&#34;Help us improve Brave Search&#34;:&#34;Help us improve Brave Search&#34;,&#34;What do you think of the information shown?&#34;:&#34;What do you think of the information shown?&#34;,&#34;This is helpful&#34;:&#34;This is helpful&#34;,&#34;This isn&#39;t relevant&#34;:&#34;This isn&#39;t relevant&#34;,&#34;Something is wrong&#34;:&#34;Something is wrong&#34;,&#34;This isn&#39;t useful&#34;:&#34;This isn&#39;t useful&#34;,&#34;The location is wrong&#34;:&#34;The location is wrong&#34;,&#34;The weather is wrong&#34;:&#34;The weather is wrong&#34;,&#34;The currency is wrong&#34;:&#34;The currency is wrong&#34;,&#34;The currency rate is wrong&#34;:&#34;The currency rate is wrong&#34;,&#34;The cryptocurrency is wrong&#34;:&#34;The cryptocurrency is wrong&#34;,&#34;The cryptocurrency price is wrong&#34;:&#34;The cryptocurrency price is wrong&#34;,&#34;The unit is wrong&#34;:&#34;The unit is wrong&#34;,&#34;The times are wrong&#34;:&#34;The times are wrong&#34;,&#34;The stock is wrong&#34;:&#34;The stock is wrong&#34;,&#34;The stock price is wrong&#34;:&#34;The stock price is wrong&#34;,&#34;Comments or suggestions?&#34;:&#34;Comments or suggestions?&#34;,&#34;Submit&#34;:&#34;Submit&#34;,&#34;Thank you for your feedback!&#34;:&#34;Thank you for your feedback!&#34;,&#34;Your feedback helps us improve the Brave Search experience for everyone&#34;:&#34;Your feedback helps us improve the Brave Search experience for everyone&#34;}}"
+  defer="true">
+</script>
+<script
+  id="js-infobox"
+  src="https://cdn.search.brave.com/serp/v1/static/serp-js/3834fccee390e32d52bcbd8190c4945c7545a41730d254cc09b14d941821515c-infobox.bundle.js"
+  data="{&#34;hidden_content&#34;:true,&#34;title&#34;:&#34;Minecraft&#34;,&#34;i18n&#34;:{&#34;Show more&#34;:&#34;Show more&#34;,&#34;Show less&#34;:&#34;Show less&#34;,&#34;More about {title}&#34;:&#34;More about {title}&#34;,&#34;Less about {title}&#34;:&#34;Less about {title}&#34;}}"
+  defer="true">
+</script>
+<script
+  id="js-newsHeadlines"
+  src="https://cdn.search.brave.com/serp/v1/static/serp-js/79f5b61b2ab1543b61044c4e06efd065d20524cde3b75b3b0013b3fc147938f7-newsHeadlines.bundle.js"
+  data=""
+  defer="true">
+</script>
+<script
+  id="js-videos"
+  src="https://cdn.search.brave.com/serp/v1/static/serp-js/37b403e26772f7ab02491ab411f8515d3158cab6f073a5f01f0bf1c997db90b6-videos.bundle.js"
+  data=""
+  defer="true">
+</script>
+<script
+  id="js-telemetry"
+  src="https://cdn.search.brave.com/serp/v1/static/serp-js/2147501dc8faefd3fa0d1bbe7abd18ab6af988b2862f085ba52b6ad8d466a170-telemetry.bundle.js"
+  data="{&#34;os&#34;:&#34;Windows&#34;,&#34;browser&#34;:&#34;Edge&#34;,&#34;is_dev&#34;:false}"
+  defer="true">
+</script>
+<script
+  id="js-suggest"
+  src="https://cdn.search.brave.com/serp/v1/static/serp-js/3972c17b75a96d46eb71f676c50944abefe63ee78e042a0c45e9d63eb7952fdf-suggest.bundle.js"
+  data="{&#34;is_mobile&#34;:false}"
+  defer="true">
+</script>
+<script
+  id="js-sticky-header"
+  src="https://cdn.search.brave.com/serp/v1/static/serp-js/777d5bcae58b6c7233297c7857440fe330ac4819f4bf8d5ba0473b5d68491946-sticky-header.bundle.js"
+  data="{&#34;is_mobile&#34;:false}"
+  defer="true">
+</script>
+<script
+  id="js-filters"
+  src="https://cdn.search.brave.com/serp/v1/static/serp-js/6b1dc3404ec512b8c8b04dd8c4b5fd2af984eb8b629fcde55a31c10910348a1a-filters.bundle.js"
+  data="{&#34;is_pc&#34;:true,&#34;page&#34;:&#34;search&#34;,&#34;city&#34;:&#34;Council Bluffs&#34;,&#34;country&#34;:&#34;US&#34;,&#34;state&#34;:&#34;IA&#34;,&#34;postal_code&#34;:&#34;51502&#34;,&#34;lat&#34;:41.259,&#34;long&#34;:-95.852,&#34;indepMetric&#34;:1.0,&#34;i18n&#34;:{&#34;Info&#34;:&#34;Info&#34;,&#34;Tools&#34;:&#34;Tools&#34;,&#34;Response took {seconds} seconds&#34;:&#34;Response took {responseTime} seconds&#34;,&#34;Learn more&#34;:&#34;Learn more&#34;,&#34;All results from Brave&#34;:&#34;All results from Brave&#34;,&#34;x% of results mixed from third-parties&#34;:&#34;{thirdPartyPercentage}% of results mixed from third-parties&#34;,&#34;All regions&#34;:&#34;All regions&#34;,&#34;Argentina&#34;:&#34;Argentina&#34;,&#34;Australia&#34;:&#34;Australia&#34;,&#34;Austria&#34;:&#34;Austria&#34;,&#34;Belgium&#34;:&#34;Belgium&#34;,&#34;Brazil&#34;:&#34;Brazil&#34;,&#34;Canada&#34;:&#34;Canada&#34;,&#34;Chile&#34;:&#34;Chile&#34;,&#34;Country&#34;:&#34;Country&#34;,&#34;Time&#34;:&#34;Time&#34;,&#34;Sizes&#34;:&#34;Sizes&#34;,&#34;Types&#34;:&#34;Types&#34;,&#34;Resolution&#34;:&#34;Resolution&#34;,&#34;Length&#34;:&#34;Length&#34;,&#34;Layouts&#34;:&#34;Layouts&#34;,&#34;Colors&#34;:&#34;Colors&#34;,&#34;License&#34;:&#34;License&#34;,&#34;Denmark&#34;:&#34;Denmark&#34;,&#34;Finland&#34;:&#34;Finland&#34;,&#34;France&#34;:&#34;France&#34;,&#34;Germany&#34;:&#34;Germany&#34;,&#34;Hong Kong&#34;:&#34;Hong Kong&#34;,&#34;India&#34;:&#34;India&#34;,&#34;Indonesia&#34;:&#34;Indonesia&#34;,&#34;Italy&#34;:&#34;Italy&#34;,&#34;Japan&#34;:&#34;Japan&#34;,&#34;Korea&#34;:&#34;Korea&#34;,&#34;Malaysia&#34;:&#34;Malaysia&#34;,&#34;Mexico&#34;:&#34;Mexico&#34;,&#34;Netherlands&#34;:&#34;Netherlands&#34;,&#34;New Zealand&#34;:&#34;New Zealand&#34;,&#34;Norway&#34;:&#34;Norway&#34;,&#34;China&#34;:&#34;China&#34;,&#34;Poland&#34;:&#34;Poland&#34;,&#34;Portugal&#34;:&#34;Portugal&#34;,&#34;Philippines&#34;:&#34;Philippines&#34;,&#34;Russia&#34;:&#34;Russia&#34;,&#34;Saudi Arabia&#34;:&#34;Saudi Arabia&#34;,&#34;South Africa&#34;:&#34;South Africa&#34;,&#34;Spain&#34;:&#34;Spain&#34;,&#34;Sweden&#34;:&#34;Sweden&#34;,&#34;Switzerland&#34;:&#34;Switzerland&#34;,&#34;Taiwan&#34;:&#34;Taiwan&#34;,&#34;Turkey&#34;:&#34;Turkey&#34;,&#34;United Kingdom&#34;:&#34;United Kingdom&#34;,&#34;United States&#34;:&#34;United States&#34;,&#34;clear-verb&#34;:&#34;Clear&#34;,&#34;Safe search&#34;:&#34;Safe search&#34;,&#34;Any time&#34;:&#34;Any time&#34;,&#34;Past day&#34;:&#34;Past day&#34;,&#34;Past week&#34;:&#34;Past week&#34;,&#34;Past month&#34;:&#34;Past month&#34;,&#34;Past year&#34;:&#34;Past year&#34;,&#34;Custom&#34;:&#34;Custom&#34;,&#34;Custom range&#34;:&#34;Custom range&#34;,&#34;Choose date range&#34;:&#34;Choose date range&#34;,&#34;Start date&#34;:&#34;Start date&#34;,&#34;End date&#34;:&#34;End date&#34;,&#34;Search&#34;:&#34;Search&#34;,&#34;Moderate&#34;:&#34;Moderate&#34;,&#34;Strict&#34;:&#34;Strict&#34;,&#34;Off&#34;:&#34;Off&#34;,&#34;All sizes&#34;:&#34;All sizes&#34;,&#34;Small&#34;:&#34;Small&#34;,&#34;Medium&#34;:&#34;Medium&#34;,&#34;Large&#34;:&#34;Large&#34;,&#34;Wallpaper&#34;:&#34;Wallpaper&#34;,&#34;All types&#34;:&#34;All types&#34;,&#34;Photograph&#34;:&#34;Photograph&#34;,&#34;Clipart&#34;:&#34;Clipart&#34;,&#34;Animated GIF&#34;:&#34;Animated GIF&#34;,&#34;Transparent&#34;:&#34;Transparent&#34;,&#34;All layouts&#34;:&#34;All layouts&#34;,&#34;Square&#34;:&#34;Square&#34;,&#34;Tall&#34;:&#34;Tall&#34;,&#34;Wide&#34;:&#34;Wide&#34;,&#34;All colors&#34;:&#34;All colors&#34;,&#34;Black and white&#34;:&#34;Black and white&#34;,&#34;Color only&#34;:&#34;Color only&#34;,&#34;Red&#34;:&#34;Red&#34;,&#34;Orange&#34;:&#34;Orange&#34;,&#34;Yellow&#34;:&#34;Yellow&#34;,&#34;Green&#34;:&#34;Green&#34;,&#34;Blue&#34;:&#34;Blue&#34;,&#34;Purple&#34;:&#34;Purple&#34;,&#34;Pink&#34;:&#34;Pink&#34;,&#34;Brown&#34;:&#34;Brown&#34;,&#34;Black&#34;:&#34;Black&#34;,&#34;Gray&#34;:&#34;Gray&#34;,&#34;Teal&#34;:&#34;Teal&#34;,&#34;White&#34;:&#34;White&#34;,&#34;All licenses&#34;:&#34;All licenses&#34;,&#34;Public Domain&#34;:&#34;Public Domain&#34;,&#34;Free to Share and Use&#34;:&#34;Free to Share and Use&#34;,&#34;Free to Share and Use Commercially&#34;:&#34;Free to Share and Use Commercially&#34;,&#34;Free to Modify, Share and Use&#34;:&#34;Free to Modify, Share and Use&#34;,&#34;Free to Modify, Share and Use Commercially&#34;:&#34;Free to Modify, Share and Use Commercially&#34;,&#34;Any resolution&#34;:&#34;Any resolution&#34;,&#34;1080p&#34;:&#34;1080p&#34;,&#34;720p&#34;:&#34;720p&#34;,&#34;480p&#34;:&#34;480p&#34;,&#34;360p&#34;:&#34;360p&#34;,&#34;Any duration&#34;:&#34;Any duration&#34;,&#34;Short (less than 5 min)&#34;:&#34;Short (less than 5 min)&#34;,&#34;Medium (5 - 20 min)&#34;:&#34;Medium (5 - 20 min)&#34;,&#34;Long (over 20 min)&#34;:&#34;Long (over 20 min)&#34;,&#34;Anonymous local results&#34;:&#34;Anonymous local results&#34;,&#34;anonymous_local_results_description_short&#34;:&#34;Location information is derived from your IP address for more accurate results. It&#39;s stored only on your device. Brave never stores your IP or geo coordinates&#34;,&#34;Set manually&#34;:&#34;Set manually&#34;,&#34;Location set manually&#34;:&#34;Location set manually&#34;,&#34;Set location manually&#34;:&#34;Set location manually&#34;,&#34;No location&#34;:&#34;No location&#34;,&#34;Clear and get current location&#34;:&#34;Clear and get current location&#34;,&#34;Disable&#34;:&#34;Disable&#34;,&#34;Enable anonymous local results&#34;:&#34;Enable anonymous local results&#34;,&#34;On&#34;:&#34;On&#34;,&#34;Before-{date}&#34;:&#34;From {date}&#34;,&#34;From-{start_date}-to-{end_date}&#34;:&#34;From {start_date} to {end_date}&#34;,&#34;Move map to adjust current location&#34;:&#34;Move map to adjust current location&#34;,&#34;Done&#34;:&#34;Done&#34;}}"
+  defer="true">
+</script>
+<script
+  id="js-settings"
+  src="https://cdn.search.brave.com/serp/v1/static/serp-js/c3abbd07a41ed3e68759c7ab58ea434a359bf09e3a60dc95f5585a9584a6d95a-settings.bundle.js"
+  data="{&#34;is_mobile&#34;:false,&#34;default_possible&#34;:true,&#34;i18n&#34;:{&#34;See all settings&#34;:&#34;See all settings&#34;,&#34;Appearance&#34;:&#34;Appearance&#34;,&#34;Theme&#34;:&#34;Theme&#34;,&#34;Change the look of Brave Search&#34;:&#34;Change the look of Brave Search&#34;,&#34;General&#34;:&#34;General&#34;,&#34;Set language&#34;:&#34;Set language&#34;,&#34;Set as default&#34;:&#34;Set as default&#34;,&#34;Set default&#34;:&#34;Set default&#34;,&#34;Set Brave Search as default&#34;:&#34;Set Brave Search as default&#34;,&#34;Preferred language for Brave Search&#34;:&#34;Preferred language for Brave Search&#34;,&#34;Coming soon&#34;:&#34;Coming soon&#34;,&#34;Open links in new tab&#34;:&#34;Open links in new tab&#34;,&#34;olnt-description&#34;:&#34;Links clicked from search will open in a new browser tab&#34;,&#34;Learn more&#34;:&#34;Learn more&#34;,&#34;Your results independence&#34;:&#34;Your results independence&#34;,&#34;Global results independence&#34;:&#34;Global results independence&#34;,&#34;% of search results from Brave Index&#34;:&#34;% of search results from Brave Index&#34;,&#34;indep-metric-more-searches&#34;:&#34;More searches are needed to calculate your value&#34;,&#34;Info&#34;:&#34;Info&#34;,&#34;Tools&#34;:&#34;Tools&#34;,&#34;Response took {seconds} seconds&#34;:&#34;Response took {responseTime} seconds&#34;,&#34;All results from Brave&#34;:&#34;All results from Brave&#34;,&#34;x% of results mixed from third-parties&#34;:&#34;{thirdPartyPercentage}% of results mixed from third-parties&#34;,&#34;All regions&#34;:&#34;All regions&#34;,&#34;Argentina&#34;:&#34;Argentina&#34;,&#34;Australia&#34;:&#34;Australia&#34;,&#34;Austria&#34;:&#34;Austria&#34;,&#34;Belgium&#34;:&#34;Belgium&#34;,&#34;Brazil&#34;:&#34;Brazil&#34;,&#34;Canada&#34;:&#34;Canada&#34;,&#34;Chile&#34;:&#34;Chile&#34;,&#34;Denmark&#34;:&#34;Denmark&#34;,&#34;Finland&#34;:&#34;Finland&#34;,&#34;France&#34;:&#34;France&#34;,&#34;Germany&#34;:&#34;Germany&#34;,&#34;Hong Kong&#34;:&#34;Hong Kong&#34;,&#34;India&#34;:&#34;India&#34;,&#34;Indonesia&#34;:&#34;Indonesia&#34;,&#34;Italy&#34;:&#34;Italy&#34;,&#34;Japan&#34;:&#34;Japan&#34;,&#34;Korea&#34;:&#34;Korea&#34;,&#34;Malaysia&#34;:&#34;Malaysia&#34;,&#34;Mexico&#34;:&#34;Mexico&#34;,&#34;Netherlands&#34;:&#34;Netherlands&#34;,&#34;New Zealand&#34;:&#34;New Zealand&#34;,&#34;Norway&#34;:&#34;Norway&#34;,&#34;China&#34;:&#34;China&#34;,&#34;Poland&#34;:&#34;Poland&#34;,&#34;Portugal&#34;:&#34;Portugal&#34;,&#34;Philippines&#34;:&#34;Philippines&#34;,&#34;Russia&#34;:&#34;Russia&#34;,&#34;Saudi Arabia&#34;:&#34;Saudi Arabia&#34;,&#34;South Africa&#34;:&#34;South Africa&#34;,&#34;Spain&#34;:&#34;Spain&#34;,&#34;Sweden&#34;:&#34;Sweden&#34;,&#34;Switzerland&#34;:&#34;Switzerland&#34;,&#34;Taiwan&#34;:&#34;Taiwan&#34;,&#34;Turkey&#34;:&#34;Turkey&#34;,&#34;United Kingdom&#34;:&#34;United Kingdom&#34;,&#34;United States&#34;:&#34;United States&#34;,&#34;clear-verb&#34;:&#34;Clear&#34;,&#34;Safe search&#34;:&#34;Safe search&#34;,&#34;Search&#34;:&#34;Search&#34;,&#34;Moderate&#34;:&#34;Moderate&#34;,&#34;Strict&#34;:&#34;Strict&#34;,&#34;Off&#34;:&#34;Off&#34;,&#34;Make Brave Search default&#34;:&#34;Make Brave Search default&#34;,&#34;Show more&#34;:&#34;Show more&#34;,&#34;Search settings&#34;:&#34;Search settings&#34;,&#34;Quick settings&#34;:&#34;Quick settings&#34;,&#34;Search results independence&#34;:&#34;Search results independence&#34;,&#34;Search results independence description&#34;:&#34;&lt;strong&gt;Search results delivered solely from Brave Index&lt;/strong&gt; as opposed to mixing with big tech index. Private, not tracked.&#34;,&#34;All searches across all Brave Search users&#34;:&#34;All searches across all Brave Search users&#34;,&#34;Light&#34;:&#34;Light&#34;,&#34;Dark&#34;:&#34;Dark&#34;,&#34;Country&#34;:&#34;Country&#34;}}"
+  defer="true">
+</script>
+<script
+  id="js-feedback"
+  src="https://cdn.search.brave.com/serp/v1/static/serp-js/954a65b680c54b8e5de2346239a5ddd43ddd8ec4483b92db6612623a342b2cba-feedback.bundle.js"
+  data="{&#34;is_mobile&#34;:false,&#34;page&#34;:&#34;search&#34;,&#34;i18n&#34;:{&#34;Thank you!&#34;:&#34;Thank you!&#34;,&#34;How were the search results?&#34;:&#34;How were the search results?&#34;,&#34;Help us improve Brave Search&#34;:&#34;Help us improve Brave Search&#34;,&#34;What do you think of the information shown?&#34;:&#34;What do you think of the information shown?&#34;,&#34;Comments or suggestions?&#34;:&#34;Comments or suggestions?&#34;,&#34;Submit&#34;:&#34;Submit&#34;,&#34;Feedback&#34;:&#34;Feedback&#34;}}"
+  defer="true">
+</script>
+<script
+  id="js-searchElsewhere"
+  src="https://cdn.search.brave.com/serp/v1/static/serp-js/ad33004e1b20dc55992fd24d0754ac2c55cabb5c5e5af8d4fdcd890b8ffe24fe-searchElsewhere.bundle.js"
+  data="{&#34;is_mobile&#34;:false,&#34;is_fallback_api_available&#34;:false,&#34;query&#34;:&#34;minecraft&#34;,&#34;is_bad_query&#34;:null,&#34;i18n&#34;:{&#34;Learn more&#34;:&#34;Learn more&#34;,&#34;Find elsewhere&#34;:&#34;Find elsewhere&#34;,&#34;Dismiss and search in Google&#34;:&#34;Dismiss and search in Google&#34;,&#34;bad-results-header&#34;:&#34;Not many great matches came back for your search&#34;,&#34;Try more general keywords&#34;:&#34;Try more general keywords&#34;,&#34;Try fewer keywords&#34;:&#34;Try fewer keywords&#34;,&#34;bad-results-for-query-{query}&#34;:&#34;We&#39;re sorry you are not finding the results you wanted for &lt;strong&gt;{query}&lt;/strong&gt;&#34;,&#34;Enable Google Fallback Mixing&#34;:&#34;Enable Google Fallback Mixing&#34;,&#34;serp-fallback-cta-desc&#34;:&#34;For queries where Brave Search is not yet refined, your browser will anonymously check Google for the same query, mix the results for you and send the query data back to us so we can improve Brave Search for everyone.&#34;,&#34;Dismiss&#34;:&#34;Dismiss&#34;}}"
+  defer="true">
+</script>
+<script
+  id="js-ask-location"
+  src="https://cdn.search.brave.com/serp/v1/static/serp-js/54adcf6d543f6e26984bf35d8b99ab2f9946eb6da896e836f9d42b6dbe853b16-ask-location.bundle.js"
+  data="{&#34;is_mobile&#34;:false,&#34;lat&#34;:41.259,&#34;long&#34;:-95.852,&#34;is_geoloc&#34;:null,&#34;local_decision&#34;:&#34;drop&#34;}"
+  defer="true">
+</script>
+<script
+  id="js-gmix"
+  src="https://cdn.search.brave.com/serp/v1/static/serp-js/340de4f3305221fb9f00a0784faae239795e05fe193095bd7c717163e3a65c38-gmix.bundle.js"
+  data="{&#34;score&#34;:1.0,&#34;search&#34;:{&#34;query&#34;:{&#34;sf&#34;:false},&#34;mixed&#34;:{&#34;main&#34;:[{&#34;type&#34;:&#34;web&#34;,&#34;index&#34;:0},{&#34;type&#34;:&#34;web&#34;,&#34;index&#34;:1},{&#34;type&#34;:&#34;news&#34;,&#34;index&#34;:null},{&#34;type&#34;:&#34;web&#34;,&#34;index&#34;:2},{&#34;type&#34;:&#34;videos&#34;,&#34;index&#34;:null},{&#34;type&#34;:&#34;web&#34;,&#34;index&#34;:3},{&#34;type&#34;:&#34;web&#34;,&#34;index&#34;:4},{&#34;type&#34;:&#34;web&#34;,&#34;index&#34;:5},{&#34;type&#34;:&#34;web&#34;,&#34;index&#34;:6},{&#34;type&#34;:&#34;web&#34;,&#34;index&#34;:7},{&#34;type&#34;:&#34;search-elsewhere&#34;,&#34;index&#34;:0},{&#34;type&#34;:&#34;web&#34;,&#34;index&#34;:8},{&#34;type&#34;:&#34;web&#34;,&#34;index&#34;:9},{&#34;type&#34;:&#34;web&#34;,&#34;index&#34;:10},{&#34;type&#34;:&#34;web&#34;,&#34;index&#34;:11},{&#34;type&#34;:&#34;web&#34;,&#34;index&#34;:12},{&#34;type&#34;:&#34;web&#34;,&#34;index&#34;:13},{&#34;type&#34;:&#34;web&#34;,&#34;index&#34;:14},{&#34;type&#34;:&#34;web&#34;,&#34;index&#34;:15},{&#34;type&#34;:&#34;web&#34;,&#34;index&#34;:16}]},&#34;web&#34;:{&#34;results&#34;:[{&#34;url&#34;:&#34;https://www.minecraft.net/en-us&#34;,&#34;title&#34;:&#34;Minecraft Official Site | Minecraft&#34;,&#34;description&#34;:&#34;Explore new gaming adventures, accessories, &amp;amp; merchandise on the &lt;strong&gt;Minecraft&lt;/strong&gt; Official Site. Buy &amp;amp; download the game here, or check the site for the latest news.&#34;,&#34;ls&#34;:true,&#34;tc&#34;:true,&#34;ft&#34;:true,&#34;bt&#34;:null},{&#34;url&#34;:&#34;https://classic.minecraft.net/&#34;,&#34;title&#34;:&#34;Minecraft Classic&#34;,&#34;description&#34;:&#34;This version of &lt;strong&gt;Minecraft&lt;/strong&gt; requires a keyboard.&#34;,&#34;ls&#34;:true,&#34;tc&#34;:true,&#34;ft&#34;:true,&#34;bt&#34;:null},{&#34;url&#34;:&#34;https://play.google.com/store/apps/details?id=com.mojang.minecraftpe&amp;hl=en_US&amp;gl=US&#34;,&#34;title&#34;:&#34;Minecraft - Apps on Google Play&#34;,&#34;description&#34;:&#34;Millions of crafters have smashed billions of blocks! Now you can join the fun!&#34;,&#34;ls&#34;:true,&#34;tc&#34;:true,&#34;ft&#34;:true,&#34;bt&#34;:null},{&#34;url&#34;:&#34;https://twitter.com/Minecraft&#34;,&#34;title&#34;:&#34;Minecraft (@Minecraft) · Twitter&#34;,&#34;description&#34;:&#34;The latest tweets from &lt;strong&gt;Minecraft&lt;/strong&gt; (@&lt;strong&gt;Minecraft&lt;/strong&gt;)&#34;,&#34;ls&#34;:true,&#34;tc&#34;:true,&#34;ft&#34;:true,&#34;bt&#34;:null},{&#34;url&#34;:&#34;https://edu-next.minecraft.net/&#34;,&#34;title&#34;:&#34;Minecraft Education Edition: Minecraft Official Site&#34;,&#34;description&#34;:&#34;Find out how to use &lt;strong&gt;Minecraft&lt;/strong&gt; in the classroom. Get the latest information on &lt;strong&gt;Minecraft&lt;/strong&gt;: Education Edition, and take your students to the next level.&#34;,&#34;ls&#34;:true,&#34;tc&#34;:true,&#34;ft&#34;:true,&#34;bt&#34;:null},{&#34;url&#34;:&#34;https://en.wikipedia.org/wiki/Minecraft&#34;,&#34;title&#34;:&#34;Minecraft - Wikipedia&#34;,&#34;description&#34;:&#34;&lt;strong&gt;Minecraft&lt;/strong&gt; is a sandbox video game developed by the Swedish video game developer Mojang Studios. The game was created by Markus &amp;quot;Notch&amp;quot; Persson in the Java programming language. Following several early private testing versions, it was first made public in May 2009 before fully releasing in November ...&#34;,&#34;ls&#34;:true,&#34;tc&#34;:true,&#34;ft&#34;:true,&#34;bt&#34;:null},{&#34;url&#34;:&#34;https://education.minecraft.net/en-us/get-started/download&#34;,&#34;title&#34;:&#34;Download | Minecraft Education Edition&#34;,&#34;description&#34;:&#34;Learn how to download &lt;strong&gt;Minecraft&lt;/strong&gt; Education. Follow these simple instructions in order to access &lt;strong&gt;Minecraft&lt;/strong&gt; Education on your phone, computer or tablet.&#34;,&#34;ls&#34;:true,&#34;tc&#34;:true,&#34;ft&#34;:true,&#34;bt&#34;:null},{&#34;url&#34;:&#34;https://store.steampowered.com/app/1672970/Minecraft_Dungeons/&#34;,&#34;title&#34;:&#34;Minecraft Dungeons on Steam&#34;,&#34;description&#34;:&#34;Fight your way through an exciting action-adventure game, inspired by classic dungeon crawlers and set in the &lt;strong&gt;Minecraft&lt;/strong&gt; universe!&#34;,&#34;ls&#34;:true,&#34;tc&#34;:true,&#34;ft&#34;:true,&#34;bt&#34;:null},{&#34;url&#34;:&#34;https://apps.apple.com/us/app/minecraft/id479516143&#34;,&#34;title&#34;:&#34;‎Minecraft on the App Store&#34;,&#34;description&#34;:&#34;‎Read reviews, compare customer ratings, see screenshots, and learn more about &lt;strong&gt;Minecraft&lt;/strong&gt;. Download &lt;strong&gt;Minecraft&lt;/strong&gt; and enjoy it on your iPhone, iPad, and iPod touch.&#34;,&#34;ls&#34;:true,&#34;tc&#34;:true,&#34;ft&#34;:true,&#34;bt&#34;:null},{&#34;url&#34;:&#34;https://www.xbox.com/en-us/games/store/Minecraft/9NBLGGH537BL&#34;,&#34;title&#34;:&#34;Minecraft | Xbox&#34;,&#34;description&#34;:&#34;FEATURES Skin, texture, and mash-up packs from the community! Find out more at &lt;strong&gt;minecraft&lt;/strong&gt;.net/marketplace. ADD-ONS! Learn more at &lt;strong&gt;minecraft&lt;/strong&gt;.net/addons, where you can try some examples for free or learn to create your own. Realms! Play with up to 10 friends cross-platform in worlds that exist ...&#34;,&#34;ls&#34;:true,&#34;tc&#34;:true,&#34;ft&#34;:true,&#34;bt&#34;:null},{&#34;url&#34;:&#34;https://minecraft.fandom.com/wiki/Minecraft_Wiki&#34;,&#34;title&#34;:&#34;Minecraft Wiki – The Ultimate Resource for Minecraft&#34;,&#34;description&#34;:&#34;Welcome to the &lt;strong&gt;Minecraft&lt;/strong&gt; Wiki, a publicly accessible and editable wiki for information on the &lt;strong&gt;Minecraft&lt;/strong&gt; franchise. This wiki and its many articles and content for all the &lt;strong&gt;Minecraft&lt;/strong&gt;-related elements are managed and maintained by 760 active contributors from the &lt;strong&gt;Minecraft&lt;/strong&gt; community.&#34;,&#34;ls&#34;:true,&#34;tc&#34;:true,&#34;ft&#34;:true,&#34;bt&#34;:null},{&#34;url&#34;:&#34;https://www.microsoft.com/en-us/p/minecraft/9nblggh537bl&#34;,&#34;title&#34;:&#34;Buy Minecraft - Microsoft Store&#34;,&#34;description&#34;:&#34;Explore randomly generated worlds and build amazing things from the simplest of homes to the grandest of castles. Play in creative mode with unlimited resources or mine deep into the world in survival mode, crafting weapons and armor to fend off the dangerous mobs.&#34;,&#34;ls&#34;:true,&#34;tc&#34;:true,&#34;ft&#34;:true,&#34;bt&#34;:null},{&#34;url&#34;:&#34;https://www.microsoft.com/en-us/p/minecraft-for-windows-10/9nblggh2jhxj&#34;,&#34;title&#34;:&#34;Buy Minecraft for Windows 10 - Microsoft Store&#34;,&#34;description&#34;:&#34;Ray tracing for Windows 10 brings a different graphics experience to &lt;strong&gt;Minecraft&lt;/strong&gt;! Experience creator-built worlds with realistic lighting, vibrant colors, naturally reflective water and emissive textures that light up.&#34;,&#34;ls&#34;:true,&#34;tc&#34;:true,&#34;ft&#34;:true,&#34;bt&#34;:null},{&#34;url&#34;:&#34;https://www.youtube.com/watch?v=vQnfKoikihE&#34;,&#34;title&#34;:&#34;[AUDIO DESCRIPTION] Minecraft Live 2021 - YouTube&#34;,&#34;description&#34;:&#34;The live show is no longer live, but it lives forever as a recording! Watch us announce the next update, deliver the newest news, and vote for mobs over and ...&#34;,&#34;ls&#34;:true,&#34;tc&#34;:true,&#34;ft&#34;:true,&#34;bt&#34;:null},{&#34;url&#34;:&#34;https://minecraft.fandom.com/wiki/Minecraft&#34;,&#34;title&#34;:&#34;Minecraft – Minecraft Wiki&#34;,&#34;description&#34;:&#34;&lt;strong&gt;Minecraft&lt;/strong&gt; is a sandbox video game originally created by Markus &amp;quot;Notch&amp;quot; Persson. It is maintained by Mojang Studios, a part of Xbox Game Studios, which in turn is part of Microsoft. From its creation, &lt;strong&gt;Minecraft&lt;/strong&gt; was developed almost exclusively by Notch until Jens &amp;quot;Jeb&amp;quot; Bergensten started working ...&#34;,&#34;ls&#34;:true,&#34;tc&#34;:true,&#34;ft&#34;:true,&#34;bt&#34;:null},{&#34;url&#34;:&#34;https://help.minecraft.net/hc/en-us&#34;,&#34;title&#34;:&#34;Minecraft Help Center&#34;,&#34;description&#34;:&#34;Mojang © 2009-2020. &amp;quot;&lt;strong&gt;Minecraft&lt;/strong&gt;&amp;quot; is a trademark of Mojang Synergies AB&#34;,&#34;ls&#34;:true,&#34;tc&#34;:true,&#34;ft&#34;:true,&#34;bt&#34;:null},{&#34;url&#34;:&#34;https://www.youtube.com/user/TeamMojang&#34;,&#34;title&#34;:&#34;Minecraft - YouTube&#34;,&#34;description&#34;:&#34;This is the official YouTube channel of &lt;strong&gt;Minecraft&lt;/strong&gt;. We tell stories about the &lt;strong&gt;Minecraft&lt;/strong&gt; Universe. ESRB Rating: Everyone 10+ with Fantasy Violence&#34;,&#34;ls&#34;:true,&#34;tc&#34;:true,&#34;ft&#34;:true,&#34;bt&#34;:null}]}}}"
+  defer="true">
+</script>
+
+
+        <script src="/4d07ac85e3501ec7c35d46ba8f3260dc018add1014408ca223abe61295377af7-sw.bundle.js" defer="true"></script>
+    
+          </body>
+</html>
