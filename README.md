@@ -2,6 +2,9 @@
 A simple Python package for SEO position tracking from Google and other search engines.
 ___
 
+[![codecov](https://codecov.io/gh/dimitryzub/seo-position-tracker/branch/main/graph/badge.svg?token=RX5P8YWEZG)](https://codecov.io/gh/dimitryzub/seo-position-tracker)
+
+
 Currently, supports:
 - Google Search
 - Brave Search
