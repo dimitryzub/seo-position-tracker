@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "seo-position-tracker"
+homepage = "https://github.com/dimitryzub/seo-position-tracker"
+version = "0.1.0"
+description = "A simple Python package for SEO position tracking from Google and other search engines."
+authors = ["Dimitry Zub <dimitryzub@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+classifiers = [
+    "Intended Audience :: Developers",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<4.0"
+bs4 = "^0.0.1"
+lxml = "^4.6.3"
+requests = "^2.26.0"
+
+[tool.poetry.dev-dependencies]
+coverage = "^6.0.2"
+pytest = "^6.2.5"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
