@@ -1,0 +1,4 @@
+[run]
+omit =
+    # delete from here when added mocks to the file:
+    seo_position_tracker/seo_position_tracker.py
