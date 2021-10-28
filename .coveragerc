@@ -2,3 +2,6 @@
 omit =
     # delete from here when added mocks to the file:
     seo_position_tracker/seo_position_tracker.py
+    # no need to coverage them
+    seo_position_tracker/google_domains.py
+    seo_position_tracker/google_supported_languages.py
