@@ -1,6 +1,5 @@
 # Seo Position Tracker 📡
 A simple Python package for SEO position tracking from Google and other search engines.
-___
 
 [![codecov](https://codecov.io/gh/dimitryzub/seo-position-tracker/branch/main/graph/badge.svg?token=RX5P8YWEZG)](https://codecov.io/gh/dimitryzub/seo-position-tracker)
 ![CI workflow](https://github.com/dimitryzub/seo-position-tracker/actions/workflows/ci.yml/badge.svg)
@@ -9,10 +8,9 @@ ___
 ![python versions](https://img.shields.io/pypi/pyversions/seo-position-tracker)
 ![licence brought by shields.io](https://img.shields.io/github/license/dimitryzub/seo-position-tracker?color=blue)
 
-
 ![twitter account brought by shield.io](https://img.shields.io/twitter/follow/DimitryZub?style=social)
 
-
+___
 
 Currently, supports:
 - Google Search
