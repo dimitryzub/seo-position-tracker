@@ -21,8 +21,6 @@ See [how results being checked](https://github.com/dimitryzub/seo-position-track
 
 ## 🤹‍♂️Usage
 
-_The following examples will be pretty much the same for other search engines._
-
 Each `get_SEARCH_ENGINE_NAME_position()` will have its own arguments. 
 
 #### 1. Define parameters
