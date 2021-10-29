@@ -3,6 +3,15 @@ A simple Python package for SEO position tracking from Google and other search e
 ___
 
 [![codecov](https://codecov.io/gh/dimitryzub/seo-position-tracker/branch/main/graph/badge.svg?token=RX5P8YWEZG)](https://codecov.io/gh/dimitryzub/seo-position-tracker)
+![CI workflow](https://github.com/dimitryzub/seo-position-tracker/actions/workflows/ci.yml/badge.svg)
+[![Downloads](https://static.pepy.tech/personalized-badge/seo-position-tracker?period=month&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/seo-position-tracker)
+
+![python versions](https://img.shields.io/pypi/pyversions/seo-position-tracker)
+![licence brought by shields.io](https://img.shields.io/github/license/dimitryzub/seo-position-tracker?color=blue)
+
+
+![twitter account brought by shield.io](https://img.shields.io/twitter/follow/DimitryZub?style=social)
+
 
 
 Currently, supports:
@@ -18,7 +27,7 @@ _The following examples will be pretty much the same for other search engines._
 
 Each `get_SEARCH_ENGINE_NAME_position()` will have its own arguments. 
 
-#### Define parameters
+#### 1. Define parameters
 
 ```python
 # define parameters and pass them to PositionTracker() class
@@ -29,7 +38,7 @@ params = {
 }
 ```
 
-#### Get position only
+#### 2. Get position only
 
 ```python
 from seo_position_tracker import PositionTracker
@@ -39,7 +48,7 @@ PositionTracker(params=params).get_google_position(return_position_only=True)
 # [3] (third position on the first page)
 ```
 
-#### Get position with additional info
+#### 3. Get position with additional info
 
 ```python
 from seo_position_tracker import PositionTracker
