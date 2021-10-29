@@ -28,6 +28,8 @@ Each `get_SEARCH_ENGINE_NAME_position()` will have its own arguments.
 #### 1. Define parameters
 
 ```python
+from seo_position_tracker import PositionTracker
+
 # define parameters and pass them to PositionTracker() class
 params = {
     "query": "minecraft",
@@ -39,8 +41,6 @@ params = {
 #### 2. Get position only
 
 ```python
-from seo_position_tracker import PositionTracker
-
                              # other_search_engine()
 PositionTracker(params=params).get_google_position(return_position_only=True)
 # [3] (third position on the first page)
@@ -49,8 +49,6 @@ PositionTracker(params=params).get_google_position(return_position_only=True)
 #### 3. Get position with additional info
 
 ```python
-from seo_position_tracker import PositionTracker
-
                              # other_search_engine()
 PositionTracker(params=params).get_google_position(country="uk", lang="en") # change to what you need
 
