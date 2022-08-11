@@ -1,0 +1,25 @@
+tasks:
+  - name: Update Linux and Install other Dependencies
+    init: |
+      sudo apt-get update -y && sudo apt-get upgrade -y
+  - name: Install Python Dependencies
+    init: |
+      pip install poetry
+      poetry install
+      poetry update
+      poetry shell
+
+github:
+  prebuilds:
+    addBadge: true
+  
+vscode:
+  extensions:
+    - usernamehw.errorlens
+    - vscode-icons-team.vscode-icons
+    - bierner.markdown-preview-github-styles
+    - ms-python.python
+    - KevinRose.vsc-python-inden
+    - eamodio.gitlens
+    - Gruntfuggly.todo-tree
+    - GrapeCity.gc-excelviewer
