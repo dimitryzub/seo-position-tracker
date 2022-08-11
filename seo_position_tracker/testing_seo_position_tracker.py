@@ -13,8 +13,7 @@ Thinking behind it: First, make it stupidly simple that just works.
 '''
 
 from pathlib import Path
-from bs4 import BeautifulSoup
-import lxml
+from serpapi import GoogleSearch
 
 HTMLS = {
     "google": Path(__file__).parent.resolve() / "htmls" / "google_tracker.html",
