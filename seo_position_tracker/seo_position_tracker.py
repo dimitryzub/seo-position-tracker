@@ -1,60 +1,62 @@
+# TODO: support ad results. Organic AND ads.
+
+import pandas as pd
 import argparse, json
 from serpapi import GoogleSearch
-import pandas as pd
 
-parser = argparse.ArgumentParser(prog='SerpApi SEO Position Tracker')
+# engines = ['google', 'bing', 'baidu', 'yahoo', 'duckduckgo', 'naver', 'yandex']  # multiple --search-engine, will be added in the next updates.
 
+parser = argparse.ArgumentParser(description='SerpApi SEO position tracker.')
 # usage: --api-key 213128sad or --api-key=213128sad or --api-key="213128sad"
-parser.add_argument('--api-key', required=True, type=str, help='Your SerpApi API key.')
-parser.add_argument('-se', '--search-engine', type=str, default='google', help='Search engine where search happens.')
-parser.add_argument('-po', '--position-only', action='store_true', help='Returns website position only')
+parser.add_argument('--api-key', required=True, type=str, help='your SerpApi API key. For more: https://serpapi.com/manage-api-key')
+parser.add_argument('-se', type=str, default='google', help=f'search engine. Currently only one can be passed. Default: Google')
+parser.add_argument('-po', action='store_true', help='returns website position only.')
 
-# usage: python <script.py> -q="<your are breathtaking and this sentance is long and beautiful>". Same with --search_query
+# usage: python <script.py> -q="<your are breathtaking>". Same with --search_query
 parser.add_argument(
     '-q',
-    '--search-query',
     type=str,
     default='coffee',
-    help='Search query. Default: "Coffee"',
+    help='search query. Default: "Coffee"',
 )
 parser.add_argument(
     '-tk',
-    '--target-keyword',
     type=str,
-    nargs='+',
+    # nargs='+', # will be added in the next update
     default='coffee',
-    help='Target keyword to track. Should be at least 1. Default: "Coffee"',
+    help='target keyword to track. Default: "coffee". Currently only one can be passed.',
 )
 parser.add_argument(
     '-tw',
-    '--target-website',
     type=str,
-    nargs='+',
+    # nargs='+', # will be added in the next update
     default='starbucks.com',
-    help='Target website to track. Should be at least 1. Default: "starbucks.com"',
+    help='target website to track. Default: "starbucks.com". Currently only one can be passed.',
 )
-parser.add_argument('--to-csv', action='store_true', help='Saves Results to CSV.')
-parser.add_argument('--to-json', action='store_true', help='Saves Results to JSON.')
+parser.add_argument('-l', type=str, default='en', help='language of the search. For more: https://serpapi.com/google-languages')
+parser.add_argument('-c', type=str, default='us', help='country of the search. For more: https://serpapi.com/google-countries')
+parser.add_argument('-loc', type=str, default='United States', help='location of the search. For more: https://serpapi.com/locations-api')
+parser.add_argument('--to-csv', action='store_true', help='saves results in the current directory to csv.')
+parser.add_argument('--to-json', action='store_true', help='saves results in the current directory to json.')
 
 args = parser.parse_args()
+print(args)
 
-for keyword, website in zip(args.target_keyword, args.target_website):
-    print(website)
-    print(keyword)
+# TODO: support for multiple engines: bing, baidu, yahoo, duckduckgo, naver, yandex
+# TODO: support multiple target keywords (keywords with spaces) and multiple target websites.
 
 def main():
-
-    for website, keyword in zip(args.target_website, args.target_keyword):
+    for keyword, website in zip(args.tk, args.tw):
         params = {
             'api_key': args.api_key,
-            'engine': 'google',
-            'q': args.search_query,
-            'hl': 'en',
-            'gl': 'us',
-            'location': 'United States',
-            'google_domain': 'google.com',
-            'num': 100
+            'engine': args.se,
+            'q': args.q,
+            'hl': args.l,
+            'gl': args.c,
+            'location': args.loc,
+            'num': 100                  # 100 results from Google search
         }
+        print(params)
 
         search = GoogleSearch(params)
         results = search.get_dict()
@@ -62,22 +64,7 @@ def main():
         position_data = []
 
         for result in results['organic_results']:
-            if (
-                keyword in result['title'].lower()
-                and keyword in result['link']
-                and website in result['link']
-                and args.position_only
-            ):
-                position_data.append(result['position'])
-
-                return position_data
-
-            if (
-                keyword in result['title'].lower()
-                and keyword in result['link']
-                and website in result['link']
-                and not args.position_only
-            ):
+            if keyword.lower() in result['title'].lower() and website in result['link'] and not args.po:
                 position_data.append(
                     {
                         'position': result['position'],
@@ -87,24 +74,31 @@ def main():
                     }
                 )
 
-                return position_data
+            if keyword.lower() in result['title'].lower() and website in result['link'] and args.po:
+                position_data.append(result['position'])
+
+        return position_data
 
 
 if __name__ == '__main__':
-    if not args.position_only:
+    # [1] or [1, 5, 20] - 1st, 5th and 20th positions
+    if args.po:
+        print(main())
+
+    if not args.po:
         print(json.dumps(main(), indent=2, ensure_ascii=False))
 
         if args.to_csv:
-            df = pd.DataFrame(main()).to_csv(f'position_for_{args.search_query}_and_{args.target_website}.csv', index=False, encoding='utf-8')
-            print(f'Saved to "position_for_{args.search_query}_and_{args.target_website}.csv"')
+            # chnage file output to the one you understand
+            df = pd.DataFrame(main()).to_csv(f'results_for_query_{args.search_query.replace(" ", "_")}.csv', index=False, encoding='utf-8')
+            print(f'Saved to "results_for_query_{args.search_query.replace(" ", "_")}.csv"')
 
         if args.to_json:
-            pd.DataFrame(main()).to_json(f'position_for_{args.search_query}_and_{args.target_website}.json', orient='records', lines=True)
-            print(f'Saved to "position_for_{args.search_query}_and_{args.target_website}.json"')
+            # chnage file output to the one you understand
+            pd.DataFrame(main()).to_json(f'results_for_query_{args.search_query.replace(" ", "_")}.json', orient='records')
+            print(f'Saved to "results_for_query_{args.search_query.replace(" ", "_")}.json"')
 
-    # [1] -> 1
-    if args.position_only:
-        print(main()[0])
+    
 
     
 
