@@ -45,45 +45,46 @@ args = parser.parse_args()
 # TODO: support multiple target keywords (keywords with spaces) and multiple target websites.
 
 def main():
-    for keyword, website in zip(args.tk, args.tw):
-        params = {
-            'api_key': args.api_key,
-            'engine': args.se,
-            'q': args.q,
-            'hl': args.l,
-            'gl': args.c,
-            'location': args.loc,
-            'num': 100                  # 100 results from Google search
-        }
+    params = {
+        'api_key': args.api_key,
+        'engine': args.se,
+        'q': args.q,
+        'hl': args.l,
+        'gl': args.c,
+        'location': args.loc,
+        'num': 100                  # 100 results from Google search
+    }
 
-        search = GoogleSearch(params)
-        results = search.get_dict()
+    search = GoogleSearch(params)
+    results = search.get_dict()
 
-        position_data = []
+    position_data = []
 
-        for result in results['organic_results']:
-            if keyword.lower() in result['title'].lower() and website in result['link'] and not args.po:
-                position_data.append(
-                    {
-                        'position': result['position'],
-                        'country_of_the_search': params['gl'],
-                        'title': result['title'],
-                        'link': result['link'],
-                    }
-                )
+    for result in results['organic_results']:
+        if args.tk.lower() in result['title'].lower() and args.tw in result['link'] and not args.po:
+            position_data.append(
+                {
+                    'position': result['position'],
+                    'country_of_the_search': params['gl'],
+                    'title': result['title'],
+                    'link': result['link'],
+                }
+            )
 
-            if keyword.lower() in result['title'].lower() and website in result['link'] and args.po:
-                position_data.append(result['position'])
+        if args.tk.lower() in result['title'].lower() and args.tw in result['link'] and args.po:
+            position_data.append(result['position'])
 
-        return position_data
+    return position_data
 
 
 if __name__ == '__main__':
     # [1] or [1, 5, 20] - 1st, 5th and 20th positions
     if args.po:
+        # main()
         print(main())
 
     if not args.po:
+        # main()
         print(json.dumps(main(), indent=2, ensure_ascii=False))
 
         if args.to_csv:
