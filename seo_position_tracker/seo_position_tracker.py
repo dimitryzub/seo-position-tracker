@@ -33,14 +33,13 @@ parser.add_argument(
     default='starbucks.com',
     help='target website to track. Default: "starbucks.com". Currently only one can be passed.',
 )
-parser.add_argument('-l', type=str, default='en', help='language of the search. For more: https://serpapi.com/google-languages')
-parser.add_argument('-c', type=str, default='us', help='country of the search. For more: https://serpapi.com/google-countries')
-parser.add_argument('-loc', type=str, default='United States', help='location of the search. For more: https://serpapi.com/locations-api')
+parser.add_argument('-l', type=str, default='en', help='language of the search. Default: "en" - English. For more: https://serpapi.com/google-languages')
+parser.add_argument('-c', type=str, default='us', help='country of the search. Default: "us" - United States. For more: https://serpapi.com/google-countries')
+parser.add_argument('-loc', type=str, default='United States', help='location of the search. Default: "United States". For more: https://serpapi.com/locations-api')
 parser.add_argument('--to-csv', action='store_true', help='saves results in the current directory to csv.')
 parser.add_argument('--to-json', action='store_true', help='saves results in the current directory to json.')
 
 args = parser.parse_args()
-print(args)
 
 # TODO: support for multiple engines: bing, baidu, yahoo, duckduckgo, naver, yandex
 # TODO: support multiple target keywords (keywords with spaces) and multiple target websites.
@@ -56,7 +55,6 @@ def main():
             'location': args.loc,
             'num': 100                  # 100 results from Google search
         }
-        print(params)
 
         search = GoogleSearch(params)
         results = search.get_dict()
