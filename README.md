@@ -4,8 +4,6 @@
 
 <div align="center">
 
-  <a href="https://codecov.io/gh/dimitryzub/seo-position-tracker">![codecov](https://codecov.io/gh/dimitryzub/seo-position-tracker/branch/main/graph/badge.svg?token=RX5P8YWEZG)</a>
-  <a href="">![CI workflow](https://github.com/dimitryzub/seo-position-tracker/actions/workflows/ci.yml/badge.svg)</a>
   <a href="https://pepy.tech/project/seo-position-tracker">![Downloads](https://static.pepy.tech/personalized-badge/seo-position-tracker?period=month&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)</a>
   <a href="">![licence](https://img.shields.io/github/license/dimitryzub/seo-position-tracker?color=blue)</a>
 
