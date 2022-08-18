@@ -4,7 +4,7 @@ homepage = "https://github.com/dimitryzub/seo-position-tracker"
 version = "1.0.0"
 description = "A simple Python package for SEO position tracking from Google and other search engines."
 authors = ["Dimitry Zub <dimitryzub@gmail.com>"]
-license = "MIT"
+license = "BSD-3-Clause"
 readme = "README.md"
 classifiers = [
     "Intended Audience :: Developers",
