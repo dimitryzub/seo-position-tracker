@@ -1,5 +1,4 @@
 import argparse
-import json
 import pandas as pd
 from serpapi import GoogleSearch
 from typing import Optional
