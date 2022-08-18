@@ -1,103 +1,111 @@
-# Seo Position Tracker 📡
-A simple Python package for SEO position tracking from Google and other search engines.
+<h1 align="center">SEO Position Tracker 📡</h1>
 
-[![codecov](https://codecov.io/gh/dimitryzub/seo-position-tracker/branch/main/graph/badge.svg?token=RX5P8YWEZG)](https://codecov.io/gh/dimitryzub/seo-position-tracker)
-![CI workflow](https://github.com/dimitryzub/seo-position-tracker/actions/workflows/ci.yml/badge.svg)
-[![Downloads](https://static.pepy.tech/personalized-badge/seo-position-tracker?period=month&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/seo-position-tracker)
+<p align="center">A simple Python tool for SEO position tracking from Google and other search engines.</p>
 
-![python versions](https://img.shields.io/pypi/pyversions/seo-position-tracker)
-![licence brought by shields.io](https://img.shields.io/github/license/dimitryzub/seo-position-tracker?color=blue)
+<div align="center">
 
-![twitter account brought by shield.io](https://img.shields.io/twitter/follow/DimitryZub?style=social)
+  <a href="https://codecov.io/gh/dimitryzub/seo-position-tracker">![codecov](https://codecov.io/gh/dimitryzub/seo-position-tracker/branch/main/graph/badge.svg?token=RX5P8YWEZG)</a>
+  <a href="">![CI workflow](https://github.com/dimitryzub/seo-position-tracker/actions/workflows/ci.yml/badge.svg)</a>
+  <a href="https://pepy.tech/project/seo-position-tracker">![Downloads](https://static.pepy.tech/personalized-badge/seo-position-tracker?period=month&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)</a>
+  <a href="">![licence](https://img.shields.io/github/license/dimitryzub/seo-position-tracker?color=blue)</a>
 
-___
+</div>
 
-Currently, supports:
-- Google Search
-- Brave Search
+
+## 🔎 Current search engines support
+
+- Google Search - looks for first 100 organic results.
 - [See what's coming next](https://github.com/dimitryzub/seo-position-tracker/projects).
 
-See [how results being checked](https://github.com/dimitryzub/seo-position-tracker/#-how-results-are-being-filtered).
-
-## 🤹‍♂️Usage
-
-Each `get_SEARCH_ENGINE_NAME_position()` will have its own arguments. 
-
-#### 1. Define parameters
-
-```python
-from seo_position_tracker import PositionTracker
-
-# define parameters and pass them to PositionTracker() class
-params = {
-    "query": "minecraft",
-    "target_keyword": "minecraft",
-    "target_website": "play.google.com"
-}
-```
-
-#### 2. Get position only
-
-```python
-                             # other_search_engine()
-PositionTracker(params=params).get_google_position(return_position_only=True)
-# [3] (third position on the first page)
-```
-
-#### 3. Get position with additional info
-
-```python
-                             # other_search_engine()
-PositionTracker(params=params).get_google_position(country="uk", lang="en") # change to what you need
-
-'''
-[
-  {
-    "position": 3,
-    "title": "minecraft - apps on google play",
-    "link": "https://play.google.com/store/apps/details?id=com.mojang.minecraftpe&hl=en_us&gl=us"
-  }
-  # might be other results.. 
-]
-'''
-```
-
-## 🛸 How results are being filtered
-
-Result comes out of checking if **target_keyword** is in _title_ and _link_, and **target_website** is in _link_. 
-
-```python
-params = {
-    "query": "minecraft",                 # just a query
-    "target_keyword": "minecraft",        # being checked for match both in title and link
-    "target_website": "play.google.com"   # checks for match in website URL 
-}
-
-
-#                target_website                                target_keyword
-#                     ↓↓↓                                           ↓↓↓
-# Link: https://play.google.com/store/apps/details?id=com.mojang.minecraftpe&hl=en&gl=US
-
-# ------------------------------------------
-
-#      target_keyword     
-#           ↓↓↓
-# Title: Minecraft - Apps on Google Play
-```
 
 ## ⚙️Installation
 
-```python
-pip install seo-position-tracker
+```bash
+$ pip install seo-position-tracker
+```
+
+```bash
+$ git clone https://github.com/dimitryzub/seo-position-tracking.git
+```
+
+
+## 🤹‍♂️Usage
+
+#### Available CLI arugments:
+
+```bash
+$ python seo_position_tracker.py -h 
 ```
 
 ```lang-none
-git clone https://github.com/dimitryzub/seo-position-tracking.git
+SerpApi SEO position tracker.
+
+optional arguments:
+  -h, --help         show this help message and exit
+  --api-key API_KEY  your SerpApi API key. For more: https://serpapi.com/manage-api-key
+  -se SE             search engine. Currently only one can be passed. Default: Google
+  -po                returns website position only.
+  -q Q               search query. Default: "Coffee"
+  -tk TK             target keyword to track. Default: "coffee". Currently only one can be passed.
+  -tw TW             target website to track. Default: "starbucks.com". Currently only one can be passed.
+  -l L               language of the search. Default: "en" - English. For more: https://serpapi.com/google-languages
+  -c C               country of the search. Default: "us" - United States. For more: https://serpapi.com/google-countries
+  -loc LOC           location of the search. Default: "United States". For more: https://serpapi.com/locations-api
+  --to-csv           saves results in the current directory to csv.
+  --to-json          saves results in the current directory to json.
+```
+
+#### Example:
+
+```bash
+$ python seo_position_tracker.py --api-key=<your_serpapi_api_key> \
+> -q="minecraft buy" \
+> -tk minecraft \
+> -tw minecraft.net \
+> -l en -c us
+```
+
+```json
+[
+  {
+    "position": 1,
+    "country_of_the_search": "us",
+    "title": "Get Minecraft: Gaming Platform Features",
+    "link": "https://www.minecraft.net/en-us/get-minecraft"
+  },
+  {
+    "position": 5,
+    "country_of_the_search": "us",
+    "title": "I Want to Buy Minecraft on a Non-Windows Device",
+    "link": "https://help.minecraft.net/hc/en-us/articles/6661712171405-I-Want-to-Buy-Minecraft-on-a-Non-Windows-Device"
+  }
+]
 ```
 
 
-## 💡Suggestions
-For suggestions, visit [suggestions](https://github.com/dimitryzub/seo-position-tracking/discussions) page.
 
-## 🔦Issues
-For issues, visit [issues](https://github.com/dimitryzub/seo-position-tracking/issues) page.
+#### Get position only
+
+```bash
+$ python seo_position_tracker.py --api-key=<your_serpapi_api_key> \
+> -q="minecraft buy" \
+> -tk minecraft \
+> -tw  minecraft.net \
+> -l en -c us \
+> -po
+```
+
+```lang-none
+[1]
+# or 
+[1, 5, ...]
+```
+
+## 💡Issues or suggestions
+
+Visit [issues](https://github.com/dimitryzub/seo-position-tracking/issues) page.
+
+## 📜 Licence
+
+SEO Position Tracker is released under the [BSD-3-Clause Licence](https://github.com/dimitryzub/seo-position-tracker/blob/407a561b23e0905d88e4d9dd22390330e96889e1/LICENSE).
+

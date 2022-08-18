@@ -1,87 +1,93 @@
-import requests, lxml
-from bs4 import BeautifulSoup
-
-# TODO: add list of countries Google domain as an optional argument: "google.br/google.uk/google.au", etc.
-# TODO: add corresponding language ("hl" param) to defined Google domain. Example: if google.br -> hl:es (spanish)
-# TODO: loop through all domains with appropriate language (later big release)
-
-params = {
-    "query": "minecraft",
-    "target_keyword": "minecraft",
-    "target_website": "play.google.com",
-}
+import argparse
+import pandas as pd
+from serpapi import GoogleSearch
+from typing import Optional
+from typing import Sequence
 
 
-class PositionTracker:
+# TODO: support ad results. Organic AND ads.
+# TODO: support for multiple engines: bing, baidu, yahoo, duckduckgo, naver, yandex
+# TODO: support multiple target keywords (keywords with spaces) and multiple target websites.
 
-    def __init__(self, params: {}):
-        self.query = params["query"].lower().strip()
-        self.target_keyword = params["target_keyword"].lower().strip()
-        self.target_website = params["target_website"].lower().strip().replace(" ", "")
+def main(argv: Optional[Sequence[str]] = None) -> int:
+    # engines = ['google', 'bing', 'baidu', 'yahoo', 'duckduckgo', 'naver', 'yandex']  # multiple --search-engine, will be added in the next updates.
+    parser = argparse.ArgumentParser(description='SerpApi SEO position tracker.')
+    # usage: --api-key 213128sad or --api-key=213128sad or --api-key="213128sad"
+    parser.add_argument('--api-key', required=True, type=str, help='your SerpApi API key. For more: https://serpapi.com/manage-api-key')
+    parser.add_argument('-se', type=str, default='google', help=f'search engine. Currently only one can be passed. Default: Google')
+    parser.add_argument('-po', action='store_true', help='returns website position only.')
 
-    def get_google_position(self, lang: str = "en", country: str = "us", return_position_only: bool = False):
+    # usage: python <script.py> -q="<your are breathtaking>". Same with --search_query
+    parser.add_argument(
+        '-q',
+        type=str,
+        default='coffee',
+        help='search query. Default: "Coffee"',
+    )
+    parser.add_argument(
+        '-tk',
+        type=str,
+        # nargs='+', # will be added in the next update
+        default='coffee',
+        help='target keyword to track. Default: "coffee". Currently only one can be passed.',
+    )
+    parser.add_argument(
+        '-tw',
+        type=str,
+        # nargs='+', # will be added in the next update
+        default='starbucks.com',
+        help='target website to track. Default: "starbucks.com". Currently only one can be passed.',
+    )
+    parser.add_argument('-l', type=str, default='en', help='language of the search. Default: "en" - English. For more: https://serpapi.com/google-languages')
+    parser.add_argument('-c', type=str, default='us', help='country of the search. Default: "us" - United States. For more: https://serpapi.com/google-countries')
+    parser.add_argument('-loc', type=str, default='United States', help='location of the search. Default: "United States". For more: https://serpapi.com/locations-api')
+    parser.add_argument('--to-csv', action='store_true', help='saves results in the current directory to csv.')
+    parser.add_argument('--to-json', action='store_true', help='saves results in the current directory to json.')
 
-        headers = {
-            "User-Agent":
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.19582"
-        }
+    args = parser.parse_args(argv)
 
-        params = {
-            "q": self.query,
-            "hl": lang,
-            "gl": country
-        }
+    params = {
+        'api_key': args.api_key,
+        'engine': args.se,
+        'q': args.q,
+        'hl': args.l,
+        'gl': args.c,
+        'location': args.loc,
+        'num': 100                  # 100 results from Google search
+    }
 
-        html = requests.get("https://www.google.com/search", params=params, headers=headers)
-        soup = BeautifulSoup(html.text, "lxml")
+    search = GoogleSearch(params)
+    results = search.get_dict()
 
-        # if bad response from soup -> don't save HTML, otherwise -> SAVE to test it.
+    position_data = []
 
-        position_data = []
+    for result in results['organic_results']:
+        if args.tk.lower() in result['title'].lower() and args.tw in result['link'] and not args.po:
+            position_data.append(
+                {
+                    'position': result['position'],
+                    'country_of_the_search': params['gl'],
+                    'title': result['title'],
+                    'link': result['link'],
+                }
+            )
 
-        for index, result in enumerate(soup.select(".tF2Cxc")):
-            title = result.select_one(".DKV0Md").text.lower()
-            link = result.select_one(".yuRUbf a")["href"].lower()
+        # [1] or [1, 5, 20] - 1st, 5th and 20th positions
+        if args.tk.lower() in result['title'].lower() and args.tw in result['link'] and args.po:
+            position_data.append(result['position'])
 
-            if self.target_keyword in title and self.target_keyword in link and self.target_website in link and return_position_only:
-                position_data.append(index + 1)
+    if args.to_json:
+        # chnage file output to the one you understand
+        pd.DataFrame(main()).to_json(f'results_for_query_{args.search_query.replace(" ", "_")}.json', orient='records')
+        print(f'Saved to "results_for_query_{args.search_query.replace(" ", "_")}.json"')
 
-            if self.target_keyword in title and self.target_keyword in link and self.target_website in link and not return_position_only:
-                position_data.append({
-                    "position": index + 1,
-                    "country_of_the_search": country,
-                    "title": title,
-                    "link": link
-                })
+    if args.to_csv:
+        # chnage file output to the one you understand
+        pd.DataFrame(main()).to_csv(f'results_for_query_{args.search_query.replace(" ", "_")}.csv', index=False, encoding='utf-8')
+        print(f'Saved to "results_for_query_{args.search_query.replace(" ", "_")}.csv"')
 
-        return position_data
+    return position_data
 
-    def get_brave_search_position(self, return_position_only: bool = False):
 
-        headers = {
-            "User-Agent":
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.19582"
-        }
-
-        params = {"q": self.query}
-
-        html = requests.get("https://search.brave.com/search", params=params, headers=headers)
-        soup = BeautifulSoup(html.text, "lxml")
-
-        position_data = []
-
-        for index, result in enumerate(soup.select(".snippet.fdb")):
-            title = result.select_one(".snippet-title").text.lower().strip()
-            link = result.select_one("a")["href"].lower().strip()
-
-            if self.target_keyword in title and self.target_keyword in link and self.target_website in link and return_position_only:
-                position_data.append(index + 1)
-
-            if self.target_keyword in title and self.target_keyword in link and self.target_website in link and not return_position_only:
-                position_data.append({
-                    "position": index + 1,
-                    "title": title,
-                    "link": link
-                })
-
-        return position_data
+if __name__ == '__main__':
+    exit(main())
