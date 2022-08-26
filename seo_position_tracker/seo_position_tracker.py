@@ -16,27 +16,28 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     parser.add_argument('--api-key', required=True, type=str, help='your SerpApi API key. For more: https://serpapi.com/manage-api-key')
     parser.add_argument('-se', type=str, default='google', help=f'search engine. Currently only one can be passed. Default: Google')
     parser.add_argument('-po', action='store_true', help='returns website position only.')
-
+    parser.add_argument('-s', action='store_true', help='strict mode. Checks if target_keyword in title and in URL and target website in URL.')
+    
     # usage: python <script.py> -q="<your are breathtaking>". Same with --search_query
     parser.add_argument(
         '-q',
         type=str,
         default='coffee',
-        help='search query. Default: "Coffee"',
+        help='search query. Default: "Coffee"'
     )
     parser.add_argument(
         '-tk',
         type=str,
         # nargs='+', # will be added in the next update
         default='coffee',
-        help='target keyword to track. Default: "coffee". Currently only one can be passed.',
+        help='target keyword to track. Default: "coffee". Currently only one can be passed.'
     )
     parser.add_argument(
         '-tw',
         type=str,
         # nargs='+', # will be added in the next update
         default='starbucks.com',
-        help='target website to track. Default: "starbucks.com". Currently only one can be passed.',
+        help='target website to track. Default: "starbucks.com". Currently only one can be passed.'
     )
     parser.add_argument('-l', type=str, default='en', help='language of the search. Default: "en" - English. For more: https://serpapi.com/google-languages')
     parser.add_argument('-c', type=str, default='us', help='country of the search. Default: "us" - United States. For more: https://serpapi.com/google-countries')
@@ -47,33 +48,44 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     args = parser.parse_args(argv)
 
     params = {
-        'api_key': args.api_key,
-        'engine': args.se,
-        'q': args.q,
-        'hl': args.l,
-        'gl': args.c,
-        'location': args.loc,
+        'api_key': args.api_key,    # serpapi api key
+        'engine': args.se,          # serpapi parasing engine
+        'q': args.q,                # search query
+        'hl': args.l,               # language of the search
+        'gl': args.c,               # country of the search
+        'location': args.loc,       # location of the search
         'num': 100                  # 100 results from Google search
     }
 
-    search = GoogleSearch(params)
-    results = search.get_dict()
+    search = GoogleSearch(params)   # where data extraction happens on the serpapi backend
+    results = search.get_dict()     # JSON -> Python dict
 
     position_data = []
 
     for result in results['organic_results']:
-        if args.tk.lower() in result['title'].lower() and args.tw in result['link'] and not args.po:
+        # strict mode argument
+        if args.s:
+            if args.tk.lower() in result['title'].lower() and args.tk.lower() in result['link'] and args.tw in result['link'] and not args.po:
+                position_data.append(
+                    {
+                        'position': result['position'],
+                        'country_of_the_search': params['gl'],
+                        'title': result['title'],
+                        'link': result['link']
+                    }
+                )
+        elif args.tk.lower() in result['title'].lower() and args.tw in result['link'] and not args.po:
             position_data.append(
                 {
                     'position': result['position'],
                     'country_of_the_search': params['gl'],
                     'title': result['title'],
-                    'link': result['link'],
+                    'link': result['link']
                 }
             )
 
         # [1] or [1, 5, 20] - 1st, 5th and 20th positions
-        if args.tk.lower() in result['title'].lower() and args.tw in result['link'] and args.po:
+        elif args.tk.lower() in result['title'].lower() and args.tw in result['link'] and args.po:
             position_data.append(result['position'])
 
     if args.to_json:
