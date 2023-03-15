@@ -1,105 +1,272 @@
-import argparse
-import pandas as pd
-from serpapi import GoogleSearch
-from typing import Optional
-from typing import Sequence
+from serpapi import GoogleSearch, BaiduSearch, BingSearch, DuckDuckGoSearch, YahooSearch, YandexSearch, NaverSearch
+import json, csv
 
 
-# TODO: support ad results. Organic AND ads.
-# TODO: support for multiple engines: bing, baidu, yahoo, duckduckgo, naver, yandex
-# TODO: support multiple target keywords (keywords with spaces) and multiple target websites.
+class SeoPositionTracker:
+    def __init__(self, query: str, api_key: str, keywords: list, websites: list, lang: str = None, country: str = None, location: str = None, domain: str = None) -> None:
+        self.query = query
+        self.api_key = api_key
+        self.keywords = keywords
+        self.websites = websites
+        self.lang = lang, 
+        self.country = country, 
+        self.location = location,
+        self.domain = domain, 
 
-def main(argv: Optional[Sequence[str]] = None) -> int:
-    # engines = ['google', 'bing', 'baidu', 'yahoo', 'duckduckgo', 'naver', 'yandex']  # multiple --search-engine, will be added in the next updates.
-    parser = argparse.ArgumentParser(description='SerpApi SEO position tracker.')
-    # usage: --api-key 213128sad or --api-key=213128sad or --api-key="213128sad"
-    parser.add_argument('--api-key', required=True, type=str, help='your SerpApi API key. For more: https://serpapi.com/manage-api-key')
-    parser.add_argument('-se', type=str, default='google', help=f'search engine. Currently only one can be passed. Default: Google')
-    parser.add_argument('-po', action='store_true', help='returns website position only.')
-    parser.add_argument('-s', action='store_true', help='strict mode. Checks if target_keyword in title and in URL and target website in URL.')
+
+    def __find_positions(self, results: dict, engine: str) -> list:
+        data = []
+
+        for keyword in self.keywords:
+            for website in self.websites:
+                for result in results.get('organic_results', []):
+                    check = keyword.lower() in result.get('title', '').lower() and website in result.get('link')
+                    
+                    if not check:
+                        continue
+                    
+                    data.append({
+                        'engine': engine,
+                        'position': result.get('position'),
+                        'title': result.get('title'),
+                        'link': result.get('link')
+                    })
+        
+        return data
+
+
+    def __check_params(self, lang: str = None, country: str = None, location: str = None, domain: str = None) -> tuple:
+        '''The function checks if class variables exist. If there are any, then these variables are overwritten instead of the default parameters.'''
+        checked_params = []
+
+        if lang:
+            if self.lang[0]:
+                lang = self.lang[0]
+            checked_params.append(lang)
+
+        if country:
+            if self.country[0]:
+                country = self.country[0]
+            checked_params.append(country)
+
+        if location:
+            if self.location[0]:
+                location = self.location[0]
+            checked_params.append(location)
+        
+        if domain:
+            if self.domain[0]:
+                domain = self.domain[0]
+            checked_params.append(domain)
+
+        if len(checked_params) == 1:
+            return checked_params[0]
+        
+        return tuple(checked_params)
+
     
-    # usage: python <script.py> -q="<your are breathtaking>". Same with --search_query
-    parser.add_argument(
-        '-q',
-        type=str,
-        default='coffee',
-        help='search query. Default: "Coffee"'
-    )
-    parser.add_argument(
-        '-tk',
-        type=str,
-        # nargs='+', # will be added in the next update
-        default='coffee',
-        help='target keyword to track. Default: "coffee". Currently only one can be passed.'
-    )
-    parser.add_argument(
-        '-tw',
-        type=str,
-        # nargs='+', # will be added in the next update
-        default='starbucks.com',
-        help='target website to track. Default: "starbucks.com". Currently only one can be passed.'
-    )
-    parser.add_argument('-l', type=str, default='en', help='language of the search. Default: "en" - English. For more: https://serpapi.com/google-languages')
-    parser.add_argument('-c', type=str, default='us', help='country of the search. Default: "us" - United States. For more: https://serpapi.com/google-countries')
-    parser.add_argument('-loc', type=str, default='United States', help='location of the search. Default: "United States". For more: https://serpapi.com/locations-api')
-    parser.add_argument('--to-csv', action='store_true', help='saves results in the current directory to csv.')
-    parser.add_argument('--to-json', action='store_true', help='saves results in the current directory to json.')
+    def scrape_google(self, lang: str = 'en', country: str = 'us', location: str = 'United States', domain: str = 'google.com') -> list:
+        '''
+        The `lang` parameter defines the language to use for the Google search. It's a two-letter language code. (e.g., `en` for English, `es` for Spanish, or `fr` for French). \
+        Head to the [Google languages page](https://serpapi.com/google-languages) for a full list of supported Google languages.
 
-    args = parser.parse_args(argv)
+        The `country` parameter defines the country to use for the Google search. It's a two-letter country code. (e.g., `us` for United States, `uk` for United Kingdom, or `fr` for France). \
+        Head to the [Google countries page](https://serpapi.com/google-countries) for a full list of supported Google countries.
 
-    params = {
-        'api_key': args.api_key,    # serpapi api key
-        'engine': args.se,          # serpapi parasing engine
-        'q': args.q,                # search query
-        'hl': args.l,               # language of the search
-        'gl': args.c,               # country of the search
-        'location': args.loc,       # location of the search
-        'num': 100                  # 100 results from Google search
-    }
+        The `location` parameter defines from where you want the search to originate. If several locations match the location requested, the most popular will be selected. \
+        Head to the [/locations.json API](https://serpapi.com/locations-api) if you need more precise control.
+        
+        The `domain` parameter defines the Google domain to use. It defaults to `google.com`. \
+        Head to the [Google domains page](https://serpapi.com/google-domains) for a full list of supported Google domains.
+        '''
+        lang, country, location, domain = self.__check_params(lang=lang, country=country, location=location, domain=domain)
+        
+        params = {
+            'api_key': self.api_key,        # https://serpapi.com/manage-api-key
+            'q': self.query,                # search query
+            'engine': 'google',             # search engine
+            'google_domain': domain,        # Google domain to use
+            'hl': lang,                     # language of the search
+            'gl': country,                  # country of the search
+            'location': location,           # location of the search
+            'num': 100                      # 100 results from Google search
+        }
 
-    search = GoogleSearch(params)   # where data extraction happens on the serpapi backend
-    results = search.get_dict()     # JSON -> Python dict
-
-    position_data = []
-
-    for result in results['organic_results']:
-        # strict mode argument
-        if args.s:
-            if args.tk.lower() in result['title'].lower() and args.tk.lower() in result['link'] and args.tw in result['link'] and not args.po:
-                position_data.append(
-                    {
-                        'position': result['position'],
-                        'country_of_the_search': params['gl'],
-                        'title': result['title'],
-                        'link': result['link']
-                    }
-                )
-        elif args.tk.lower() in result['title'].lower() and args.tw in result['link'] and not args.po:
-            position_data.append(
-                {
-                    'position': result['position'],
-                    'country_of_the_search': params['gl'],
-                    'title': result['title'],
-                    'link': result['link']
-                }
-            )
-
-        # [1] or [1, 5, 20] - 1st, 5th and 20th positions
-        elif args.tk.lower() in result['title'].lower() and args.tw in result['link'] and args.po:
-            position_data.append(result['position'])
-
-    if args.to_json:
-        # chnage file output to the one you understand
-        pd.DataFrame(main()).to_json(f'results_for_query_{args.search_query.replace(" ", "_")}.json', orient='records')
-        print(f'Saved to "results_for_query_{args.search_query.replace(" ", "_")}.json"')
-
-    if args.to_csv:
-        # chnage file output to the one you understand
-        pd.DataFrame(main()).to_csv(f'results_for_query_{args.search_query.replace(" ", "_")}.csv', index=False, encoding='utf-8')
-        print(f'Saved to "results_for_query_{args.search_query.replace(" ", "_")}.csv"')
-
-    return position_data
+        search = GoogleSearch(params)       # data extraction on the SerpApi backend
+        results = search.get_dict()         # JSON -> Python dict
+        
+        return self.__find_positions(results, 'google')
 
 
-if __name__ == '__main__':
-    exit(main())
+    def scrape_baidu(self, lang: str = '1') -> list:
+        '''
+        The `lang` parameter defines which language to restrict results. Available options:
+
+        `1` - All languages
+
+        `2` - Simplified Chinese
+
+        `3` - Traditional Chinese
+        '''
+        lang = self.__check_params(lang=lang)
+        
+        if lang not in ['1', '2', '3']:
+            lang = '1'
+
+        params = {
+            'api_key': self.api_key,        # https://serpapi.com/manage-api-key
+            'q': self.query,                # search query
+            'engine': 'baidu',              # search engine
+            'ct': lang,                     # language to restrict results
+            'rn': 50                        # 50 results from Baidu search
+        }
+
+        search = BaiduSearch(params)        # data extraction on the SerpApi backend
+        results = search.get_dict()         # JSON -> Python dict
+        
+        return self.__find_positions(results, 'baidu')
+
+
+    def scrape_bing(self, country: str = 'us', location: str = 'United States') -> list:
+        '''
+        The `country` parameter defines the country to search from. It follows the 2-character [ISO_3166-1](https://en.wikipedia.org/wiki/ISO_3166-1) format. \
+        (e.g., `us` for United States, `de` for Germany, `gb` for United Kingdom, etc.).
+        
+        The `location` parameter defines from where you want the search to originate. \
+        If several locations match the location requested, we'll pick the most popular one. \
+        Head to the [/locations.json API](https://serpapi.com/locations-api) if you need more precise control.
+        '''
+        country, location = self.__check_params(country=country, location=location)
+        
+        params = {
+            'api_key': self.api_key,        # https://serpapi.com/manage-api-key
+            'q': self.query,                # search query
+            'engine': 'bing',               # search engine
+            'cc': country,                  # country of the search
+            'location': location,           # location of the search
+            'count': 50                     # 50 results from Bing search
+        }
+
+        search = BingSearch(params)         # data extraction on the SerpApi backend
+        results = search.get_dict()         # JSON -> Python dict
+        
+        return self.__find_positions(results, 'bing')
+
+
+    def scrape_duckduckgo(self, location: str = 'us-en') -> list:
+        '''
+        The `location` parameter defines the region to use for the DuckDuckGo search. Region code examples: 
+        
+        `us-en` for United States
+        
+        `uk-en` for United Kingdom 
+        
+        `fr-fr` for France
+
+        Head to the [DuckDuckGo regions](https://serpapi.com/duckduckgo-regions) for a full list of supported regions.
+        '''
+        location = self.__check_params(location=location)
+
+        params = {
+            'api_key': self.api_key,        # https://serpapi.com/manage-api-key
+            'q': self.query,                # search query
+            'engine': 'duckduckgo',         # search engine
+            'kl': location
+        }
+
+        search = DuckDuckGoSearch(params)   # data extraction on the SerpApi backend
+        results = search.get_dict()         # JSON -> Python dict
+        
+        return self.__find_positions(results, 'duckduckgo')
+
+
+    def scrape_yahoo(self, lang: str = 'lang_en', country: str = 'us', domain: str = 'search.yahoo.com') -> list:
+        '''
+        The `lang` parameter defines language to limit the search to. It uses `lang_{two-letter language code}` to specify languages (e.g., `lang_fr` will only search French). \
+        You can check [a full list of supported Yahoo! languages](https://serpapi.com/yahoo-vl-languages).
+
+        The `country` parameter defines the country to use for the Yahoo! search. It's a two-letter country code (e.g., `us` for the United States, `uk` for United Kingdom, or `fr` for France). \
+        Head to the [Yahoo! countries](https://serpapi.com/yahoo-vc-countries) for a full list of supported Yahoo! countries.
+        
+        The `domain` parameter defines the Yahoo! domain to use. It defaults to `search.yahoo.com`. If specified domain is allowed, \
+        it will be prepended to the domain (e.g., `fr.search.yahoo.com`). You can check [a full list of supported Yahoo! domains](https://serpapi.com/yahoo-domains).
+        '''
+        lang, country, domain = self.__check_params(lang=lang, country=country, domain=domain)
+
+        params = {
+            'api_key': self.api_key,        # https://serpapi.com/manage-api-key
+            'p': self.query,                # search query
+            'engine': 'yahoo',              # search engine
+            'yahoo_domain': domain,         # Yahoo! domain to use
+            'vl': lang,                     # language of the search
+            'vc': country,                  # country of the search
+        }
+
+        search = YahooSearch(params)        # data extraction on the SerpApi backend
+        results = search.get_dict()         # JSON -> Python dict
+        
+        return self.__find_positions(results, 'yahoo')
+
+
+    def scrape_yandex(self, lang: str = 'en', location: str = '84', domain: str = 'yandex.com') -> list:
+        '''
+        The `lang` parameter defines the language to use for the Yandex search. \
+        Head to the [Yandex languages](https://serpapi.com/yandex-languages) for a full list of supported Yandex languages.
+
+        The `location` parameter defines ID of the country or region to search. Determines the rules for ranking documents. \
+        For example, if we pass the value `84` in this parameter (United States), when generating search results, a formula is used that is defined for the United States. \
+        Head to the [Yandex locations](https://serpapi.com/yandex-locations) for a full list of supported Yandex locations. \
+        Supported only for `yandex.ru` and `yandex.com.tr` domains.
+
+        The `domain` parameter defines the Yandex domain to use. It defaults to `yandex.com`. \
+        Head to the [Yandex domains](https://serpapi.com/yandex-domains) for a full list of supported Yandex domains.
+        '''
+        lang, location, domain = self.__check_params(lang=lang, location=location, domain=domain)
+
+        params = {
+            'api_key': self.api_key,        # https://serpapi.com/manage-api-key
+            'text': self.query,             # search query
+            'engine': 'yandex',             # search engine
+            'yandex_domain': domain,        # Yandex domain to use
+            'lang': lang,                   # language of the search
+            'lr': location                  # Supported only for yandex.ru and yandex.com.tr domains
+        }
+
+        search = YandexSearch(params)       # data extraction on the SerpApi backend
+        results = search.get_dict()         # JSON -> Python dict
+        
+        return self.__find_positions(results, 'yandex')
+
+
+    def scrape_naver(self) -> list:
+        params = {
+            'api_key': self.api_key,        # https://serpapi.com/manage-api-key
+            'query': self.query,            # search query
+            'engine': 'naver',              # search engine
+            'where': 'web'                  # web organic results
+        }
+
+        search = NaverSearch(params)        # data extraction on the SerpApi backend
+        results = search.get_dict()         # JSON -> Python dict
+        
+        return self.__find_positions(results, 'naver')
+
+
+    def save_to_csv(self, data: list):
+        keys = data[0].keys()
+
+        with open(f"{self.query.replace(' ', '_')}.csv", 'w') as csv_file:
+            writer = csv.DictWriter(csv_file, keys)
+            writer.writeheader()
+            writer.writerows(data)
+        
+
+    def save_to_json(self, data: list):
+        with open(f"{self.query.replace(' ', '_')}.json", 'w', encoding='utf-8') as json_file:
+            json.dump(data, json_file, indent=2, ensure_ascii=False)
+
+
+    def save_to_txt(self, data: list):
+        with open(f'{self.query.replace(" ", "_")}.txt', 'w') as txt_file:
+            for element in data:
+                txt_file.write(f"{element.get('engine')} {element.get('position')} {element.get('title')} {element.get('link')}\n")
