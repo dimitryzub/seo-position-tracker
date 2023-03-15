@@ -12,8 +12,13 @@
 
 ## 🔎 Current search engines support
 
-- Google Search - looks for first 100 organic results.
-- [See what's coming next](https://github.com/dimitryzub/seo-position-tracker/projects).
+- Google Search - first 100 organic results.
+- Baidu Search - first 50 organic results.
+- Bing Search - first 50 organic results.
+- DuckDuckGo Search - up to 30 organic results.
+- Yahoo! Search - first 10 organic results.
+- Yandex Search - up to 15 organic results.
+- Naver Search - first 15 organic results.
 
 
 ## ⚙️Installation
@@ -32,71 +37,170 @@ $ git clone https://github.com/dimitryzub/seo-position-tracking.git
 #### Available CLI arugments:
 
 ```bash
-$ python seo_position_tracker.py -h 
+$ cd seo_position_tracker/
+$ python main.py -h
 ```
 
 ```lang-none
-SerpApi SEO position tracker.
+SerpApi SEO position tracker [-h] [-q] [-tk  [...]] [-tw  [...]] [-se  [...]] [-ak] [-hl] [-gl] [-loc] [-d] [-st]
+
+A simple Python CLI for SEO position tracking from Google, Baidu, Bing, DuckDuckGo, Yahoo, Yandex and Naver.
 
 optional arguments:
-  -h, --help         show this help message and exit
-  --api-key API_KEY  your SerpApi API key. For more: https://serpapi.com/manage-api-key
-  -se SE             search engine. Currently only one can be passed. Default: Google
-  -po                returns website position only.
-  -q Q               search query. Default: "Coffee"
-  -tk TK             target keyword to track. Default: "coffee". Currently only one can be passed.
-  -tw TW             target website to track. Default: "starbucks.com". Currently only one can be passed.
-  -l L               language of the search. Default: "en" - English. For more: https://serpapi.com/google-languages
-  -c C               country of the search. Default: "us" - United States. For more: https://serpapi.com/google-countries
-  -loc LOC           location of the search. Default: "United States". For more: https://serpapi.com/locations-api
-  --to-csv           saves results in the current directory to csv.
-  --to-json          saves results in the current directory to json.
+  -h, --help            show this help message and exit
+  -q , --query          Search query. Default "coffee".
+  -tk  [ ...], --target-keywords  [ ...]
+                        Target keywords to track. Default "['coffee']".
+  -tw  [ ...], --target-websites  [ ...]
+                        Target websites to track. Default "['starbucks.com']".
+  -se  [ ...], --search-engine  [ ...]
+                        Choosing a search engine to track: "google", "baidu", "bing", "duckduckgo", "yahoo", "yandex", "naver". You can select multiple search
+                        engines. All search engines are selected by default.
+  -ak , --api-key       Your SerpApi API key: https://serpapi.com/manage-api-key. Default is a test API key to test CLI.
+  -hl , --lang          Language of the search. Supported only for "google", "baidu", "yahoo" and "yandex" engines. Default "None".
+  -gl , --country       Country of the search. Supported only for "google", "bing" and "yahoo" engines. Default "None".
+  -loc , --location     Location of the search. Supported only for "google", "bing", "duckduckgo" and "yandex" engines. Default "None".
+  -d , --domain         Search engine domain to use. Supported only for "google", "yahoo" and "yandex" engines. Default "None".
+  -st , --save-to       Saves the results in the current directory in the selected format (CSV, JSON, TXT). Default CSV.
+
+Found a bug? Open issue: https://github.com/dimitryzub/seo-position-tracker/issues
 ```
 
-#### Example:
+## 🤹‍♂️Examples
+
+#### Extracting positions from all search engines for a given query with a target website and a target keyword:
 
 ```bash
-$ python seo_position_tracker.py --api-key=<your_serpapi_api_key> \
-> -q="minecraft buy" \
-> -tk minecraft \
-> -tw minecraft.net \
-> -l en -c us
+$ python main.py --api-key=<your_serpapi_api_key> \
+> -q "minecraft" \
+> -tk official \
+> -tw minecraft.net
 ```
 
 ```json
 [
   {
+    "engine": "google",
     "position": 1,
-    "country_of_the_search": "us",
-    "title": "Get Minecraft: Gaming Platform Features",
-    "link": "https://www.minecraft.net/en-us/get-minecraft"
+    "title": "Welcome to the Minecraft Official Site | Minecraft",
+    "link": "https://www.minecraft.net/en-us"
   },
   {
-    "position": 5,
-    "country_of_the_search": "us",
-    "title": "I Want to Buy Minecraft on a Non-Windows Device",
-    "link": "https://help.minecraft.net/hc/en-us/articles/6661712171405-I-Want-to-Buy-Minecraft-on-a-Non-Windows-Device"
+    "engine": "bing",
+    "position": 1,
+    "title": "Minecraft - Official Site",
+    "link": "https://minecraft.net/"
+  },
+  {
+    "engine": "bing",
+    "position": 2,
+    "title": "Welcome to the Minecraft Official Site | Minecraft",
+    "link": "https://www.minecraft.net/en-us"
+  },
+  {
+    "engine": "bing",
+    "position": 10,
+    "title": "Minecraft Official Site | Minecraft Education",
+    "link": "https://education.minecraft.net/en-us"
+  },
+  {
+    "engine": "duckduckgo",
+    "position": 1,
+    "title": "Minecraft - Official Site",
+    "link": "https://minecraft.net/"
+  },
+  {
+    "engine": "duckduckgo",
+    "position": 2,
+    "title": "Welcome to the Minecraft Official Site | Minecraft",
+    "link": "https://www.minecraft.net/en-us"
+  },
+  {
+    "engine": "yahoo",
+    "position": 1,
+    "title": "Minecraft - Official Site",
+    "link": "https://minecraft.net/"
+  },
+  {
+    "engine": "yahoo",
+    "position": 2,
+    "title": "Welcome to the Minecraft Official Site | Minecraft",
+    "link": "https://www.minecraft.net/en-us"
+  },
+  {
+    "engine": "yandex",
+    "position": 2,
+    "title": "Welcome to the Minecraft Official Site | Minecraft",
+    "link": "https://www.minecraft.net/"
   }
 ]
 ```
 
-
-
-#### Get position only
+#### Extracting positions from 3 search engines with default arguments and saving to JSON:
 
 ```bash
-$ python seo_position_tracker.py --api-key=<your_serpapi_api_key> \
-> -q="minecraft buy" \
-> -tk minecraft \
-> -tw  minecraft.net \
-> -l en -c us \
-> -po
+$ python main.py --api-key=<your_serpapi_api_key> \
+> -se google bing duckduckgo \
+> -st JSON
 ```
 
-```lang-none
-[1]
-# or 
-[1, 5, ...]
+```json
+[
+  {
+    "engine": "google",
+    "position": 6,
+    "title": "Starbucks Coffee Company",
+    "link": "https://www.starbucks.com/"
+  },
+  {
+    "engine": "bing",
+    "position": 12,
+    "title": "The Best Coffee from Starbucks Coffee: Starbucks Coffee Company",
+    "link": "https://www.starbucks.com/coffee/"
+  },
+  {
+    "engine": "duckduckgo",
+    "position": 11,
+    "title": "The Best Coffee from Starbucks Coffee: Starbucks Coffee Company",
+    "link": "https://www.starbucks.com/coffee/"
+  }
+]
+Saving data in JSON format...
+Data successfully saved to coffee.json file.
+```
+
+#### Extracting positions from one engine with all arguments for it:
+
+```bash       
+$ python main.py --api-key=<your_serpapi_api_key> \
+> -q serpapi \
+> -tk serpapi \
+> -tw https://serpapi.com/ https://github.com/ \
+> -se google \
+> -hl de \
+> -gl de \
+> -loc Germany \
+> -d google.de \
+> -st TXT
+```
+
+```json
+[
+  {
+    "engine": "google",
+    "position": 1,
+    "title": "SerpApi: Google Search API",
+    "link": "https://serpapi.com/"
+  },
+  {
+    "engine": "google",
+    "position": 3,
+    "title": "SerpApi - GitHub",
+    "link": "https://github.com/serpapi"
+  }
+]
+Saving data in TXT format...
+Data successfully saved to serpapi.txt file.
 ```
 
 ## 💡Issues or suggestions
