@@ -8,10 +8,10 @@ class SeoPositionTracker:
         self.api_key = api_key
         self.keywords = keywords
         self.websites = websites
-        self.lang = lang, 
-        self.country = country, 
-        self.location = location,
-        self.domain = domain, 
+        self.lang = lang
+        self.country = country
+        self.location = location
+        self.domain = domain
 
 
     def __find_positions(self, results: dict, engine: str) -> list:
@@ -56,23 +56,23 @@ class SeoPositionTracker:
         checked_params = []
 
         if lang:
-            if self.lang[0]:
-                lang = self.lang[0]
+            if self.lang:
+                lang = self.lang
             checked_params.append(lang)
 
         if country:
-            if self.country[0]:
-                country = self.country[0]
+            if self.country:
+                country = self.country
             checked_params.append(country)
 
         if location:
-            if self.location[0]:
-                location = self.location[0]
+            if self.location:
+                location = self.location
             checked_params.append(location)
         
         if domain:
-            if self.domain[0]:
-                domain = self.domain[0]
+            if self.domain:
+                domain = self.domain
             checked_params.append(domain)
 
         if len(checked_params) == 1:
@@ -262,7 +262,7 @@ class SeoPositionTracker:
         return self.__find_positions(results, 'naver')
 
 
-    def save_to_csv(self, data: list):
+    def save_to_csv(self, data: list) -> None:
         keys = data[0].keys()
 
         with open(f"{self.query.replace(' ', '_')}.csv", 'w') as csv_file:
@@ -271,12 +271,12 @@ class SeoPositionTracker:
             writer.writerows(data)
         
 
-    def save_to_json(self, data: list):
+    def save_to_json(self, data: list) -> None:
         with open(f"{self.query.replace(' ', '_')}.json", 'w', encoding='utf-8') as json_file:
             json.dump(data, json_file, indent=2, ensure_ascii=False)
 
 
-    def save_to_txt(self, data: list):
+    def save_to_txt(self, data: list) -> None:
         with open(f'{self.query.replace(" ", "_")}.txt', 'w') as txt_file:
             for element in data:
                 txt_file.write(f"{element.get('engine')} {element.get('position')} {element.get('title')} {element.get('link')}\n")
