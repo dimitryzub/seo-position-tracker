@@ -22,10 +22,10 @@ position_data.extend(bing_results)
 duckduckgo_results = tracker.scrape_duckduckgo(location='us-en')
 position_data.extend(duckduckgo_results)
 
-yahoo_results = tracker.scrape_yahoo(lang='lang_en', country='us', domain='search.yahoo.com')
+yahoo_results = tracker.scrape_yahoo(lang='lang_en', country='us', domain='uk')
 position_data.extend(yahoo_results)
 
-yandex_results = tracker.scrape_yandex(lang='en', location='84', domain='yandex.com')
+yandex_results = tracker.scrape_yandex(lang='en', domain='yandex.com')
 position_data.extend(yandex_results)
 
 naver_results = tracker.scrape_naver()
