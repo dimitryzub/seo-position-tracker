@@ -54,8 +54,7 @@ optional arguments:
   -tw  [ ...], --target-websites  [ ...]
                         Target websites to track. Default "['starbucks.com']".
   -se  [ ...], --search-engine  [ ...]
-                        Choosing a search engine to track: "google", "baidu", "bing", "duckduckgo", "yahoo", "yandex", "naver". You can select multiple search
-                        engines. All search engines are selected by default.
+                        Choosing a search engine to track: "google", "baidu", "bing", "duckduckgo", "yahoo", "yandex", "naver". You can select multiple search engines. All search engines are selected by default.
   -ak , --api-key       Your SerpApi API key: https://serpapi.com/manage-api-key. Default is a test API key to test CLI.
   -hl , --lang          Language of the search. Supported only for "google", "baidu", "yahoo" and "yandex" engines. Default "None".
   -gl , --country       Country of the search. Supported only for "google", "bing" and "yahoo" engines. Default "None".
