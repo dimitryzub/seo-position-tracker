@@ -18,9 +18,11 @@ class SeoPositionTracker:
         data = []
 
         for keyword in self.keywords:
-            for website in self.websites:
+            # links in Baidu Search have this format http://www.baidu.com/link?url=R9iXojWG2Aq-dp0xgO5UhGPqv2rwVH4dJ9g9zQHrMmyTZYrGbIOU1w7CAvf2QjR9Lj8UhkWp6PcUVsYE3ECqorYZojMeQ9O6kmoYfxJv2d3
+            # so there is no way to check if the target website exists in the link
+            if engine == 'baidu':
                 for result in results.get('organic_results', []):
-                    check = keyword.lower() in result.get('title', '').lower() and website in result.get('link')
+                    check = keyword.lower() in result.get('title', '').lower()
                     
                     if not check:
                         continue
@@ -31,6 +33,20 @@ class SeoPositionTracker:
                         'title': result.get('title'),
                         'link': result.get('link')
                     })
+            else:
+                for website in self.websites:
+                    for result in results.get('organic_results', []):
+                        check = keyword.lower() in result.get('title', '').lower() and website in result.get('link')
+                        
+                        if not check:
+                            continue
+                        
+                        data.append({
+                            'engine': engine,
+                            'position': result.get('position'),
+                            'title': result.get('title'),
+                            'link': result.get('link')
+                        })
         
         return data
 
@@ -180,7 +196,7 @@ class SeoPositionTracker:
         return self.__find_positions(results, 'duckduckgo')
 
 
-    def scrape_yahoo(self, lang: str = 'lang_en', country: str = 'us', domain: str = 'search.yahoo.com') -> list:
+    def scrape_yahoo(self, lang: str = 'lang_en', country: str = 'us', domain: str = 'uk') -> list:
         '''
         The `lang` parameter defines language to limit the search to. It uses `lang_{two-letter language code}` to specify languages (e.g., `lang_fr` will only search French). \
         You can check [a full list of supported Yahoo! languages](https://serpapi.com/yahoo-vl-languages).
@@ -188,8 +204,8 @@ class SeoPositionTracker:
         The `country` parameter defines the country to use for the Yahoo! search. It's a two-letter country code (e.g., `us` for the United States, `uk` for United Kingdom, or `fr` for France). \
         Head to the [Yahoo! countries](https://serpapi.com/yahoo-vc-countries) for a full list of supported Yahoo! countries.
         
-        The `domain` parameter defines the Yahoo! domain to use. It defaults to `search.yahoo.com`. If specified domain is allowed, \
-        it will be prepended to the domain (e.g., `fr.search.yahoo.com`). You can check [a full list of supported Yahoo! domains](https://serpapi.com/yahoo-domains).
+        The `domain` parameter defines the Yahoo! domain to use. It defaults to `uk`. If specified domain is allowed, \
+        it will be prepended to the domain. You can check [a full list of supported Yahoo! domains](https://serpapi.com/yahoo-domains).
         '''
         lang, country, domain = self.__check_params(lang=lang, country=country, domain=domain)
 
@@ -199,7 +215,7 @@ class SeoPositionTracker:
             'engine': 'yahoo',              # search engine
             'yahoo_domain': domain,         # Yahoo! domain to use
             'vl': lang,                     # language of the search
-            'vc': country,                  # country of the search
+            'vc': country                   # country of the search
         }
 
         search = YahooSearch(params)        # data extraction on the SerpApi backend
@@ -208,28 +224,22 @@ class SeoPositionTracker:
         return self.__find_positions(results, 'yahoo')
 
 
-    def scrape_yandex(self, lang: str = 'en', location: str = '84', domain: str = 'yandex.com') -> list:
+    def scrape_yandex(self, lang: str = 'en', domain: str = 'yandex.com') -> list:
         '''
         The `lang` parameter defines the language to use for the Yandex search. \
         Head to the [Yandex languages](https://serpapi.com/yandex-languages) for a full list of supported Yandex languages.
 
-        The `location` parameter defines ID of the country or region to search. Determines the rules for ranking documents. \
-        For example, if we pass the value `84` in this parameter (United States), when generating search results, a formula is used that is defined for the United States. \
-        Head to the [Yandex locations](https://serpapi.com/yandex-locations) for a full list of supported Yandex locations. \
-        Supported only for `yandex.ru` and `yandex.com.tr` domains.
-
         The `domain` parameter defines the Yandex domain to use. It defaults to `yandex.com`. \
         Head to the [Yandex domains](https://serpapi.com/yandex-domains) for a full list of supported Yandex domains.
         '''
-        lang, location, domain = self.__check_params(lang=lang, location=location, domain=domain)
+        lang, domain = self.__check_params(lang=lang, domain=domain)
 
         params = {
             'api_key': self.api_key,        # https://serpapi.com/manage-api-key
             'text': self.query,             # search query
             'engine': 'yandex',             # search engine
             'yandex_domain': domain,        # Yandex domain to use
-            'lang': lang,                   # language of the search
-            'lr': location                  # Supported only for yandex.ru and yandex.com.tr domains
+            'lang': lang                    # language of the search
         }
 
         search = YandexSearch(params)       # data extraction on the SerpApi backend
