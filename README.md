@@ -29,6 +29,7 @@ $ pip install seo-position-tracker
 
 ```bash
 $ git clone https://github.com/dimitryzub/seo-position-tracking.git
+$ cd seo_position_tracker/
 ```
 
 
@@ -37,7 +38,6 @@ $ git clone https://github.com/dimitryzub/seo-position-tracking.git
 #### Available CLI arugments:
 
 ```bash
-$ cd seo_position_tracker/
 $ python main.py -h
 ```
 
@@ -71,9 +71,9 @@ Found a bug? Open issue: https://github.com/dimitryzub/seo-position-tracker/issu
 
 ```bash
 $ python main.py --api-key=<your_serpapi_api_key> \
-> -q "minecraft" \
-> -tk official \
-> -tw minecraft.net
+-q "minecraft" \
+-tk official \
+-tw minecraft.net
 ```
 
 ```json
@@ -139,8 +139,8 @@ $ python main.py --api-key=<your_serpapi_api_key> \
 
 ```bash
 $ python main.py --api-key=<your_serpapi_api_key> \
-> -se google bing duckduckgo \
-> -st JSON
+-se google bing duckduckgo \
+-st JSON
 ```
 
 ```json
@@ -172,15 +172,15 @@ Data successfully saved to coffee.json file.
 
 ```bash       
 $ python main.py --api-key=<your_serpapi_api_key> \
-> -q serpapi \
-> -tk serpapi \
-> -tw https://serpapi.com/ https://github.com/ \
-> -se google \
-> -hl de \
-> -gl de \
-> -loc Germany \
-> -d google.de \
-> -st TXT
+-q serpapi \
+-tk serpapi \
+-tw https://serpapi.com/ https://github.com/ \
+-se google \
+-hl de \
+-gl de \
+-loc Germany \
+-d google.de \
+-st TXT
 ```
 
 ```json
