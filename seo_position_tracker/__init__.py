@@ -1,1 +1,1 @@
-from .seo_position_tracker import main
+from .seo_position_tracker import SeoPositionTracker
