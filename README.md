@@ -164,8 +164,6 @@ $ python main.py --api-key=<your_serpapi_api_key> \
     "link": "https://www.starbucks.com/coffee/"
   }
 ]
-Saving data in JSON format...
-Data successfully saved to coffee.json file.
 ```
 
 #### Extracting positions from one engine with all arguments for it:
@@ -198,8 +196,6 @@ $ python main.py --api-key=<your_serpapi_api_key> \
     "link": "https://github.com/serpapi"
   }
 ]
-Saving data in TXT format...
-Data successfully saved to serpapi.txt file.
 ```
 
 #### Extracting positions from all search engines manually (without CLI):
