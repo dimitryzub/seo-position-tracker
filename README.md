@@ -1,6 +1,8 @@
 <h1 align="center">SEO Position Tracker 📡</h1>
 
-<p align="center">A simple Python tool for SEO position tracking from Google and other search engines.</p>
+<p align="center">A simple Python CLI and in-code SEO position tracking tool for Google and 6 other search engines.</p>
+<p align="center">This project uses <a href="http://serpapi.com/">SerpApi</a></p>
+
 
 <div align="center">
 
