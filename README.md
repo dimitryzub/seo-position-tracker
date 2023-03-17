@@ -27,9 +27,19 @@
 $ pip install seo-position-tracker
 ```
 
+Install from source:
+
 ```bash
 $ git clone https://github.com/dimitryzub/seo-position-tracking.git
 $ cd seo_position_tracker/
+$ python -m venv env && source env/bin/activate # or env/Scripts/activate for Windows
+$ poetry install
+```
+
+If you get an error, try: 
+```bash
+$ pip install chardet 
+$ poetry install
 ```
 
 
@@ -54,12 +64,17 @@ optional arguments:
   -tw  [ ...], --target-websites  [ ...]
                         Target websites to track. Default "['starbucks.com']".
   -se  [ ...], --search-engine  [ ...]
-                        Choosing a search engine to track: "google", "baidu", "bing", "duckduckgo", "yahoo", "yandex", "naver". You can select multiple search engines. All search engines are selected by default.
+                        Choosing a search engine to track: "google", "baidu", "bing", "duckduckgo", "yahoo", "yandex", "naver". You can select multiple search engines. All search   
+                        engines are selected by default.
   -ak , --api-key       Your SerpApi API key: https://serpapi.com/manage-api-key. Default is a test API key to test CLI.
-  -hl , --lang          Language of the search. Supported only for "google", "baidu", "yahoo" and "yandex" engines. Default "None".
-  -gl , --country       Country of the search. Supported only for "google", "bing" and "yahoo" engines. Default "None".
-  -loc , --location     Location of the search. Supported only for "google", "bing", "duckduckgo" and "yandex" engines. Default "None".
-  -d , --domain         Search engine domain to use. Supported only for "google", "yahoo" and "yandex" engines. Default "None".
+  -hl , --lang          Language of the search. Supported only for "google", "baidu", "yahoo" and "yandex" engines. Default "None". Find more by Googling: "SerpApi supported        
+                        <engine> languages"
+  -gl , --country       Country of the search. Supported only for "google", "bing" and "yahoo" engines. Default "None". Find more by Googling: "SerpApi supported <engine>
+                        countries"
+  -loc , --location     Location of the search. Supported only for "google", "bing", "duckduckgo" and "yandex" engines. Default "None". Find more by Googling: "SerpApi supported    
+                        <engine> locations"
+  -d , --domain         Search engine domain to use. Supported only for "google", "yahoo" and "yandex" engines. Default "None". Find more by Googling: "SerpApi supported <engine>   
+                        domains"
   -st , --save-to       Saves the results in the current directory in the selected format (CSV, JSON, TXT). Default CSV.
 
 Found a bug? Open issue: https://github.com/dimitryzub/seo-position-tracker/issues
