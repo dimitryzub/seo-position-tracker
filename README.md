@@ -1,3 +1,15 @@
+<div align="center">
+<p>Special thanks to:</p>
+<div>
+   <img src="https://sindresorhus.com/assets/thanks/serpapi-logo-light.svg" width="140" alt="SerpApi">
+</div>
+<a href="https://serpapi.com">
+	<b>API to get search engine results with ease.</b>
+</a>
+</div>
+
+______
+
 <h1 align="center">SEO Position Tracker 📡</h1>
 
 <p align="center">A simple Python CLI and in-code SEO position tracking tool for Google and 6 other search engines.</p>
