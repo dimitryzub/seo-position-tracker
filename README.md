@@ -1,10 +1,10 @@
 <div align="center">
-<p>Special thanks to:</p>
+<p>Sponsor of the project:</p>
 <div>
-   <img src="https://user-images.githubusercontent.com/81998012/231172985-81515e8b-bc41-46b4-83fa-d129d5f3e718.svg" width="140" alt="SerpApi">
+   <img src="https://user-images.githubusercontent.com/81998012/231172985-81515e8b-bc41-46b4-83fa-d129d5f3e718.svg" width="100" alt="SerpApi">
 </div>
 <a href="https://serpapi.com">
-	<b>API to get search engine results with ease.</b>
+  <b>API to get search engine results with ease.</b>
 </a>
 </div>
 
@@ -14,6 +14,10 @@ ______
 
 <p align="center">A simple Python CLI and in-code SEO position tracking tool for Google and 6 other search engines.</p>
 <p align="center">This project uses <a href="http://serpapi.com/">SerpApi</a></p>
+
+<div align="center">
+   <img src="https://user-images.githubusercontent.com/78694043/231775565-1b007b07-e168-4b88-9518-865148e1d2a4.svg" width="700" alt="SerpApi">
+</div>
 
 
 <div align="center">
