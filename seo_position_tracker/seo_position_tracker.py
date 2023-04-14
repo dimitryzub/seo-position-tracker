@@ -265,7 +265,7 @@ class SeoPositionTracker:
     def save_to_csv(self, data: list) -> None:
         keys = data[0].keys()
 
-        with open(f"{self.query.replace(' ', '_')}.csv", 'w') as csv_file:
+        with open(f"{self.query.replace(' ', '_')}.csv", 'w', encoding='utf-8') as csv_file:
             writer = csv.DictWriter(csv_file, keys)
             writer.writeheader()
             writer.writerows(data)
@@ -277,6 +277,6 @@ class SeoPositionTracker:
 
 
     def save_to_txt(self, data: list) -> None:
-        with open(f'{self.query.replace(" ", "_")}.txt', 'w') as txt_file:
+        with open(f'{self.query.replace(" ", "_")}.txt', 'w', encoding='utf-8') as txt_file:
             for element in data:
                 txt_file.write(f"{element.get('engine')} {element.get('position')} {element.get('title')} {element.get('link')}\n")
