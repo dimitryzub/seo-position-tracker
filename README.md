@@ -47,14 +47,18 @@ $ pip install seo-position-tracker
 
 Install from source:
 
+Windows:
+
 ```bash
 $ git clone https://github.com/dimitryzub/seo-position-tracking.git
-$ cd seo_position_tracker/
+$ cd seo-position-tracker/
 $ python -m venv env && source env/bin/activate # or env/Scripts/activate for Windows
+$ pip install poetry
 $ poetry install
 ```
 
 If you get an error, try: 
+
 ```bash
 $ pip install chardet 
 $ poetry install
