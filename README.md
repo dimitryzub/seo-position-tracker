@@ -49,6 +49,8 @@ Install from source:
 
 ```bash
 $ git clone https://github.com/dimitryzub/seo-position-tracking.git
+$ cd seo_position_tracker/
+$ python -m venv env && source env/bin/activate # or env/Scripts/activate for Windows
 $ poetry install
 ```
 
