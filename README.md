@@ -49,8 +49,6 @@ Install from source:
 
 ```bash
 $ git clone https://github.com/dimitryzub/seo-position-tracking.git
-$ cd seo_position_tracker/
-$ python -m venv env && source env/bin/activate # or env/Scripts/activate for Windows
 $ poetry install
 ```
 
@@ -63,11 +61,18 @@ $ poetry install
 
 ## 🤹‍♂️Usage
 
-#### Available CLI arugments:
+```bash
+$ python seo_position_tracker/main.py -h
+```
 
 ```bash
-$ python main.py -h
+$ poetry run seo -h
 ```
+
+<details>
+<summary>
+Available arugments
+</summary>
 
 ```lang-none
 SerpApi SEO position tracker [-h] [-q] [-tk  [...]] [-tw  [...]] [-se  [...]] [-ak] [-hl] [-gl] [-loc] [-d] [-st]
@@ -95,8 +100,11 @@ optional arguments:
                         domains"
   -st , --save-to       Saves the results in the current directory in the selected format (CSV, JSON, TXT). Default CSV.
 
+
 Found a bug? Open issue: https://github.com/dimitryzub/seo-position-tracker/issues
 ```
+
+</details>
 
 ## 🤹‍♂️Examples
 
