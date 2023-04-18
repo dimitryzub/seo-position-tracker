@@ -68,8 +68,13 @@ $ poetry install
 
 ## 🤹‍♂️Usage
 
+You can envoke script by this two commands. 
+
+Examples below will show usage with `poetry run seo <command>`, but you can use `python main.py <command>` instead.  
+
 ```bash
-$ python seo_position_tracker/main.py -h
+$ cd seo_position_tracker # dive inside the module folder
+$ python main.py -h
 ```
 
 ```bash
@@ -118,7 +123,7 @@ Found a bug? Open issue: https://github.com/dimitryzub/seo-position-tracker/issu
 #### Extracting positions from all search engines for a given query with a target website and a target keyword:
 
 ```bash
-$ python main.py --api-key=<your_serpapi_api_key> \
+$ poetry run seo --api-key=<your_serpapi_api_key> \
 -q "minecraft" \
 -tk official \
 -tw minecraft.net
@@ -186,7 +191,7 @@ $ python main.py --api-key=<your_serpapi_api_key> \
 #### Extracting positions from 3 search engines with default arguments and saving to JSON:
 
 ```bash
-$ python main.py --api-key=<your_serpapi_api_key> \
+$ poetry run seo --api-key=<your_serpapi_api_key> \
 -se google bing duckduckgo \
 -st JSON
 ```
@@ -217,7 +222,7 @@ $ python main.py --api-key=<your_serpapi_api_key> \
 #### Extracting positions from one engine with all arguments for it:
 
 ```bash       
-$ python main.py --api-key=<your_serpapi_api_key> \
+$ poetry run seo --api-key=<your_serpapi_api_key> \
 -q serpapi \
 -tk serpapi \
 -tw https://serpapi.com/ https://github.com/ \
