@@ -1,14 +1,12 @@
 <div align="center">
-<p>Sponsor of the project:</p>
+<p>Special thanks to:</p>
 <div>
-   <img src="https://user-images.githubusercontent.com/81998012/231172985-81515e8b-bc41-46b4-83fa-d129d5f3e718.svg" width="100" alt="SerpApi">
+   <img src="https://user-images.githubusercontent.com/81998012/231172985-81515e8b-bc41-46b4-83fa-d129d5f3e718.svg" width="60" alt="SerpApi">
 </div>
 <a href="https://serpapi.com">
   <b>API to get search engine results with ease.</b>
 </a>
 </div>
-
-______
 
 <h1 align="center">SEO Position Tracker 📡</h1>
 
@@ -16,17 +14,15 @@ ______
 <p align="center">This project uses <a href="http://serpapi.com/">SerpApi</a></p>
 
 <div align="center">
-   <img src="https://user-images.githubusercontent.com/78694043/231775565-1b007b07-e168-4b88-9518-865148e1d2a4.svg" width="700" alt="SerpApi">
+   <img src="https://user-images.githubusercontent.com/78694043/231775565-1b007b07-e168-4b88-9518-865148e1d2a4.svg" width="500" alt="SerpApi">
 </div>
-
 
 <div align="center">
 
-  <a href="https://pepy.tech/project/seo-position-tracker">![Downloads](https://static.pepy.tech/personalized-badge/seo-position-tracker?period=month&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)</a>
+  <a href="https://pepy.tech/project/seo-position-tracker">![Downloads](https://static.pepy.tech/badge/seo-position-tracker/month)</a>
   <a href="">![licence](https://img.shields.io/github/license/dimitryzub/seo-position-tracker?color=blue)</a>
 
 </div>
-
 
 ## 🔎 Current search engines support
 
@@ -58,27 +54,19 @@ $ pip install poetry
 $ poetry install
 ```
 
-If you get an error, try: 
+<details>
+<summary>If you get an error</summary>
 
-```bash
-$ pip install chardet 
-$ poetry install
-```
-
+   ```bash
+   $ pip install chardet 
+   $ poetry install
+   ```
+</details>
 
 ## 🤹‍♂️Usage
 
-You can envoke script by this two commands. 
-
-Examples below will show usage with `poetry run seo <command>`, but you can use `python main.py <command>` instead.  
-
 ```bash
-$ cd seo_position_tracker # dive inside the module folder
-$ python main.py -h
-```
-
-```bash
-$ poetry run seo -h
+$ seo -h
 ```
 
 <details>
@@ -123,7 +111,7 @@ Found a bug? Open issue: https://github.com/dimitryzub/seo-position-tracker/issu
 #### Extracting positions from all search engines for a given query with a target website and a target keyword:
 
 ```bash
-$ poetry run seo --api-key=<your_serpapi_api_key> \
+$ seo --api-key=<your_serpapi_api_key> \
 -q "minecraft" \
 -tk official \
 -tw minecraft.net
@@ -191,7 +179,7 @@ $ poetry run seo --api-key=<your_serpapi_api_key> \
 #### Extracting positions from 3 search engines with default arguments and saving to JSON:
 
 ```bash
-$ poetry run seo --api-key=<your_serpapi_api_key> \
+$ seo --api-key=<your_serpapi_api_key> \
 -se google bing duckduckgo \
 -st JSON
 ```
@@ -222,7 +210,7 @@ $ poetry run seo --api-key=<your_serpapi_api_key> \
 #### Extracting positions from one engine with all arguments for it:
 
 ```bash       
-$ poetry run seo --api-key=<your_serpapi_api_key> \
+$ seo --api-key=<your_serpapi_api_key> \
 -q serpapi \
 -tk serpapi \
 -tw https://serpapi.com/ https://github.com/ \
